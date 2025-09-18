@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HOSQ Labs</title>
+  <script src='https://d3js.org/d3.v7.min.js'></script>
+  <link href='https://fonts.googleapis.com/css2?family=Lexend&display=swap' rel='stylesheet'>
+  <style>
+    :root {
+      --page-bg: #262123;
+      --page-text: #E8DED3;
+      --accent: #6A50FF;
+      --edge: #322C2E;
+      --label-muted: #4C4646;
+      --popup-bg: #262123;
+      --popup-text: #E8DED3;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--page-bg);
+      color: var(--page-text);
+      font-family: 'Lexend', sans-serif;
+      overflow: hidden;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      grid-template-rows: 100vh;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .sidebar {
+      background: var(--page-bg);
+      color: var(--page-text);
+      padding: 16px 12px;
+      overflow-y: auto;
+      border-right: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .sidebar h2 {
+      margin: 0 0 12px 0;
+      font-size: 18px;
+      color: var(--page-text);
+    }
+
+    .filter-group { margin-bottom: 14px; }
+    .filter-group h3 {
+      margin: 8px 0 6px 0;
+      font-size: 14px;
+      color: var(--page-text);
+    }
+
+    .filter-options { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      background: #4C4646;
+      color: #E8DED3;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 12px;
+      cursor: pointer;
+      user-select: none;
+      border: none;
+      box-shadow: none;
+    }
+    .tag[aria-pressed="true"] {
+      background: #6A50FF;
+      color: #FFFFFF;
+    }
+
+    .content { position: relative; }
+    svg { width: 100%; height: 100%; cursor: grab; display: block; }
+
+    #search-input {
+      position: absolute;
+      top: 16px;
+      left: 300px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      background-color: #4C4646;
+      color: #E8DED3;
+      z-index: 100;
+    }
+
+    #fullscreen-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 100;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: var(--accent);
+      color: white;
+      font-family: 'Lexend', sans-serif;
+      cursor: pointer;
+    }
+
+    .popup {
+      position: absolute;
+      background-color: var(--popup-bg);
+      color: var(--popup-text);
+      padding: 8px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      z-index: 10;
+      width: 220px;
+      text-align: center;
+      font-size: 14px;
+      user-select: text;
+      pointer-events: auto;
+      display: none;
+    }
+
+    .popup img { max-width: 100%; border-radius: 6px; margin-top: 8px; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <div id="filters"></div>
+    </aside>
+    <main class="content">
+      <input id="search-input" placeholder="Search artist..." />
+      <button id="fullscreen-btn">Full screen</button>
+      <svg></svg>
+      <div id='popup' class='popup' style='user-select: text; -webkit-user-select: text;'></div>
+    </main>
+  </div>
+
+  <script>
+    function openFullscreen() {
+      const docElm = document.documentElement;
+      if (docElm.requestFullscreen) { docElm.requestFullscreen(); }
+      else if (docElm.webkitRequestFullscreen) { docElm.webkitRequestFullscreen(); }
+      else if (docElm.msRequestFullscreen) { docElm.msRequestFullscreen(); }
+    }
+    document.getElementById('fullscreen-btn').addEventListener('click', openFullscreen);
+
+    function escapeAt(text) {
+      return typeof text === 'string' ? text.replaceAll('@', '&#64;') : text;
+    }
+
+    function buildFilters(container, filterOptions, onChange) {
+      const order = ['lab','department','role','discipline','instruments','skill set'];
+      const selected = {};
+      order.forEach(cat => { selected[cat] = new Set(); });
+
+      const root = document.createDocumentFragment();
+      order.forEach(cat => {
+        const values = Array.from(filterOptions[cat] || []).sort();
+        if (!values.length) return;
+        const group = document.createElement('div');
+        group.className = 'filter-group';
+        const h3 = document.createElement('h3');
+        h3.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+        group.appendChild(h3);
+        const opts = document.createElement('div');
+        opts.className = 'filter-options';
+        values.forEach(val => {
+          const tag = document.createElement('button');
+          tag.type = 'button';
+          tag.className = 'tag';
+          tag.textContent = val;
+          tag.setAttribute('aria-pressed', 'false');
+          tag.addEventListener('click', () => {
+            const pressed = tag.getAttribute('aria-pressed') === 'true';
+            tag.setAttribute('aria-pressed', String(!pressed));
+            if (pressed) selected[cat].delete(val); else selected[cat].add(val);
+            onChange(mapToSelected(selected));
+          });
+          opts.appendChild(tag);
+        });
+        group.appendChild(opts);
+        root.appendChild(group);
+      });
+      container.innerHTML = '';
+      container.appendChild(root);
+      return mapToSelected(selected);
+    }
+
+    function mapToSelected(map) {
+      const out = {};
+      Object.keys(map).forEach(k => { out[k] = Array.from(map[k]); });
+      return out;
+    }
+
+    function computeArtistLinksMap(links) {
+      const map = new Map();
+      links.forEach(l => {
+        const s = typeof l.source === 'string' ? l.source : l.source.id;
+        const t = typeof l.target === 'string' ? l.target : l.target.id;
+        if (s.startsWith('artist::')) {
+          if (!map.has(s)) map.set(s, new Set());
+          map.get(s).add(t);
+        }
+        if (t.startsWith('artist::')) {
+          if (!map.has(t)) map.set(t, new Set());
+          map.get(t).add(s);
+        }
+      });
+      return map;
+    }
+
+    function artistPassesFilter(artistId, selected, artistLinksMap) {
+      for (const [cat, vals] of Object.entries(selected)) {
+        if (!vals || vals.length === 0) continue;
+        const relevant = new Set(vals.map(v => `${cat}::${v}`));
+        const connected = artistLinksMap.get(artistId) || new Set();
+        let hasAny = false;
+        for (const r of relevant) {
+          if (connected.has(r)) { hasAny = true; break; }
+        }
+        if (!hasAny) return false;
+      }
+      return true;
+    }
+
+    function renderGraph(data, selected) {
+      const svg = d3.select('svg');
+      svg.selectAll('*').remove();
+      const width = svg.node().clientWidth;
+      const height = svg.node().clientHeight;
+
+      const g = svg.append('g');
+
+      const zoom = d3.zoom().scaleExtent([0.3, 4]).on('zoom', (event) => {
+        g.attr('transform', event.transform);
+      });
+      svg.call(zoom);
+
+      const artistLinksMap = computeArtistLinksMap(data.links);
+
+      const visibleArtistIds = new Set(Object.keys(data.artists).filter(a => artistPassesFilter(a, selected, artistLinksMap)));
+      const visibleRelatedIds = new Set(visibleArtistIds);
+
+      data.links.forEach(l => {
+        const s = typeof l.source === 'string' ? l.source : l.source.id;
+        const t = typeof l.target === 'string' ? l.target : l.target.id;
+        if (visibleArtistIds.has(s)) visibleRelatedIds.add(t);
+        if (visibleArtistIds.has(t)) visibleRelatedIds.add(s);
+      });
+
+      const nodes = data.nodes.filter(n => visibleRelatedIds.has(n.id));
+      const links = data.links.filter(l => visibleRelatedIds.has(typeof l.source === 'string' ? l.source : l.source.id) && visibleRelatedIds.has(typeof l.target === 'string' ? l.target : l.target.id));
+
+      const simulation = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(d => d.id).distance(120))
+        .force('charge', d3.forceManyBody().strength(-60))
+        .force('center', d3.forceCenter(width / 1.7, height / 4))
+        .force('x', d3.forceX(width / 2).strength(0.2))
+        .force('y', d3.forceY(height / 2).strength(0.2));
+
+      const link = g.append('g')
+        .selectAll('line')
+        .data(links)
+        .enter().append('line')
+        .attr('stroke', '#322C2E');
+
+      let popupNode = null;
+
+      const node = g.append('g')
+        .selectAll('circle')
+        .data(nodes)
+        .enter().append('circle')
+        .attr('r', 10)
+        .attr('fill', d => d.color)
+        .attr('class', 'node')
+        .call(d3.drag()
+          .on('start', function(event, d) { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+          .on('drag', function(event, d) { d.fx = event.x; d.fy = event.y; })
+          .on('end', function(event, d) { if (!event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+        )
+        .on('mouseover', function(event, d) {
+          onHover(event, d, data, node, link, labels, svg);
+          popupNode = d;
+          const connected = new Set();
+          links.forEach(l => { if (l.source.id === d.id) connected.add(l.target.id); if (l.target.id === d.id) connected.add(l.source.id); });
+          node.attr('opacity', n => connected.has(n.id) || n.id === d.id ? 1 : 0.5);
+          link.attr('stroke', l => (l.source.id === d.id || l.target.id === d.id) ? '#6A50FF' : '#322C2E')
+              .attr('opacity', l => (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.2);
+        })
+        .on('mouseout', function(event, d) {
+          if (!popupNode || popupNode.id !== d.id) { document.getElementById('popup').style.display = 'none'; }
+          node.attr('opacity', 1);
+          link.attr('stroke', '#322C2E').attr('opacity', 1);
+        })
+        .on('click', function(event, d) {
+          event.stopPropagation();
+          popupNode = d;
+          const firstDegree = new Set();
+          const secondDegree = new Set();
+          links.forEach(l => { if (l.source.id === d.id) firstDegree.add(l.target.id); if (l.target.id === d.id) firstDegree.add(l.source.id); });
+          let allVisible;
+          if (d.id.startsWith('artist::')) {
+            links.forEach(l => { if (firstDegree.has(l.source.id)) secondDegree.add(l.target.id); if (firstDegree.has(l.target.id)) secondDegree.add(l.source.id); });
+            allVisible = new Set([d.id, ...firstDegree, ...secondDegree]);
+          } else {
+            allVisible = new Set([d.id, ...firstDegree]);
+          }
+          node.attr('display', n => allVisible.has(n.id) ? null : 'none');
+          link.attr('display', l => allVisible.has(l.source.id) && allVisible.has(l.target.id) ? null : 'none');
+          labels.attr('display', n => allVisible.has(n.id) ? null : 'none')
+                .attr('opacity', n => firstDegree.has(n.id) || n.id === d.id ? 1 : 0.5);
+        });
+
+      const labels = g.append('g')
+        .selectAll('text')
+        .data(nodes)
+        .enter().append('text')
+        .text(d => d.label)
+        .attr('font-size', 6)
+        .attr('text-anchor', 'middle')
+        .attr('dy', 8)
+        .attr('fill', '#E8DED3')
+        .attr('pointer-events', 'none')
+        .style('font-family', 'Lexend');
+
+      simulation.on('tick', () => {
+        link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+        node.attr('cx', d => d.x).attr('cy', d => d.y);
+        labels.attr('x', d => d.x).attr('y', d => d.y + 8);
+        if (popupNode) updatePopupPosition(popupNode, svg);
+      });
+
+      svg.on('click', () => {
+        popupNode = null;
+        document.getElementById('popup').style.display = 'none';
+        node.attr('display', null).attr('opacity', 1).attr('stroke', null).attr('stroke-width', null);
+        link.attr('display', null).attr('stroke', '#322C2E').attr('opacity', 1);
+        labels.attr('display', null).attr('opacity', 1);
+        const si = document.getElementById('search-input'); if (si) si.value = '';
+      });
+
+      document.getElementById('search-input').addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase();
+        node.attr('stroke', d => d.id.startsWith('artist::') && d.label.toLowerCase().includes(query) ? '#6A50FF' : null)
+            .attr('stroke-width', d => d.id.startsWith('artist::') && d.label.toLowerCase().includes(query) ? 3 : null);
+      });
+    }
+
+    function onHover(event, d, data, node, link, labels, svg) {
+      const popup = document.getElementById('popup');
+      let html = '';
+      if (d.id.startsWith('artist::')) {
+        const artist = data.artists[d.id];
+        html = `
+          <strong>${artist.name}</strong><br>
+          ${artist.role ? `<div><span style='color: #4C4646;'>${artist.role}</span></div>` : ''}
+          <img src="${artist.photo}" alt="photo"><br>
+          ${(artist.country || artist.city) ? `<div><span style='color: #6A50FF;'>${artist.country}${artist.city ? ', ' + artist.city : ''}</span></div>` : ''}
+          ${artist.lab ? `<div><span style='color: var(--popup-text);'>lab:</span> <span style='color: #6A50FF;'>${artist.lab}</span></div>` : ''}
+          ${artist.department ? `<div><span style='color: var(--popup-text);'>department:</span> <span style='color: #4C4646;'>${artist.department}</span></div>` : ''}
+          ${artist.discipline ? `<div><span style='color: var(--popup-text);'>disciplines:</span> <span style='color: #4C4646;'>${artist.discipline}</span></div>` : ''}
+          ${artist.instruments ? `<div><span style='color: var(--popup-text);'>instruments:</span> <span style='color: #4C4646;'>${artist.instruments}</span></div>` : ''}
+          ${artist.telegram ? `<div><span style='color: var(--popup-text);'>telegram:</span> <span style='color: #6A50FF;'>${artist.telegram.replace(/@/g, '&#64;')}</span></div>` : ''}
+          ${artist.email ? `<div><span style='color: var(--popup-text);'>email:</span> <span style='color: #6A50FF;'>${artist.email.replace(/@/g, '&#64;')}</span></div>` : ''}
+        `;
+      } else {
+        if (d.id.startsWith('seeking for::')) {
+          html = `
+            <div>
+              <span style="color: #4C4646;">seeking for:</span>
+              <span style="color: var(--popup-text);">${d.label}</span>
+            </div>`;
+        } else {
+          html = `<div><strong>${d.label}</strong></div>`;
+        }
+      }
+      popup.innerHTML = html;
+      popup.style.display = 'block';
+      updatePopupPosition(d, svg);
+
+      if (!d.id.startsWith('artist::')) {
+        const connected = new Set();
+        d3.selectAll('line').data().forEach(l => { if (l.source.id === d.id) connected.add(l.target.id); if (l.target.id === d.id) connected.add(l.source.id); });
+        node.attr('opacity', n => connected.has(n.id) || n.id === d.id ? 1 : 0.1);
+        link.attr('stroke', l => (l.source.id === d.id || l.target.id === d.id) ? '#6A50FF' : '#322C2E')
+            .attr('opacity', l => (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.1);
+      }
+    }
+
+    function updatePopupPosition(d, svg) {
+      const popup = document.getElementById('popup');
+      const transform = d3.zoomTransform(svg.node());
+      const x = d.x * transform.k + transform.x;
+      const y = d.y * transform.k + transform.y;
+      popup.style.left = (x + 15) + 'px';
+      popup.style.top = (y + 15) + 'px';
+    }
+
+    fetch('data.json')
+      .then(r => r.json())
+      .then((data) => {
+        const filtersEl = document.getElementById('filters');
+        let currentSelected = buildFilters(filtersEl, data.filter_options || {}, (sel) => {
+          currentSelected = sel;
+          renderGraph(data, currentSelected);
+        });
+        renderGraph(data, currentSelected);
+        window.addEventListener('resize', () => renderGraph(data, currentSelected));
+      });
+  </script>
+</body>
+</html>
+
+
