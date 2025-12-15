@@ -39,6 +39,7 @@
       background: var(--page-bg);
       color: var(--page-text);
       font-family: 'Lexend', sans-serif;
+      font-weight: 500;
       overflow: hidden;
     }
 
@@ -136,6 +137,7 @@
       max-height: calc(100vh - 100px);
       overflow: hidden;
       font-family: 'Lexend', sans-serif;
+      font-weight: 500;
     }
 
     .filters-popup.active {
@@ -164,7 +166,7 @@
     .filters-popup-header h2 {
       margin: 0;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .close-filters-btn {
@@ -284,6 +286,8 @@
       width: 220px;
       text-align: center;
       font-size: 14px;
+      font-family: 'Lexend', sans-serif;
+      font-weight: 500;
       user-select: text;
       pointer-events: auto;
       display: none;
@@ -598,7 +602,8 @@
         .attr('dy', 8)
         .attr('fill', '#E8DED3')
         .attr('pointer-events', 'none')
-        .style('font-family', 'Lexend, sans-serif');
+        .style('font-family', 'Lexend, sans-serif')
+        .style('font-weight', '500');
 
       // Update positions on each simulation tick
       simulation.on('tick', () => {
