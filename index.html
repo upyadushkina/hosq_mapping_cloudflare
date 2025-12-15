@@ -93,6 +93,18 @@
       right: 16px;
     }
 
+    /* Header Logo */
+    .header-logo {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      z-index: 200;
+    }
+
     /* Filters Popup Backdrop */
     .filters-backdrop {
       position: fixed;
@@ -284,6 +296,7 @@
   <div class="layout">
     <main class="content">
       <button id="filters-btn" class="top-btn">filters</button>
+      <img src="hosq_logo.png" alt="HOSQ Logo" class="header-logo">
       <button id="fullscreen-btn" class="top-btn">full screen</button>
       <svg></svg>
       <div id='popup' class='popup' style='user-select: text; -webkit-user-select: text;'></div>
@@ -475,6 +488,16 @@
         g.attr('transform', event.transform);
       });
       svg.call(zoom);
+      
+      // Set initial zoom scale to 2x (double the size)
+      // Translate to keep the center point in the same visual position when scaling
+      const initialScale = 2;
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const initialTransform = d3.zoomIdentity
+        .translate(centerX * (1 - initialScale), centerY * (1 - initialScale))
+        .scale(initialScale);
+      svg.call(zoom.transform, initialTransform);
 
       // Compute which category nodes each artist is connected to
       const artistLinksMap = computeArtistLinksMap(data.links);
@@ -496,8 +519,8 @@
 
       // Node radius constant
       const NODE_RADIUS = 10;
-      // Minimum distance between nodes = radius * 2 (ensures nodes don't overlap)
-      const MIN_NODE_DISTANCE = NODE_RADIUS * 2;
+      // Minimum distance between nodes = radius * 5 (ensures nodes don't overlap)
+      const MIN_NODE_DISTANCE = NODE_RADIUS * 5;
 
       // D3 force simulation setup
       // Center the graph in the middle of the viewport
