@@ -15,6 +15,8 @@
       --label-muted: #4C4646;
       --popup-bg: #262123;
       --popup-text: #E8DED3;
+      --tag-bg: #E8DED3;
+      --tag-text: #262123;
     }
 
     html, body {
@@ -30,94 +32,221 @@
 
     .layout {
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 1fr;
       grid-template-rows: 100vh;
       width: 100vw;
       height: 100vh;
     }
-    .layout.collapsed { grid-template-columns: 1fr; }
-    .layout.collapsed .sidebar { display: none; }
 
-    .sidebar {
-      background: var(--page-bg);
-      color: var(--page-text);
-      padding: 16px 12px;
-      overflow-y: auto;
-      border-right: 1px solid rgba(255,255,255,0.05);
+    .content { 
+      position: relative; 
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    svg { 
+      width: 100%; 
+      height: 100%; 
+      cursor: grab; 
+      display: block; 
     }
 
-    .sidebar h2 {
-      margin: 0 0 12px 0;
-      font-size: 18px;
-      color: var(--page-text);
-    }
-
-    .filter-group { margin-bottom: 14px; }
-    .filter-group h3 {
-      margin: 8px 0 6px 0;
+    /* Top Buttons (Filters and Fullscreen) */
+    .top-btn {
+      position: absolute;
+      top: 16px;
+      z-index: 200;
+      padding: 8px 16px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #E8DED3;
+      border: none;
+      border-radius: 6px;
       font-size: 14px;
-      color: var(--page-text);
-    }
-
-    .filter-options { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tag {
-      background: #4C4646;
-      color: #E8DED3;
-      border-radius: 6px;
-      padding: 6px 10px;
-      font-size: 12px;
-      cursor: pointer;
-      user-select: none;
-      border: none;
-      box-shadow: none;
-    }
-    .tag[aria-pressed="true"] {
-      background: #6A50FF;
-      color: #FFFFFF;
-    }
-
-    .content { position: relative; }
-    svg { width: 100%; height: 100%; cursor: grab; display: block; }
-
-    #search-input {
-      position: absolute;
-      top: 16px;
-      right: 120px;
-      padding: 6px 10px;
-      border-radius: 6px;
-      border: none;
-      background-color: #4C4646;
-      color: #E8DED3;
-      z-index: 100;
-    }
-    .layout.collapsed #search-input { right: 120px; }
-
-    #toggle-sidebar {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      z-index: 110;
-      padding: 6px 10px;
-      border: none;
-      border-radius: 6px;
-      background-color: #4C4646;
-      color: #E8DED3;
+      font-weight: 500;
       font-family: 'Lexend', sans-serif;
       cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .top-btn:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    #filters-btn {
+      left: 16px;
     }
 
     #fullscreen-btn {
-      position: absolute;
-      top: 16px;
       right: 16px;
-      z-index: 100;
-      padding: 6px 10px;
-      border: none;
-      border-radius: 6px;
-      background-color: var(--accent);
-      color: white;
+    }
+
+    /* Filters Popup Backdrop */
+    .filters-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 299;
+      display: none;
+    }
+
+    .filters-backdrop.active {
+      display: block;
+    }
+
+    /* Filters Popup */
+    .filters-popup {
+      position: fixed;
+      top: 80px;
+      left: 16px;
+      background-color: var(--page-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      z-index: 300;
+      display: none;
+      width: 320px;
+      max-height: calc(100vh - 100px);
+      overflow: hidden;
       font-family: 'Lexend', sans-serif;
+    }
+
+    .filters-popup.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .filters-popup {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90vw;
+        max-width: 400px;
+        max-height: 80vh;
+      }
+    }
+
+    .filters-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .filters-popup-header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .close-filters-btn {
+      background: none;
+      border: none;
+      color: var(--page-text);
+      font-size: 28px;
       cursor: pointer;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .close-filters-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .filters-popup-content {
+      padding: 20px;
+      overflow-y: auto;
+      max-height: calc(80vh - 70px);
+    }
+
+    .filter-group {
+      margin-bottom: 24px;
+    }
+
+    .filter-group h3 {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(232, 222, 211, 0.7);
+    }
+
+    .filter-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-tag {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--page-text);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .filter-tag:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .filter-tag.active {
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
+      border-color: var(--tag-bg);
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 8px 12px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      color: var(--page-text);
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    #search-input:focus {
+      outline: none;
+      border-color: var(--tag-bg);
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    #search-input::placeholder {
+      color: rgba(232, 222, 211, 0.5);
+    }
+
+    .reset-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      color: var(--page-text);
+      font-size: 14px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .reset-btn:hover {
+      background-color: rgba(255, 255, 255, 0.15);
     }
 
     .popup {
@@ -141,17 +270,36 @@
 </head>
 <body>
   <div class="layout">
-    <aside class="sidebar">
-      <h2>Filters</h2>
-      <div id="filters"></div>
-    </aside>
     <main class="content">
-      <button id="toggle-sidebar" aria-pressed="false" aria-label="Toggle filters">Filters</button>
-      <input id="search-input" placeholder="Search artist..." />
-      <button id="fullscreen-btn">Full screen</button>
+      <button id="filters-btn" class="top-btn">filters</button>
+      <button id="fullscreen-btn" class="top-btn">full screen</button>
       <svg></svg>
       <div id='popup' class='popup' style='user-select: text; -webkit-user-select: text;'></div>
     </main>
+  </div>
+
+  <!-- Filters Popup Backdrop -->
+  <div id="filters-backdrop" class="filters-backdrop"></div>
+  
+  <!-- Filters Popup -->
+  <div id="filters-popup" class="filters-popup">
+    <div class="filters-popup-header">
+      <h2>Filters</h2>
+      <button id="close-filters" class="close-filters-btn">&times;</button>
+    </div>
+    
+    <div class="filters-popup-content">
+      <div id="filters"></div>
+      
+      <!-- Search Filter -->
+      <div class="filter-group">
+        <h3>Search</h3>
+        <input type="text" id="search-input" placeholder="Search artist...">
+      </div>
+
+      <!-- Reset Button -->
+      <button id="reset-filters" class="reset-btn">Reset filters</button>
+    </div>
   </div>
 
   <script>
@@ -163,32 +311,32 @@
     }
     document.getElementById('fullscreen-btn').addEventListener('click', openFullscreen);
 
-    // Sidebar toggle
-    const layoutEl = document.querySelector('.layout');
-    const toggleBtn = document.getElementById('toggle-sidebar');
-    function setCollapsed(collapsed) {
-      if (collapsed) {
-        layoutEl.classList.add('collapsed');
-        toggleBtn.setAttribute('aria-pressed', 'true');
-      } else {
-        layoutEl.classList.remove('collapsed');
-        toggleBtn.setAttribute('aria-pressed', 'false');
-      }
-      try { localStorage.setItem('filters_collapsed', collapsed ? '1' : '0'); } catch (e) {}
+    // Filters popup toggle
+    const filtersBtn = document.getElementById('filters-btn');
+    const filtersPopup = document.getElementById('filters-popup');
+    const filtersBackdrop = document.getElementById('filters-backdrop');
+    const closeFiltersBtn = document.getElementById('close-filters');
+    const resetFiltersBtn = document.getElementById('reset-filters');
+
+    function openFilters() {
+      filtersPopup.classList.add('active');
+      filtersBackdrop.classList.add('active');
     }
-    toggleBtn.addEventListener('click', () => {
-      const isCollapsed = layoutEl.classList.contains('collapsed');
-      setCollapsed(!isCollapsed);
-    });
-    // Initialize collapsed state: prefer saved, else collapse on small screens
-    const saved = (typeof localStorage !== 'undefined') ? localStorage.getItem('filters_collapsed') : null;
-    if (saved === '1') setCollapsed(true);
-    else if (saved === '0') setCollapsed(false);
-    else if (window.matchMedia && window.matchMedia('(max-width: 800px)').matches) setCollapsed(true);
+
+    function closeFilters() {
+      filtersPopup.classList.remove('active');
+      filtersBackdrop.classList.remove('active');
+    }
+
+    filtersBtn.addEventListener('click', openFilters);
+    closeFiltersBtn.addEventListener('click', closeFilters);
+    filtersBackdrop.addEventListener('click', closeFilters);
 
     function escapeAt(text) {
       return typeof text === 'string' ? text.replaceAll('@', '&#64;') : text;
     }
+
+    let allFilterTags = [];
 
     function buildFilters(container, filterOptions, onChange) {
       const order = ['lab','department','role','discipline','instruments','skill set'];
@@ -209,16 +357,18 @@
         values.forEach(val => {
           const tag = document.createElement('button');
           tag.type = 'button';
-          tag.className = 'tag';
+          tag.className = 'filter-tag';
           tag.textContent = val;
           tag.setAttribute('aria-pressed', 'false');
           tag.addEventListener('click', () => {
             const pressed = tag.getAttribute('aria-pressed') === 'true';
             tag.setAttribute('aria-pressed', String(!pressed));
+            tag.classList.toggle('active', !pressed);
             if (pressed) selected[cat].delete(val); else selected[cat].add(val);
             onChange(mapToSelected(selected));
           });
           opts.appendChild(tag);
+          allFilterTags.push(tag);
         });
         group.appendChild(opts);
         root.appendChild(group);
@@ -233,6 +383,19 @@
       Object.keys(map).forEach(k => { out[k] = Array.from(map[k]); });
       return out;
     }
+
+    function resetFilters() {
+      allFilterTags.forEach(tag => {
+        tag.setAttribute('aria-pressed', 'false');
+        tag.classList.remove('active');
+      });
+      const empty = {};
+      ['lab','department','role','discipline','instruments','skill set'].forEach(cat => { empty[cat] = []; });
+      if (window.currentOnChange) window.currentOnChange(empty);
+      document.getElementById('search-input').value = '';
+    }
+
+    resetFiltersBtn.addEventListener('click', resetFilters);
 
     function computeArtistLinksMap(links) {
       const map = new Map();
@@ -442,15 +605,16 @@
       .then(r => r.json())
       .then((data) => {
         const filtersEl = document.getElementById('filters');
-        let currentSelected = buildFilters(filtersEl, data.filter_options || {}, (sel) => {
-          currentSelected = sel;
-          renderGraph(data, currentSelected);
-        });
+        const onChange = (sel) => {
+          window.currentSelected = sel;
+          renderGraph(data, sel);
+        };
+        window.currentOnChange = onChange;
+        let currentSelected = buildFilters(filtersEl, data.filter_options || {}, onChange);
+        window.currentSelected = currentSelected;
         renderGraph(data, currentSelected);
-        window.addEventListener('resize', () => renderGraph(data, currentSelected));
+        window.addEventListener('resize', () => renderGraph(data, window.currentSelected || currentSelected));
       });
   </script>
 </body>
 </html>
-
-
