@@ -5,8 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HOSQ Labs</title>
   <script src='https://d3js.org/d3.v7.min.js'></script>
-  <link href='https://fonts.googleapis.com/css2?family=Lexend&display=swap' rel='stylesheet'>
   <style>
+    /* Lexend Font Face Declarations */
+    @font-face {
+      font-family: 'Lexend';
+      src: url('./Lexend-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Lexend';
+      src: url('./Lexend-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
     :root {
       --page-bg: #262123;
       --page-text: #E8DED3;
@@ -303,6 +315,9 @@
   </div>
 
   <script>
+    // ============================================
+    // Fullscreen Functionality
+    // ============================================
     function openFullscreen() {
       const docElm = document.documentElement;
       if (docElm.requestFullscreen) { docElm.requestFullscreen(); }
@@ -311,7 +326,9 @@
     }
     document.getElementById('fullscreen-btn').addEventListener('click', openFullscreen);
 
-    // Filters popup toggle
+    // ============================================
+    // Filters Popup Toggle
+    // ============================================
     const filtersBtn = document.getElementById('filters-btn');
     const filtersPopup = document.getElementById('filters-popup');
     const filtersBackdrop = document.getElementById('filters-backdrop');
@@ -332,12 +349,21 @@
     closeFiltersBtn.addEventListener('click', closeFilters);
     filtersBackdrop.addEventListener('click', closeFilters);
 
+    // ============================================
+    // Utility Functions
+    // ============================================
+    // Escape @ symbol in text to prevent email/telegram link issues
     function escapeAt(text) {
       return typeof text === 'string' ? text.replaceAll('@', '&#64;') : text;
     }
 
+    // Track all filter tags for reset functionality
     let allFilterTags = [];
 
+    // ============================================
+    // Filter UI Builder
+    // ============================================
+    // Builds the filter interface from filter options
     function buildFilters(container, filterOptions, onChange) {
       const order = ['lab','department','role','discipline','instruments','skill set'];
       const selected = {};
@@ -384,6 +410,7 @@
       return out;
     }
 
+    // Reset all active filters and clear search
     function resetFilters() {
       allFilterTags.forEach(tag => {
         tag.setAttribute('aria-pressed', 'false');
@@ -395,6 +422,7 @@
       document.getElementById('search-input').value = '';
     }
 
+    // Reset all filters when reset button is clicked
     resetFiltersBtn.addEventListener('click', resetFilters);
 
     function computeArtistLinksMap(links) {
@@ -414,6 +442,7 @@
       return map;
     }
 
+    // Check if an artist passes all active filter criteria
     function artistPassesFilter(artistId, selected, artistLinksMap) {
       for (const [cat, vals] of Object.entries(selected)) {
         if (!vals || vals.length === 0) continue;
@@ -428,22 +457,31 @@
       return true;
     }
 
+    // ============================================
+    // Graph Rendering
+    // ============================================
+    // Main function to render the D3 force-directed graph
     function renderGraph(data, selected) {
       const svg = d3.select('svg');
       svg.selectAll('*').remove();
       const width = svg.node().clientWidth;
       const height = svg.node().clientHeight;
 
+      // Create main group for zoom/pan transformations
       const g = svg.append('g');
 
+      // Setup zoom and pan functionality
       const zoom = d3.zoom().scaleExtent([0.3, 4]).on('zoom', (event) => {
         g.attr('transform', event.transform);
       });
       svg.call(zoom);
 
+      // Compute which category nodes each artist is connected to
       const artistLinksMap = computeArtistLinksMap(data.links);
 
+      // Filter artists based on selected criteria
       const visibleArtistIds = new Set(Object.keys(data.artists).filter(a => artistPassesFilter(a, selected, artistLinksMap)));
+      // Include all category nodes connected to visible artists
       const visibleRelatedIds = new Set(visibleArtistIds);
 
       data.links.forEach(l => {
@@ -456,26 +494,36 @@
       const nodes = data.nodes.filter(n => visibleRelatedIds.has(n.id));
       const links = data.links.filter(l => visibleRelatedIds.has(typeof l.source === 'string' ? l.source : l.source.id) && visibleRelatedIds.has(typeof l.target === 'string' ? l.target : l.target.id));
 
+      // Node radius constant
+      const NODE_RADIUS = 10;
+      // Minimum distance between nodes = radius * 2 (ensures nodes don't overlap)
+      const MIN_NODE_DISTANCE = NODE_RADIUS * 2;
+
+      // D3 force simulation setup
+      // Center the graph in the middle of the viewport
       const simulation = d3.forceSimulation(nodes)
-        .force('link', d3.forceLink(links).id(d => d.id).distance(120))
+        .force('link', d3.forceLink(links).id(d => d.id).distance(MIN_NODE_DISTANCE))
         .force('charge', d3.forceManyBody().strength(-60))
-        .force('center', d3.forceCenter(width / 1.7, height / 4))
+        .force('center', d3.forceCenter(width / 2, height / 2))
         .force('x', d3.forceX(width / 2).strength(0.2))
         .force('y', d3.forceY(height / 2).strength(0.2));
 
+      // Create link lines between nodes
       const link = g.append('g')
         .selectAll('line')
         .data(links)
         .enter().append('line')
         .attr('stroke', '#322C2E');
 
+      // Track which node is currently showing popup
       let popupNode = null;
 
+      // Create node circles with radius
       const node = g.append('g')
         .selectAll('circle')
         .data(nodes)
         .enter().append('circle')
-        .attr('r', 10)
+        .attr('r', NODE_RADIUS)
         .attr('fill', d => d.color)
         .attr('class', 'node')
         .call(d3.drag()
@@ -516,6 +564,7 @@
                 .attr('opacity', n => firstDegree.has(n.id) || n.id === d.id ? 1 : 0.5);
         });
 
+      // Create text labels for nodes
       const labels = g.append('g')
         .selectAll('text')
         .data(nodes)
@@ -526,12 +575,14 @@
         .attr('dy', 8)
         .attr('fill', '#E8DED3')
         .attr('pointer-events', 'none')
-        .style('font-family', 'Lexend');
+        .style('font-family', 'Lexend, sans-serif');
 
+      // Update positions on each simulation tick
       simulation.on('tick', () => {
         link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
         node.attr('cx', d => d.x).attr('cy', d => d.y);
         labels.attr('x', d => d.x).attr('y', d => d.y + 8);
+        // Update popup position if one is showing
         if (popupNode) updatePopupPosition(popupNode, svg);
       });
 
@@ -551,6 +602,10 @@
       });
     }
 
+    // ============================================
+    // Popup and Interaction Handlers
+    // ============================================
+    // Handle hover events to show popup with node information
     function onHover(event, d, data, node, link, labels, svg) {
       const popup = document.getElementById('popup');
       let html = '';
@@ -565,8 +620,6 @@
           ${artist.department ? `<div><span style='color: var(--popup-text);'>department:</span> <span style='color: #4C4646;'>${artist.department}</span></div>` : ''}
           ${artist.discipline ? `<div><span style='color: var(--popup-text);'>disciplines:</span> <span style='color: #4C4646;'>${artist.discipline}</span></div>` : ''}
           ${artist.instruments ? `<div><span style='color: var(--popup-text);'>instruments:</span> <span style='color: #4C4646;'>${artist.instruments}</span></div>` : ''}
-          ${artist.telegram ? `<div><span style='color: var(--popup-text);'>telegram:</span> <span style='color: #6A50FF;'>${artist.telegram.replace(/@/g, '&#64;')}</span></div>` : ''}
-          ${artist.email ? `<div><span style='color: var(--popup-text);'>email:</span> <span style='color: #6A50FF;'>${artist.email.replace(/@/g, '&#64;')}</span></div>` : ''}
         `;
       } else {
         if (d.id.startsWith('seeking for::')) {
@@ -592,6 +645,7 @@
       }
     }
 
+    // Update popup position based on node position and zoom transform
     function updatePopupPosition(d, svg) {
       const popup = document.getElementById('popup');
       const transform = d3.zoomTransform(svg.node());
@@ -601,6 +655,10 @@
       popup.style.top = (y + 15) + 'px';
     }
 
+    // ============================================
+    // Data Loading and Initialization
+    // ============================================
+    // Load graph data and initialize the visualization
     fetch('data.json')
       .then(r => r.json())
       .then((data) => {
