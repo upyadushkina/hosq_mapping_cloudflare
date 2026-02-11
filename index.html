@@ -335,13 +335,34 @@
     // ============================================
     // Fullscreen Functionality
     // ============================================
+    function isFullscreen() {
+      return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
     function openFullscreen() {
       const docElm = document.documentElement;
       if (docElm.requestFullscreen) { docElm.requestFullscreen(); }
       else if (docElm.webkitRequestFullscreen) { docElm.webkitRequestFullscreen(); }
       else if (docElm.msRequestFullscreen) { docElm.msRequestFullscreen(); }
     }
-    document.getElementById('fullscreen-btn').addEventListener('click', openFullscreen);
+    function exitFullscreen() {
+      if (document.exitFullscreen) { document.exitFullscreen(); }
+      else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
+      else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); }
+      else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+    }
+    function updateFullscreenButtonText() {
+      const btn = document.getElementById('fullscreen-btn');
+      btn.textContent = isFullscreen() ? 'exit full screen' : 'full screen';
+    }
+    function toggleFullscreen() {
+      if (isFullscreen()) exitFullscreen();
+      else openFullscreen();
+    }
+    document.getElementById('fullscreen-btn').addEventListener('click', toggleFullscreen);
+    document.addEventListener('fullscreenchange', updateFullscreenButtonText);
+    document.addEventListener('webkitfullscreenchange', updateFullscreenButtonText);
+    document.addEventListener('mozfullscreenchange', updateFullscreenButtonText);
+    document.addEventListener('MSFullscreenChange', updateFullscreenButtonText);
 
     // ============================================
     // Filters Popup Toggle
