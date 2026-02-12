@@ -294,6 +294,17 @@
     }
 
     .popup img { max-width: 100%; border-radius: 6px; margin-top: 8px; margin-bottom: 4px; }
+
+    /* Pseudo-fullscreen fallback for iOS Safari and restricted iframes */
+    html.pseudo-fullscreen,
+    html.pseudo-fullscreen body {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 99999;
+    }
   </style>
 </head>
 <body>
@@ -335,30 +346,84 @@
     // ============================================
     // Fullscreen Functionality
     // ============================================
+    // Check if the native Fullscreen API is available
+    const fullscreenApiAvailable = !!(
+      document.documentElement.requestFullscreen ||
+      document.documentElement.webkitRequestFullscreen ||
+      document.documentElement.msRequestFullscreen
+    );
+
     function isFullscreen() {
-      return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+      // Check native fullscreen first
+      if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+        return true;
+      }
+      // Check CSS-based pseudo-fullscreen (fallback for mobile / iframe)
+      return document.documentElement.classList.contains('pseudo-fullscreen');
     }
+
     function openFullscreen() {
       const docElm = document.documentElement;
-      if (docElm.requestFullscreen) { docElm.requestFullscreen(); }
-      else if (docElm.webkitRequestFullscreen) { docElm.webkitRequestFullscreen(); }
-      else if (docElm.msRequestFullscreen) { docElm.msRequestFullscreen(); }
+      if (fullscreenApiAvailable) {
+        // Use native Fullscreen API (desktop & Android Chrome)
+        // Wrap in try/catch + promise catch to fall back to pseudo-fullscreen
+        // if the browser blocks the request (e.g. inside iframe without allow="fullscreen")
+        try {
+          const result = docElm.requestFullscreen
+            ? docElm.requestFullscreen()
+            : docElm.webkitRequestFullscreen
+              ? docElm.webkitRequestFullscreen()
+              : docElm.msRequestFullscreen
+                ? docElm.msRequestFullscreen()
+                : null;
+          // requestFullscreen returns a Promise in modern browsers
+          if (result && result.catch) {
+            result.catch(() => openPseudoFullscreen());
+          }
+        } catch (e) {
+          openPseudoFullscreen();
+        }
+      } else {
+        // Fallback: CSS-based pseudo-fullscreen (iOS Safari, restricted iframes)
+        openPseudoFullscreen();
+      }
     }
+
     function exitFullscreen() {
-      if (document.exitFullscreen) { document.exitFullscreen(); }
-      else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
-      else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); }
-      else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+      if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+        // Exit native fullscreen
+        if (document.exitFullscreen) { document.exitFullscreen(); }
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen(); }
+        else if (document.mozCancelFullScreen) { document.mozCancelFullScreen(); }
+        else if (document.msExitFullscreen) { document.msExitFullscreen(); }
+      } else {
+        // Exit CSS-based pseudo-fullscreen
+        exitPseudoFullscreen();
+      }
     }
+
+    function openPseudoFullscreen() {
+      document.documentElement.classList.add('pseudo-fullscreen');
+      updateFullscreenButtonText();
+    }
+
+    function exitPseudoFullscreen() {
+      document.documentElement.classList.remove('pseudo-fullscreen');
+      updateFullscreenButtonText();
+    }
+
     function updateFullscreenButtonText() {
       const btn = document.getElementById('fullscreen-btn');
       btn.textContent = isFullscreen() ? 'exit full screen' : 'full screen';
     }
+
     function toggleFullscreen() {
       if (isFullscreen()) exitFullscreen();
       else openFullscreen();
     }
+
     document.getElementById('fullscreen-btn').addEventListener('click', toggleFullscreen);
+    // Listen for native fullscreen changes (desktop, Android)
     document.addEventListener('fullscreenchange', updateFullscreenButtonText);
     document.addEventListener('webkitfullscreenchange', updateFullscreenButtonText);
     document.addEventListener('mozfullscreenchange', updateFullscreenButtonText);
@@ -514,9 +579,9 @@
       });
       svg.call(zoom);
       
-      // Set initial zoom scale to 2x (double the size)
-      // Translate to keep the center point in the same visual position when scaling
-      const initialScale = 1.5;
+      // Set initial zoom scale — reduced on mobile so the graph fits the small screen
+      const isMobile = window.innerWidth <= 768;
+      const initialScale = isMobile ? 0.5 : 1.5;
       const centerX = width / 2;
       const centerY = height / 2;
       const initialTransform = d3.zoomIdentity
