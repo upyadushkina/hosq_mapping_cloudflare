@@ -336,18 +336,35 @@
     // ============================================
     // Fullscreen Functionality
     // ============================================
-    const isInIframe = window.self !== window.top;
+    // Detect if the page was opened as a fullscreen fallback (new tab with ?fullscreen=1)
+    const openedAsFullscreen = new URLSearchParams(window.location.search).has('fullscreen');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
 
     function isFullscreen() {
       return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
     }
 
     function updateFullscreenButtonText() {
-      const btn = document.getElementById('fullscreen-btn');
-      btn.textContent = isFullscreen() ? 'exit full screen' : 'full screen';
+      fullscreenBtn.textContent = isFullscreen() ? 'exit full screen' : 'full screen';
+    }
+
+    // Build the URL for opening in a new tab (strip any existing fullscreen param, then add it)
+    function getFullscreenUrl() {
+      const url = new URL(window.location.href);
+      url.searchParams.set('fullscreen', '1');
+      return url.toString();
     }
 
     function toggleFullscreen() {
+      // If we're in a tab that was opened as fullscreen fallback — close it to go back
+      if (openedAsFullscreen) {
+        window.close();
+        // Some browsers block window.close() if the tab wasn't opened by JS;
+        // in that case, navigate back as a fallback
+        window.history.back();
+        return;
+      }
+
       if (isFullscreen()) {
         // Exit native fullscreen
         if (document.exitFullscreen) { document.exitFullscreen(); }
@@ -364,18 +381,23 @@
           updateFullscreenButtonText();
         }).catch(() => {
           // Native fullscreen was blocked (e.g. iframe restrictions) — open in new tab
-          window.open(window.location.href, '_blank');
+          window.open(getFullscreenUrl(), '_blank');
         });
       } else if (docElm.webkitRequestFullscreen) {
         // Safari desktop — webkitRequestFullscreen doesn't return a promise
-        try { docElm.webkitRequestFullscreen(); } catch(e) { window.open(window.location.href, '_blank'); }
+        try { docElm.webkitRequestFullscreen(); } catch(e) { window.open(getFullscreenUrl(), '_blank'); }
       } else {
         // Fullscreen API not available at all (iOS Safari) — open in new tab
-        window.open(window.location.href, '_blank');
+        window.open(getFullscreenUrl(), '_blank');
       }
     }
 
-    document.getElementById('fullscreen-btn').addEventListener('click', toggleFullscreen);
+    // If page was opened as fullscreen fallback, set button to "exit full screen" immediately
+    if (openedAsFullscreen) {
+      fullscreenBtn.textContent = 'exit full screen';
+    }
+
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
     document.addEventListener('fullscreenchange', updateFullscreenButtonText);
     document.addEventListener('webkitfullscreenchange', updateFullscreenButtonText);
     document.addEventListener('mozfullscreenchange', updateFullscreenButtonText);
