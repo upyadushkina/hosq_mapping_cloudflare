@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HOSQ Labs</title>
+  <script src='https://d3js.org/d3.v7.min.js'></script>
+  <style>
+    @font-face {
+      font-family: 'Lexend';
+      src: url('./Lexend-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Lexend';
+      src: url('./Lexend-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+    }
+    :root {
+      --page-bg: #262123;
+      --page-text: #E8DED3;
+      --accent: #6A50FF;
+      --edge: #322C2E;
+      --label-muted: #4C4646;
+      --popup-bg: #262123;
+      --popup-text: #E8DED3;
+      --tag-bg: #E8DED3;
+      --tag-text: #262123;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--page-bg);
+      color: var(--page-text);
+      font-family: 'Lexend', sans-serif;
+      font-weight: 500;
+      overflow: hidden;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 100vh;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .content {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+      display: block;
+    }
+
+    .top-btn {
+      padding: 8px 16px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #E8DED3;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Lexend', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .top-btn:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .top-btn.active {
+      background-color: #6A50FF;
+      color: #E8DED3;
+    }
+
+    .top-left-controls {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 200;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      max-width: calc(100vw - 140px);
+    }
+
+    .top-right-controls {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-logo {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    #search-input {
+      width: 180px;
+      padding: 8px 12px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      color: var(--page-text);
+      font-size: 14px;
+      font-family: inherit;
+    }
+
+    #search-input:focus {
+      outline: none;
+      border-color: var(--tag-bg);
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    #search-input::placeholder {
+      color: rgba(232, 222, 211, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .top-left-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: calc(100vw - 120px);
+      }
+
+      #search-input {
+        width: min(220px, calc(100vw - 140px));
+      }
+
+      .top-btn {
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+    }
+
+    /* Bottom set switcher */
+    .set-switcher {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      z-index: 200;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .set-btn {
+      padding: 10px 18px;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #E8DED3;
+      border: 1px solid rgba(232, 222, 211, 0.25);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Lexend', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .set-btn:hover {
+      background-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .set-btn.active {
+      background-color: #6A50FF;
+      border-color: #6A50FF;
+      color: #E8DED3;
+    }
+
+    @media (max-width: 768px) {
+      .set-switcher {
+        bottom: 16px;
+        gap: 8px;
+        width: calc(100% - 24px);
+        max-width: 420px;
+      }
+
+      .set-btn {
+        flex: 1;
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+    }
+
+    .filters-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 299;
+      display: none;
+    }
+
+    .filters-backdrop.active {
+      display: block;
+    }
+
+    .filters-popup {
+      position: fixed;
+      top: 80px;
+      left: 16px;
+      background-color: var(--page-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      z-index: 300;
+      display: none;
+      width: 320px;
+      max-height: calc(100vh - 100px);
+      overflow: hidden;
+      font-family: 'Lexend', sans-serif;
+      font-weight: 500;
+    }
+
+    .filters-popup.active {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .filters-popup {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90vw;
+        max-width: 400px;
+        max-height: 80vh;
+      }
+    }
+
+    .filters-popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .filters-popup-header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .close-filters-btn {
+      background: none;
+      border: none;
+      color: var(--page-text);
+      font-size: 28px;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .close-filters-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .filters-popup-content {
+      padding: 20px;
+      overflow-y: auto;
+      max-height: calc(80vh - 70px);
+    }
+
+    .filter-group {
+      margin-bottom: 24px;
+    }
+
+    .filter-group h3 {
+      margin: 0 0 12px 0;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: rgba(232, 222, 211, 0.7);
+    }
+
+    .filter-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-tag {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--page-text);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .filter-tag:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .filter-tag.active {
+      background-color: var(--tag-bg);
+      color: var(--tag-text);
+      border-color: var(--tag-bg);
+    }
+
+    .reset-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      color: var(--page-text);
+      font-size: 14px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .reset-btn:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .popup {
+      position: absolute;
+      background-color: var(--popup-bg);
+      color: var(--popup-text);
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      z-index: 250;
+      width: 240px;
+      text-align: center;
+      font-size: 14px;
+      font-family: 'Lexend', sans-serif;
+      font-weight: 500;
+      user-select: text;
+      pointer-events: auto;
+      display: none;
+    }
+
+    .popup img {
+      max-width: 100%;
+      border-radius: 6px;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+
+    .popup .card-title {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .popup .card-meta {
+      color: var(--label-muted);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .popup .card-role {
+      color: #6A50FF;
+      margin: 4px 0 6px;
+    }
+
+    .popup .card-row {
+      margin: 4px 0;
+      text-align: left;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    .popup .card-row .label {
+      color: var(--popup-text);
+    }
+
+    .popup .card-row .value {
+      color: #4C4646;
+    }
+
+    .popup .card-tag {
+      display: inline;
+      color: #4C4646;
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-color: rgba(76, 70, 70, 0.35);
+      text-underline-offset: 2px;
+    }
+
+    .popup .card-tag:hover {
+      color: #6A50FF;
+      text-decoration-color: #6A50FF;
+    }
+
+    .popup .connect-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #6A50FF;
+      color: #E8DED3;
+      border: none;
+      border-radius: 999px;
+      font-size: 13px;
+      font-family: inherit;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .popup .connect-btn:hover {
+      background-color: #7d66ff;
+    }
+
+    .popup .telegram-row {
+      margin-top: 8px;
+      font-size: 12px;
+      text-align: left;
+    }
+
+    .popup .telegram-link {
+      color: #6A50FF;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .popup .telegram-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <main class="content">
+      <div class="top-left-controls">
+        <button id="filters-btn" class="top-btn">filters</button>
+        <button id="features-btn" class="top-btn active" aria-pressed="true">Features</button>
+        <input type="text" id="search-input" placeholder="Search artist...">
+      </div>
+      <div class="top-right-controls">
+        <button id="fullscreen-btn" class="top-btn">full screen</button>
+        <img src="hosq_logo.png" alt="HOSQ Logo" class="header-logo">
+      </div>
+      <svg></svg>
+      <div id="popup" class="popup" style="user-select: text; -webkit-user-select: text;"></div>
+      <div class="set-switcher" role="tablist" aria-label="Artist sets">
+        <button type="button" class="set-btn active" data-set="notations-26" aria-pressed="true">Notations '26</button>
+        <button type="button" class="set-btn" data-set="hosq-community" aria-pressed="false">hosq community</button>
+      </div>
+    </main>
+  </div>
+
+  <div id="filters-backdrop" class="filters-backdrop"></div>
+
+  <div id="filters-popup" class="filters-popup">
+    <div class="filters-popup-header">
+      <h2>Filters</h2>
+      <button id="close-filters" class="close-filters-btn">&times;</button>
+    </div>
+    <div class="filters-popup-content">
+      <div id="filters"></div>
+      <button id="reset-filters" class="reset-btn">Reset filters</button>
+    </div>
+  </div>
+
+  <script>
+    const FEATURE_COLORS = {
+      artist: '#4C4646',
+      role: '#EDEDED',
+      discipline: '#F4A8B3',
+      'skill set': '#CCA7CE',
+      tools: '#B6C9AB',
+      instruments: '#B6C9AB',
+      lab: '#DFC242',
+      department: '#03BA6D'
+    };
+
+    const ROLE_PERSON_COLORS = {
+      'participant': '#F4A8B3',
+      'curator': '#B6C9AB',
+      "curator's helper": '#CCA7CE',
+      'verticurator': '#E0C365',
+      'hosq team': '#EDEDED'
+    };
+
+    const ROLE_PRIORITY = ['curator', "curator's helper", 'verticurator', 'participant', 'hosq team'];
+
+    const openedAsFullscreen = new URLSearchParams(window.location.search).has('fullscreen');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const featuresBtn = document.getElementById('features-btn');
+    const searchInput = document.getElementById('search-input');
+
+    let featuresOn = true;
+    let pendingFocusFeatureId = null;
+    let graphCtx = null;
+    let allFilterTags = [];
+
+    function isFullscreen() {
+      return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+    }
+
+    function updateFullscreenButtonText() {
+      fullscreenBtn.textContent = isFullscreen() ? 'exit full screen' : 'full screen';
+    }
+
+    function getFullscreenUrl() {
+      const url = new URL(window.location.href);
+      url.searchParams.set('fullscreen', '1');
+      return url.toString();
+    }
+
+    function toggleFullscreen() {
+      if (openedAsFullscreen) {
+        window.close();
+        window.history.back();
+        return;
+      }
+
+      if (isFullscreen()) {
+        if (document.exitFullscreen) document.exitFullscreen();
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+        else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+        else if (document.msExitFullscreen) document.msExitFullscreen();
+        return;
+      }
+
+      const docElm = document.documentElement;
+      if (docElm.requestFullscreen) {
+        docElm.requestFullscreen().then(updateFullscreenButtonText).catch(() => {
+          window.open(getFullscreenUrl(), '_blank');
+        });
+      } else if (docElm.webkitRequestFullscreen) {
+        try { docElm.webkitRequestFullscreen(); } catch (e) { window.open(getFullscreenUrl(), '_blank'); }
+      } else {
+        window.open(getFullscreenUrl(), '_blank');
+      }
+    }
+
+    if (openedAsFullscreen) fullscreenBtn.textContent = 'exit full screen';
+    fullscreenBtn.addEventListener('click', toggleFullscreen);
+    document.addEventListener('fullscreenchange', updateFullscreenButtonText);
+    document.addEventListener('webkitfullscreenchange', updateFullscreenButtonText);
+    document.addEventListener('mozfullscreenchange', updateFullscreenButtonText);
+    document.addEventListener('MSFullscreenChange', updateFullscreenButtonText);
+
+    const filtersBtn = document.getElementById('filters-btn');
+    const filtersPopup = document.getElementById('filters-popup');
+    const filtersBackdrop = document.getElementById('filters-backdrop');
+    const closeFiltersBtn = document.getElementById('close-filters');
+    const resetFiltersBtn = document.getElementById('reset-filters');
+
+    function openFilters() {
+      filtersPopup.classList.add('active');
+      filtersBackdrop.classList.add('active');
+    }
+
+    function closeFilters() {
+      filtersPopup.classList.remove('active');
+      filtersBackdrop.classList.remove('active');
+    }
+
+    filtersBtn.addEventListener('click', openFilters);
+    closeFiltersBtn.addEventListener('click', closeFilters);
+    filtersBackdrop.addEventListener('click', closeFilters);
+
+    function updateFeaturesButton() {
+      featuresBtn.classList.toggle('active', featuresOn);
+      featuresBtn.setAttribute('aria-pressed', String(featuresOn));
+    }
+
+    featuresBtn.addEventListener('click', () => {
+      featuresOn = !featuresOn;
+      updateFeaturesButton();
+      if (window.currentData) {
+        renderGraph(window.currentData, window.currentSelected || {});
+      }
+    });
+
+    function escapeAt(text) {
+      return typeof text === 'string' ? text.replaceAll('@', '&#64;') : text;
+    }
+
+    function decodeAt(text) {
+      return typeof text === 'string' ? text.replaceAll('&#64;', '@').replaceAll('&amp;#64;', '@') : '';
+    }
+
+    function normalizeRoleLabel(role) {
+      if (!role) return '';
+      const cleaned = String(role).trim();
+      if (cleaned.toLowerCase() === 'volunteer / participant') return "curator's helper";
+      return cleaned;
+    }
+
+    function formatRoleDisplay(role) {
+      if (!role) return '';
+      return String(role)
+        .split(',')
+        .map(p => normalizeRoleLabel(p.trim()))
+        .filter(Boolean)
+        .join(', ');
+    }
+
+    function getPrimaryRoleKey(artist) {
+      const roles = [];
+      if (artist && artist.role) {
+        String(artist.role).split(',').forEach(p => {
+          const r = normalizeRoleLabel(p.trim()).toLowerCase();
+          if (r) roles.push(r);
+        });
+      }
+      for (const key of ROLE_PRIORITY) {
+        if (roles.includes(key)) return key;
+      }
+      return roles[0] || '';
+    }
+
+    function getPersonColor(artist) {
+      const key = getPrimaryRoleKey(artist);
+      return ROLE_PERSON_COLORS[key] || FEATURE_COLORS.artist;
+    }
+
+    function getNodeColor(node, data) {
+      if (!node.id.startsWith('artist::')) {
+        return FEATURE_COLORS[node.group] || node.color || '#E8DED3';
+      }
+      if (!featuresOn) {
+        return getPersonColor(data.artists[node.id]);
+      }
+      return FEATURE_COLORS.artist;
+    }
+
+    function splitCsvTags(raw) {
+      if (!raw) return [];
+      return String(raw).split(',').map(s => s.trim()).filter(Boolean);
+    }
+
+    function telegramHandle(raw) {
+      const decoded = decodeAt(raw || '').trim();
+      if (!decoded) return '';
+      return decoded.replace(/^@+/, '');
+    }
+
+    function escapeHtml(text) {
+      return String(text || '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;');
+    }
+
+    const DEFAULT_FILTER_ORDER = ['lab', 'department', 'role', 'discipline', 'instruments', 'tools', 'skill set'];
+
+    function getFilterOrder(data) {
+      if (data && Array.isArray(data.filter_order) && data.filter_order.length) {
+        return data.filter_order;
+      }
+      const keys = Object.keys((data && data.filter_options) || {});
+      return DEFAULT_FILTER_ORDER.filter(k => keys.includes(k)).concat(keys.filter(k => !DEFAULT_FILTER_ORDER.includes(k)));
+    }
+
+    function formatFilterLabel(cat) {
+      if (cat === 'skill set') return 'Skill set';
+      return cat.charAt(0).toUpperCase() + cat.slice(1);
+    }
+
+    function buildFilters(container, filterOptions, onChange, filterOrder) {
+      const order = (filterOrder && filterOrder.length) ? filterOrder : DEFAULT_FILTER_ORDER;
+      const selected = {};
+      order.forEach(cat => { selected[cat] = new Set(); });
+      allFilterTags = [];
+
+      const root = document.createDocumentFragment();
+      order.forEach(cat => {
+        const values = Array.from(filterOptions[cat] || []).sort((a, b) => a.localeCompare(b));
+        if (!values.length) return;
+        const group = document.createElement('div');
+        group.className = 'filter-group';
+        const h3 = document.createElement('h3');
+        h3.textContent = formatFilterLabel(cat);
+        group.appendChild(h3);
+        const opts = document.createElement('div');
+        opts.className = 'filter-options';
+        values.forEach(val => {
+          const displayVal = cat === 'role' ? formatRoleDisplay(val) : val;
+          const tag = document.createElement('button');
+          tag.type = 'button';
+          tag.className = 'filter-tag';
+          tag.textContent = displayVal;
+          tag.setAttribute('aria-pressed', 'false');
+          tag.addEventListener('click', () => {
+            const pressed = tag.getAttribute('aria-pressed') === 'true';
+            tag.setAttribute('aria-pressed', String(!pressed));
+            tag.classList.toggle('active', !pressed);
+            if (pressed) selected[cat].delete(val); else selected[cat].add(val);
+            onChange(mapToSelected(selected));
+          });
+          opts.appendChild(tag);
+          allFilterTags.push(tag);
+        });
+        group.appendChild(opts);
+        root.appendChild(group);
+      });
+      container.innerHTML = '';
+      container.appendChild(root);
+      return mapToSelected(selected);
+    }
+
+    function mapToSelected(map) {
+      const out = {};
+      Object.keys(map).forEach(k => { out[k] = Array.from(map[k]); });
+      return out;
+    }
+
+    function resetFilters() {
+      allFilterTags.forEach(tag => {
+        tag.setAttribute('aria-pressed', 'false');
+        tag.classList.remove('active');
+      });
+      const empty = {};
+      getFilterOrder(window.currentData || {}).forEach(cat => { empty[cat] = []; });
+      if (window.currentOnChange) window.currentOnChange(empty);
+      searchInput.value = '';
+      applySearchHighlight('');
+    }
+
+    resetFiltersBtn.addEventListener('click', resetFilters);
+
+    function computeArtistLinksMap(links) {
+      const map = new Map();
+      links.forEach(l => {
+        const s = typeof l.source === 'string' ? l.source : l.source.id;
+        const t = typeof l.target === 'string' ? l.target : l.target.id;
+        if (s.startsWith('artist::')) {
+          if (!map.has(s)) map.set(s, new Set());
+          map.get(s).add(t);
+        }
+        if (t.startsWith('artist::')) {
+          if (!map.has(t)) map.set(t, new Set());
+          map.get(t).add(s);
+        }
+      });
+      return map;
+    }
+
+    function artistPassesFilter(artistId, selected, artistLinksMap) {
+      for (const [cat, vals] of Object.entries(selected)) {
+        if (!vals || vals.length === 0) continue;
+        const relevant = new Set(vals.map(v => `${cat}::${v}`));
+        const connected = artistLinksMap.get(artistId) || new Set();
+        let hasAny = false;
+        for (const r of relevant) {
+          if (connected.has(r)) { hasAny = true; break; }
+        }
+        if (!hasAny) return false;
+      }
+      return true;
+    }
+
+    function renderClickableTags(category, raw) {
+      const tags = splitCsvTags(raw);
+      if (!tags.length) return '';
+      return tags.map((tag, i) => {
+        const sep = i < tags.length - 1 ? ', ' : '';
+        return `<span class="card-tag" data-feature-id="${escapeHtml(category + '::' + tag)}">${escapeHtml(tag)}</span>${sep}`;
+      }).join('');
+    }
+
+    function buildArtistCardHtml(artist) {
+      const artisticName = artist.name || '';
+      const legalName = artist.legal_name || '';
+      const showLegal = legalName && legalName.trim().toLowerCase() !== artisticName.trim().toLowerCase();
+      const country = artist.country || artist.city || '';
+      const role = formatRoleDisplay(artist.role);
+      const social = (artist.social || '').trim();
+      const tg = telegramHandle(artist.telegram);
+      const metaParts = [];
+      if (showLegal) metaParts.push(escapeHtml(legalName));
+      if (country) metaParts.push(escapeHtml(country));
+
+      let html = `<strong class="card-title">${escapeHtml(artisticName)}</strong>`;
+      if (metaParts.length) {
+        html += `<div class="card-meta">${metaParts.join(' · ')}</div>`;
+      }
+      if (role) {
+        html += `<div class="card-role">${escapeHtml(role)}</div>`;
+      }
+      if (artist.photo) {
+        html += `<img src="${escapeHtml(artist.photo)}" alt="photo">`;
+      }
+      if (artist.lab) {
+        html += `<div class="card-row"><span class="label">lab:</span> <span style="color:#6A50FF;">${escapeHtml(artist.lab)}</span></div>`;
+      }
+      if (artist.department) {
+        html += `<div class="card-row"><span class="label">department:</span> <span class="value">${escapeHtml(artist.department)}</span></div>`;
+      }
+      if (artist.discipline) {
+        html += `<div class="card-row"><span class="label">disciplines:</span> ${renderClickableTags('discipline', artist.discipline)}</div>`;
+      }
+      if (artist.tools) {
+        html += `<div class="card-row"><span class="label">tools:</span> ${renderClickableTags('tools', artist.tools)}</div>`;
+      }
+      if (artist.instruments) {
+        html += `<div class="card-row"><span class="label">instruments:</span> ${renderClickableTags('instruments', artist.instruments)}</div>`;
+      }
+      if (artist['skill set']) {
+        html += `<div class="card-row"><span class="label">skill set:</span> ${renderClickableTags('skill set', artist['skill set'])}</div>`;
+      }
+      if (social) {
+        html += `<a class="connect-btn" href="${escapeHtml(social)}" target="_blank" rel="noopener noreferrer">Connect</a>`;
+      }
+      if (tg) {
+        html += `<div class="telegram-row">Telegram: <a class="telegram-link" href="https://t.me/${encodeURIComponent(tg)}" target="_blank" rel="noopener noreferrer">@${escapeHtml(tg)}</a></div>`;
+      }
+      return html;
+    }
+
+    function showArtistPopup(d, data, svg) {
+      const popup = document.getElementById('popup');
+      const artist = data.artists[d.id];
+      if (!artist) return;
+      popup.innerHTML = buildArtistCardHtml(artist);
+      popup.style.display = 'block';
+      updatePopupPosition(d, svg);
+
+      popup.querySelectorAll('.card-tag').forEach(el => {
+        el.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const featureId = el.getAttribute('data-feature-id');
+          if (featureId) selectFeatureFromCard(featureId);
+        });
+      });
+
+      popup.querySelectorAll('a').forEach(el => {
+        el.addEventListener('click', (event) => event.stopPropagation());
+      });
+    }
+
+    function applyFeatureFocus(featureId) {
+      if (!graphCtx) return;
+      const { node, link, labels, linksData, svg } = graphCtx;
+      const featureNode = node.data().find(n => n.id === featureId);
+      if (!featureNode) return;
+
+      const firstDegree = new Set();
+      linksData.forEach(l => {
+        if (l.source.id === featureId) firstDegree.add(l.target.id);
+        if (l.target.id === featureId) firstDegree.add(l.source.id);
+      });
+      const allVisible = new Set([featureId, ...firstDegree]);
+
+      graphCtx.popupNode = featureNode;
+      node.attr('display', n => allVisible.has(n.id) ? null : 'none')
+          .attr('opacity', n => firstDegree.has(n.id) || n.id === featureId ? 1 : 0.1);
+      link.attr('display', l => allVisible.has(l.source.id) && allVisible.has(l.target.id) ? null : 'none')
+          .attr('stroke', l => (l.source.id === featureId || l.target.id === featureId) ? '#6A50FF' : '#322C2E')
+          .attr('opacity', l => (l.source.id === featureId || l.target.id === featureId) ? 1 : 0.1);
+      labels.attr('display', n => allVisible.has(n.id) ? null : 'none')
+            .attr('opacity', n => firstDegree.has(n.id) || n.id === featureId ? 1 : 0.5);
+
+      const popup = document.getElementById('popup');
+      popup.innerHTML = `<div><strong>${escapeHtml(featureNode.label)}</strong></div>`;
+      popup.style.display = 'block';
+      updatePopupPosition(featureNode, svg);
+    }
+
+    function selectFeatureFromCard(featureId) {
+      if (!featuresOn) {
+        pendingFocusFeatureId = featureId;
+        featuresOn = true;
+        updateFeaturesButton();
+        if (window.currentData) {
+          renderGraph(window.currentData, window.currentSelected || {});
+        }
+        return;
+      }
+      applyFeatureFocus(featureId);
+    }
+
+    function applySearchHighlight(query) {
+      if (!graphCtx) return;
+      const q = (query || '').toLowerCase();
+      graphCtx.node.attr('stroke', d => {
+        if (!d.id.startsWith('artist::') || !q) return null;
+        const artist = graphCtx.data.artists[d.id] || {};
+        const hay = `${d.label} ${artist.name || ''} ${artist.legal_name || ''}`.toLowerCase();
+        return hay.includes(q) ? '#6A50FF' : null;
+      }).attr('stroke-width', d => {
+        if (!d.id.startsWith('artist::') || !q) return null;
+        const artist = graphCtx.data.artists[d.id] || {};
+        const hay = `${d.label} ${artist.name || ''} ${artist.legal_name || ''}`.toLowerCase();
+        return hay.includes(q) ? 3 : null;
+      });
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      applySearchHighlight(e.target.value);
+    });
+
+    function renderGraph(data, selected) {
+      const svg = d3.select('svg');
+      svg.selectAll('*').remove();
+      const width = svg.node().clientWidth;
+      const height = svg.node().clientHeight;
+      const g = svg.append('g');
+
+      const zoom = d3.zoom().scaleExtent([0.3, 4]).on('zoom', (event) => {
+        g.attr('transform', event.transform);
+        if (graphCtx && graphCtx.popupNode) updatePopupPosition(graphCtx.popupNode, svg);
+      });
+      svg.call(zoom);
+
+      const isMobile = window.innerWidth <= 768;
+      const initialScale = isMobile ? 0.65 : 1.5;
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const initialTransform = d3.zoomIdentity
+        .translate(centerX * (1 - initialScale), centerY * (1 - initialScale))
+        .scale(initialScale);
+      svg.call(zoom.transform, initialTransform);
+
+      const artistLinksMap = computeArtistLinksMap(data.links);
+      const visibleArtistIds = new Set(
+        Object.keys(data.artists).filter(a => artistPassesFilter(a, selected, artistLinksMap))
+      );
+      const visibleRelatedIds = new Set(visibleArtistIds);
+
+      if (featuresOn) {
+        data.links.forEach(l => {
+          const s = typeof l.source === 'string' ? l.source : l.source.id;
+          const t = typeof l.target === 'string' ? l.target : l.target.id;
+          if (visibleArtistIds.has(s)) visibleRelatedIds.add(t);
+          if (visibleArtistIds.has(t)) visibleRelatedIds.add(s);
+        });
+      }
+
+      let nodes = data.nodes
+        .filter(n => visibleRelatedIds.has(n.id))
+        .map(n => ({ ...n, color: getNodeColor(n, data) }));
+
+      if (!featuresOn) {
+        nodes = nodes.filter(n => n.id.startsWith('artist::'));
+      }
+
+      const nodeIdSet = new Set(nodes.map(n => n.id));
+      const links = featuresOn
+        ? data.links.filter(l => {
+            const s = typeof l.source === 'string' ? l.source : l.source.id;
+            const t = typeof l.target === 'string' ? l.target : l.target.id;
+            return nodeIdSet.has(s) && nodeIdSet.has(t);
+          }).map(l => ({ ...l }))
+        : [];
+
+      const NODE_RADIUS = 10;
+      const MIN_NODE_DISTANCE = NODE_RADIUS * 5;
+
+      const simulation = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(d => d.id).distance(MIN_NODE_DISTANCE))
+        .force('charge', d3.forceManyBody().strength(featuresOn ? -60 : -30))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('x', d3.forceX(width / 2).strength(0.2))
+        .force('y', d3.forceY(height / 2).strength(0.2))
+        .force('collide', d3.forceCollide(NODE_RADIUS * 1.6));
+
+      const link = g.append('g')
+        .selectAll('line')
+        .data(links)
+        .enter().append('line')
+        .attr('stroke', '#322C2E');
+
+      const node = g.append('g')
+        .selectAll('circle')
+        .data(nodes)
+        .enter().append('circle')
+        .attr('r', NODE_RADIUS)
+        .attr('fill', d => d.color)
+        .attr('class', 'node')
+        .call(d3.drag()
+          .on('start', function(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x; d.fy = d.y;
+          })
+          .on('drag', function(event, d) { d.fx = event.x; d.fy = event.y; })
+          .on('end', function(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null; d.fy = null;
+          })
+        )
+        .on('mouseover', function(event, d) {
+          if (d.id.startsWith('artist::')) {
+            showArtistPopup(d, data, svg);
+            graphCtx.popupNode = d;
+          } else {
+            const popup = document.getElementById('popup');
+            popup.innerHTML = `<div><strong>${escapeHtml(d.label)}</strong></div>`;
+            popup.style.display = 'block';
+            updatePopupPosition(d, svg);
+            graphCtx.popupNode = d;
+          }
+
+          if (featuresOn) {
+            const connected = new Set();
+            links.forEach(l => {
+              if (l.source.id === d.id) connected.add(l.target.id);
+              if (l.target.id === d.id) connected.add(l.source.id);
+            });
+            node.attr('opacity', n => connected.has(n.id) || n.id === d.id ? 1 : 0.5);
+            link.attr('stroke', l => (l.source.id === d.id || l.target.id === d.id) ? '#6A50FF' : '#322C2E')
+                .attr('opacity', l => (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.2);
+          }
+        })
+        .on('mouseout', function() {
+          if (featuresOn) {
+            node.attr('opacity', 1);
+            link.attr('stroke', '#322C2E').attr('opacity', 1);
+          }
+        })
+        .on('click', function(event, d) {
+          event.stopPropagation();
+          graphCtx.popupNode = d;
+
+          if (d.id.startsWith('artist::')) {
+            showArtistPopup(d, data, svg);
+            if (!featuresOn) return;
+
+            const firstDegree = new Set();
+            const secondDegree = new Set();
+            links.forEach(l => {
+              if (l.source.id === d.id) firstDegree.add(l.target.id);
+              if (l.target.id === d.id) firstDegree.add(l.source.id);
+            });
+            links.forEach(l => {
+              if (firstDegree.has(l.source.id)) secondDegree.add(l.target.id);
+              if (firstDegree.has(l.target.id)) secondDegree.add(l.source.id);
+            });
+            const allVisible = new Set([d.id, ...firstDegree, ...secondDegree]);
+            node.attr('display', n => allVisible.has(n.id) ? null : 'none');
+            link.attr('display', l => allVisible.has(l.source.id) && allVisible.has(l.target.id) ? null : 'none');
+            labels.attr('display', n => allVisible.has(n.id) ? null : 'none')
+                  .attr('opacity', n => firstDegree.has(n.id) || n.id === d.id ? 1 : 0.5);
+            return;
+          }
+
+          // Feature node click
+          applyFeatureFocus(d.id);
+        });
+
+      const labels = g.append('g')
+        .selectAll('text')
+        .data(nodes)
+        .enter().append('text')
+        .text(d => d.group === 'role' ? (formatRoleDisplay(d.label) || d.label) : d.label)
+        .attr('font-size', 6)
+        .attr('text-anchor', 'middle')
+        .attr('dy', 8)
+        .attr('fill', '#E8DED3')
+        .attr('pointer-events', 'none')
+        .style('font-family', 'Lexend, sans-serif')
+        .style('font-weight', '500');
+
+      simulation.on('tick', () => {
+        link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+            .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+        node.attr('cx', d => d.x).attr('cy', d => d.y);
+        labels.attr('x', d => d.x).attr('y', d => d.y + 8);
+        if (graphCtx && graphCtx.popupNode) updatePopupPosition(graphCtx.popupNode, svg);
+      });
+
+      svg.on('click', () => {
+        if (graphCtx) graphCtx.popupNode = null;
+        document.getElementById('popup').style.display = 'none';
+        node.attr('display', null).attr('opacity', 1).attr('stroke', null).attr('stroke-width', null);
+        link.attr('display', null).attr('stroke', '#322C2E').attr('opacity', 1);
+        labels.attr('display', null).attr('opacity', 1);
+        searchInput.value = '';
+      });
+
+      graphCtx = {
+        node,
+        link,
+        labels,
+        linksData: links,
+        data,
+        svg,
+        popupNode: null
+      };
+
+      applySearchHighlight(searchInput.value);
+
+      if (pendingFocusFeatureId) {
+        const focusId = pendingFocusFeatureId;
+        pendingFocusFeatureId = null;
+        // Wait a tick so layout exists
+        requestAnimationFrame(() => applyFeatureFocus(focusId));
+      }
+    }
+
+    function updatePopupPosition(d, svg) {
+      if (!d || d.x == null || d.y == null) return;
+      const popup = document.getElementById('popup');
+      const transform = d3.zoomTransform(svg.node());
+      const x = d.x * transform.k + transform.x;
+      const y = d.y * transform.k + transform.y;
+      popup.style.left = (x + 15) + 'px';
+      popup.style.top = (y + 15) + 'px';
+    }
+
+    const DATASETS = {
+      'notations-26': 'data-notations-26.json',
+      'hosq-community': 'data-hosq-community.json'
+    };
+
+    let activeSetId = 'notations-26';
+    let resizeBound = false;
+
+    function initDataset(data) {
+      window.currentData = data;
+      const filtersEl = document.getElementById('filters');
+      const onChange = (sel) => {
+        window.currentSelected = sel;
+        renderGraph(data, sel);
+      };
+      window.currentOnChange = onChange;
+      const currentSelected = buildFilters(
+        filtersEl,
+        data.filter_options || {},
+        onChange,
+        getFilterOrder(data)
+      );
+      window.currentSelected = currentSelected;
+      searchInput.value = '';
+      document.getElementById('popup').style.display = 'none';
+      renderGraph(data, currentSelected);
+
+      if (!resizeBound) {
+        window.addEventListener('resize', () => {
+          if (!window.currentData) return;
+          renderGraph(window.currentData, window.currentSelected || {});
+        });
+        resizeBound = true;
+      }
+    }
+
+    function loadDataset(setId) {
+      const file = DATASETS[setId];
+      if (!file) return;
+      activeSetId = setId;
+      document.querySelectorAll('.set-btn').forEach(btn => {
+        const active = btn.getAttribute('data-set') === setId;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', String(active));
+      });
+      fetch(file)
+        .then(r => {
+          if (!r.ok) throw new Error('Failed to load ' + file);
+          return r.json();
+        })
+        .then(initDataset)
+        .catch(err => console.error(err));
+    }
+
+    document.querySelectorAll('.set-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const setId = btn.getAttribute('data-set');
+        if (setId && setId !== activeSetId) loadDataset(setId);
+      });
+    });
+
+    updateFeaturesButton();
+    loadDataset(activeSetId);
+  </script>
+</body>
+</html>
