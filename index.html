@@ -106,6 +106,59 @@
       z-index: 200;
     }
 
+    /* Bottom set switcher */
+    .set-switcher {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      z-index: 200;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .set-btn {
+      padding: 10px 18px;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #E8DED3;
+      border: 1px solid rgba(232, 222, 211, 0.25);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Lexend', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .set-btn:hover {
+      background-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .set-btn.active {
+      background-color: #6A50FF;
+      border-color: #6A50FF;
+      color: #E8DED3;
+    }
+
+    @media (max-width: 768px) {
+      .set-switcher {
+        bottom: 16px;
+        gap: 8px;
+        width: calc(100% - 24px);
+        max-width: 420px;
+      }
+
+      .set-btn {
+        flex: 1;
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+    }
+
     /* Filters Popup Backdrop */
     .filters-backdrop {
       position: fixed;
@@ -305,6 +358,10 @@
       <button id="fullscreen-btn" class="top-btn">full screen</button>
       <svg></svg>
       <div id='popup' class='popup' style='user-select: text; -webkit-user-select: text;'></div>
+      <div class="set-switcher" role="tablist" aria-label="Artist sets">
+        <button type="button" class="set-btn active" data-set="notations-26" aria-pressed="true">Notations '26</button>
+        <button type="button" class="set-btn" data-set="hosq-community" aria-pressed="false">hosq community</button>
+      </div>
     </main>
   </div>
 
@@ -440,20 +497,36 @@
     // ============================================
     // Filter UI Builder
     // ============================================
+    const DEFAULT_FILTER_ORDER = ['lab','department','role','discipline','instruments','tools','skill set'];
+
+    function getFilterOrder(data) {
+      if (data && Array.isArray(data.filter_order) && data.filter_order.length) {
+        return data.filter_order;
+      }
+      const keys = Object.keys((data && data.filter_options) || {});
+      return DEFAULT_FILTER_ORDER.filter(k => keys.includes(k)).concat(keys.filter(k => !DEFAULT_FILTER_ORDER.includes(k)));
+    }
+
+    function formatFilterLabel(cat) {
+      if (cat === 'skill set') return 'Skill set';
+      return cat.charAt(0).toUpperCase() + cat.slice(1);
+    }
+
     // Builds the filter interface from filter options
-    function buildFilters(container, filterOptions, onChange) {
-      const order = ['lab','department','role','discipline','instruments','skill set'];
+    function buildFilters(container, filterOptions, onChange, filterOrder) {
+      const order = (filterOrder && filterOrder.length) ? filterOrder : DEFAULT_FILTER_ORDER;
       const selected = {};
       order.forEach(cat => { selected[cat] = new Set(); });
+      allFilterTags = [];
 
       const root = document.createDocumentFragment();
       order.forEach(cat => {
-        const values = Array.from(filterOptions[cat] || []).sort();
+        const values = Array.from(filterOptions[cat] || []).sort((a, b) => a.localeCompare(b));
         if (!values.length) return;
         const group = document.createElement('div');
         group.className = 'filter-group';
         const h3 = document.createElement('h3');
-        h3.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+        h3.textContent = formatFilterLabel(cat);
         group.appendChild(h3);
         const opts = document.createElement('div');
         opts.className = 'filter-options';
@@ -494,7 +567,7 @@
         tag.classList.remove('active');
       });
       const empty = {};
-      ['lab','department','role','discipline','instruments','skill set'].forEach(cat => { empty[cat] = []; });
+      getFilterOrder(window.currentData || {}).forEach(cat => { empty[cat] = []; });
       if (window.currentOnChange) window.currentOnChange(empty);
       document.getElementById('search-input').value = '';
     }
@@ -702,12 +775,14 @@
         html = `
           <strong>${artist.name}</strong><br>
           ${artist.role ? `<div><span style='color: #4C4646;'>${artist.role}</span></div>` : ''}
-          <img src="${artist.photo}" alt="photo"><br>
+          ${artist.photo ? `<img src="${artist.photo}" alt="photo"><br>` : ''}
           ${(artist.country || artist.city) ? `<div><span style='color: #6A50FF;'>${artist.country}${artist.city ? ', ' + artist.city : ''}</span></div>` : ''}
           ${artist.lab ? `<div><span style='color: var(--popup-text);'>lab:</span> <span style='color: #6A50FF;'>${artist.lab}</span></div>` : ''}
           ${artist.department ? `<div><span style='color: var(--popup-text);'>department:</span> <span style='color: #4C4646;'>${artist.department}</span></div>` : ''}
           ${artist.discipline ? `<div><span style='color: var(--popup-text);'>disciplines:</span> <span style='color: #4C4646;'>${artist.discipline}</span></div>` : ''}
+          ${artist.tools ? `<div><span style='color: var(--popup-text);'>tools:</span> <span style='color: #4C4646;'>${artist.tools}</span></div>` : ''}
           ${artist.instruments ? `<div><span style='color: var(--popup-text);'>instruments:</span> <span style='color: #4C4646;'>${artist.instruments}</span></div>` : ''}
+          ${artist['skill set'] ? `<div><span style='color: var(--popup-text);'>skill set:</span> <span style='color: #4C4646;'>${artist['skill set']}</span></div>` : ''}
         `;
       } else {
         if (d.id.startsWith('seeking for::')) {
@@ -746,21 +821,68 @@
     // ============================================
     // Data Loading and Initialization
     // ============================================
-    // Load graph data and initialize the visualization
-    fetch('data.json')
-      .then(r => r.json())
-      .then((data) => {
-        const filtersEl = document.getElementById('filters');
-        const onChange = (sel) => {
-          window.currentSelected = sel;
-          renderGraph(data, sel);
-        };
-        window.currentOnChange = onChange;
-        let currentSelected = buildFilters(filtersEl, data.filter_options || {}, onChange);
-        window.currentSelected = currentSelected;
-        renderGraph(data, currentSelected);
-        window.addEventListener('resize', () => renderGraph(data, window.currentSelected || currentSelected));
+    const DATASETS = {
+      'notations-26': 'data-notations-26.json',
+      'hosq-community': 'data-hosq-community.json'
+    };
+
+    let activeSetId = 'notations-26';
+    let resizeBound = false;
+
+    function initDataset(data) {
+      window.currentData = data;
+      const filtersEl = document.getElementById('filters');
+      const onChange = (sel) => {
+        window.currentSelected = sel;
+        renderGraph(data, sel);
+      };
+      window.currentOnChange = onChange;
+      const currentSelected = buildFilters(
+        filtersEl,
+        data.filter_options || {},
+        onChange,
+        getFilterOrder(data)
+      );
+      window.currentSelected = currentSelected;
+      document.getElementById('search-input').value = '';
+      document.getElementById('popup').style.display = 'none';
+      renderGraph(data, currentSelected);
+
+      if (!resizeBound) {
+        window.addEventListener('resize', () => {
+          if (!window.currentData) return;
+          renderGraph(window.currentData, window.currentSelected || {});
+        });
+        resizeBound = true;
+      }
+    }
+
+    function loadDataset(setId) {
+      const file = DATASETS[setId];
+      if (!file) return;
+      activeSetId = setId;
+      document.querySelectorAll('.set-btn').forEach(btn => {
+        const active = btn.getAttribute('data-set') === setId;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', String(active));
       });
+      fetch(file)
+        .then(r => {
+          if (!r.ok) throw new Error('Failed to load ' + file);
+          return r.json();
+        })
+        .then(initDataset)
+        .catch(err => console.error(err));
+    }
+
+    document.querySelectorAll('.set-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const setId = btn.getAttribute('data-set');
+        if (setId && setId !== activeSetId) loadDataset(setId);
+      });
+    });
+
+    loadDataset(activeSetId);
   </script>
 </body>
 </html>
