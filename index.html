@@ -677,9 +677,6 @@
     const HIGHLIGHT = '#F4A8B3';
     const EDGE = '#5C5255';
     const TEXT = '#EAE2D6';
-    const NODE_PAD_X = 8;
-    const NODE_PAD_Y = 4;
-    const PAGE_BG = '#3B3033';
     const NODE_RADIUS = 15;
     const LABEL_FONT_SIZE = 9;
     const LABEL_OFFSET_Y = 12;
@@ -776,20 +773,24 @@
 
     function applyFeaturesVisibility(options = {}) {
       if (!graphCtx) return;
-      const { node, link, data } = graphCtx;
+      const { node, link, labels, data } = graphCtx;
       const resetFocus = options.resetFocus;
 
       if (resetFocus) {
         node.attr('display', null);
         link.attr('display', null);
+        if (labels) labels.attr('display', null);
         link.attr('stroke', EDGE);
       }
 
-      node.select('rect').attr('fill', d => getNodeColor(d, data));
-      node.style('pointer-events', d => {
-        if (d.id.startsWith('artist::')) return 'all';
-        return featuresOn ? 'all' : 'none';
-      });
+      node
+        .attr('fill', d => getNodeColor(d, data))
+        .attr('stroke', null)
+        .attr('stroke-width', null)
+        .style('pointer-events', d => {
+          if (d.id.startsWith('artist::')) return 'all';
+          return featuresOn ? 'all' : 'none';
+        });
 
       applySearchHighlight(searchInput.value);
     }
@@ -1007,19 +1008,26 @@
 
     function applySearchHighlight(query) {
       if (!graphCtx) return;
-      const { node, link, data } = graphCtx;
+      const { node, link, labels, data } = graphCtx;
       const q = (query || '').trim();
       const matches = buildSearchMatchSet(q, data);
       const searching = q.length > 0 && matches.size > 0;
       const dim = 0.3;
 
-      node.attr('opacity', d => {
+      const opacityFor = (d) => {
         const base = baseNodeOpacity(d);
         if (base === 0) return 0;
         if (!searching) return base;
         if (d.id.startsWith('artist::')) return matches.has(d.id) ? 1 : dim;
         return dim;
-      });
+      };
+
+      node
+        .attr('stroke', null)
+        .attr('stroke-width', null)
+        .attr('opacity', opacityFor);
+
+      if (labels) labels.attr('opacity', opacityFor);
 
       link
         .attr('opacity', () => {
@@ -1031,6 +1039,7 @@
 
       if (q.length > 0 && matches.size === 0) {
         node.attr('opacity', d => baseNodeOpacity(d));
+        if (labels) labels.attr('opacity', d => baseNodeOpacity(d));
         link.attr('opacity', featuresOn ? 1 : 0);
       }
     }
@@ -1309,7 +1318,7 @@
 
     function applyFeatureFocus(featureId) {
       if (!graphCtx) return;
-      const { node, link, linksData, svg } = graphCtx;
+      const { node, link, labels, linksData, svg } = graphCtx;
       const featureNode = node.data().find(n => n.id === featureId);
       if (!featureNode) return;
 
@@ -1326,6 +1335,10 @@
       link.attr('display', l => allVisible.has(l.source.id) && allVisible.has(l.target.id) ? null : 'none')
           .attr('stroke', l => (l.source.id === featureId || l.target.id === featureId) ? HIGHLIGHT : EDGE)
           .attr('opacity', l => (l.source.id === featureId || l.target.id === featureId) ? 1 : 0.1);
+      if (labels) {
+        labels.attr('display', n => allVisible.has(n.id) ? null : 'none')
+              .attr('opacity', n => firstDegree.has(n.id) || n.id === featureId ? 1 : 0.5);
+      }
 
       showFeaturePopup(featureNode, svg);
     }
@@ -1403,6 +1416,15 @@
         return nodeIdSet.has(s) && nodeIdSet.has(t);
       }).map(l => ({ ...l }));
 
+      const MIN_NODE_DISTANCE = NODE_RADIUS * 5;
+      const simulation = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(d => d.id).distance(MIN_NODE_DISTANCE))
+        .force('charge', d3.forceManyBody().strength(-60))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('x', d3.forceX(width / 2).strength(0.2))
+        .force('y', d3.forceY(height / 2).strength(0.2))
+        .force('collide', d3.forceCollide(NODE_RADIUS * 1.6));
+
       const link = g.append('g')
         .attr('class', 'links')
         .selectAll('line')
@@ -1413,52 +1435,26 @@
 
       const node = g.append('g')
         .attr('class', 'nodes')
-        .selectAll('g')
+        .selectAll('circle')
         .data(nodes)
-        .enter().append('g')
+        .enter().append('circle')
+        .attr('r', NODE_RADIUS)
+        .attr('fill', d => d.color)
         .attr('class', 'node');
 
-      node.append('rect')
-        .attr('rx', 6)
-        .attr('ry', 6)
-        .attr('fill', d => d.color);
-
-      node.append('text')
+      const labels = g.append('g')
+        .attr('class', 'labels')
+        .selectAll('text')
+        .data(nodes)
+        .enter().append('text')
         .text(d => getNodeLabel(d))
-        .attr('text-anchor', 'middle')
-        .attr('dominant-baseline', 'central')
-        .attr('fill', PAGE_BG)
         .attr('font-size', LABEL_FONT_SIZE)
+        .attr('text-anchor', 'middle')
+        .attr('dy', LABEL_OFFSET_Y)
+        .attr('fill', TEXT)
         .attr('pointer-events', 'none')
         .style('font-family', 'Lexend, sans-serif')
         .style('font-weight', '500');
-
-      node.each(function(d) {
-        const textNode = d3.select(this).select('text').node();
-        const bbox = textNode.getBBox();
-        d.width = Math.max(bbox.width + NODE_PAD_X * 2, 24);
-        d.height = Math.max(bbox.height + NODE_PAD_Y * 2, 16);
-        d.radius = Math.sqrt((d.width / 2) ** 2 + (d.height / 2) ** 2);
-        d3.select(this).select('rect')
-          .attr('x', -d.width / 2)
-          .attr('y', -d.height / 2)
-          .attr('width', d.width)
-          .attr('height', d.height);
-      });
-
-      const simulation = d3.forceSimulation(nodes)
-        .force('link', d3.forceLink(links).id(d => d.id).distance(link => {
-          const s = typeof link.source === 'object' ? link.source : null;
-          const t = typeof link.target === 'object' ? link.target : null;
-          const aw = (s && s.width) || 40;
-          const bw = (t && t.width) || 40;
-          return Math.max(80, (aw + bw) / 2 + 30);
-        }))
-        .force('charge', d3.forceManyBody().strength(-140))
-        .force('center', d3.forceCenter(width / 2, height / 2))
-        .force('x', d3.forceX(width / 2).strength(0.15))
-        .force('y', d3.forceY(height / 2).strength(0.15))
-        .force('collide', d3.forceCollide().radius(d => (d.radius || 20) + 8).iterations(3));
 
       const dragBehavior = d3.drag()
         .on('start', function(event, d) {
@@ -1491,6 +1487,10 @@
               if (l.target.id === d.id) connected.add(l.source.id);
             });
             node.attr('opacity', n => {
+              if (!featuresOn && !n.id.startsWith('artist::')) return 0;
+              return connected.has(n.id) || n.id === d.id ? 1 : 0.5;
+            });
+            labels.attr('opacity', n => {
               if (!featuresOn && !n.id.startsWith('artist::')) return 0;
               return connected.has(n.id) || n.id === d.id ? 1 : 0.5;
             });
@@ -1530,6 +1530,8 @@
             const allVisible = new Set([d.id, ...firstDegree, ...secondDegree]);
             node.attr('display', n => allVisible.has(n.id) ? null : 'none')
                 .attr('opacity', n => firstDegree.has(n.id) || n.id === d.id ? 1 : 0.5);
+            labels.attr('display', n => allVisible.has(n.id) ? null : 'none')
+                  .attr('opacity', n => firstDegree.has(n.id) || n.id === d.id ? 1 : 0.5);
             link.attr('display', l => allVisible.has(l.source.id) && allVisible.has(l.target.id) ? null : 'none');
             return;
           }
@@ -1539,7 +1541,8 @@
       simulation.on('tick', () => {
         link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
             .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-        node.attr('transform', d => `translate(${d.x},${d.y})`);
+        node.attr('cx', d => d.x).attr('cy', d => d.y);
+        labels.attr('x', d => d.x).attr('y', d => d.y + LABEL_OFFSET_Y);
         if (graphCtx && graphCtx.popupNode) updatePopupPosition(graphCtx.popupNode, svg);
       });
 
@@ -1547,7 +1550,8 @@
         hoveringNode = false;
         hoveringPopup = false;
         hidePopup();
-        node.attr('display', null);
+        node.attr('display', null).attr('stroke', null).attr('stroke-width', null);
+        labels.attr('display', null);
         link.attr('display', null).attr('stroke', EDGE);
         applyFeaturesVisibility();
         searchInput.value = '';
@@ -1557,7 +1561,7 @@
       graphCtx = {
         node,
         link,
-        labels: node.select('text'),
+        labels,
         linksData: links,
         data,
         svg,
