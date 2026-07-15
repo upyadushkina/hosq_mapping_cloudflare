@@ -196,6 +196,8 @@
       color: var(--page-text);
       font-size: 14px;
       font-family: inherit;
+      flex-shrink: 1;
+      min-width: 0;
     }
 
     #search-input:focus {
@@ -216,17 +218,13 @@
         max-width: calc(100vw - 120px);
       }
 
-      #search-input {
-        width: min(220px, calc(100vw - 140px));
-      }
-
       .top-btn {
         font-size: 13px;
         padding: 8px 12px;
       }
     }
 
-    .set-switcher {
+    .bottom-bar {
       position: absolute;
       left: 50%;
       bottom: 24px;
@@ -236,6 +234,15 @@
       gap: 10px;
       align-items: center;
       justify-content: center;
+      max-width: calc(100vw - 24px);
+    }
+
+    .set-switcher {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
     .set-btn {
@@ -269,18 +276,37 @@
     }
 
     @media (max-width: 768px) {
-      .set-switcher {
+      .bottom-bar {
+        left: 12px;
+        right: 12px;
         bottom: 16px;
+        transform: none;
+        width: auto;
+        max-width: none;
         gap: 8px;
-        width: calc(100% - 24px);
-        max-width: 420px;
+        justify-content: flex-start;
+      }
+
+      .bottom-bar #search-input {
+        width: 120px;
+        flex: 0 1 120px;
+        min-width: 96px;
+        max-width: 36vw;
+        font-size: 13px;
+        padding: 8px 10px;
+      }
+
+      .set-switcher {
+        flex: 1 1 auto;
+        gap: 8px;
+        min-width: 0;
       }
 
       .set-btn {
         flex: 1;
         text-align: center;
-        padding: 10px 12px;
-        font-size: 13px;
+        padding: 10px 8px;
+        font-size: 12px;
       }
     }
 
@@ -572,9 +598,11 @@
       </div>
       <svg></svg>
       <div id="popup" class="popup" style="user-select: text; -webkit-user-select: text;"></div>
-      <div class="set-switcher" id="set-switcher" role="tablist" aria-label="Artist sets">
-        <button type="button" class="set-btn active" data-set="notations-26" aria-pressed="true">Notations '26</button>
-        <button type="button" class="set-btn" data-set="hosq-community" aria-pressed="false">hosq community</button>
+      <div class="bottom-bar" id="bottom-bar">
+        <div class="set-switcher" id="set-switcher" role="tablist" aria-label="Artist sets">
+          <button type="button" class="set-btn active" data-set="notations-26" aria-pressed="true">Notations '26</button>
+          <button type="button" class="set-btn" data-set="hosq-community" aria-pressed="false">hosq community</button>
+        </div>
       </div>
     </main>
   </div>
@@ -720,23 +748,12 @@
 
       node
         .attr('fill', d => getNodeColor(d, data))
-        .attr('opacity', d => {
-          if (d.id.startsWith('artist::')) return 1;
-          return featuresOn ? 1 : 0;
-        })
         .style('pointer-events', d => {
           if (d.id.startsWith('artist::')) return 'all';
           return featuresOn ? 'all' : 'none';
-        });
-
-      labels.attr('opacity', d => {
-        if (d.id.startsWith('artist::')) return 1;
-        return featuresOn ? 1 : 0;
-      });
-
-      link
-        .attr('opacity', featuresOn ? 1 : 0)
-        .style('pointer-events', 'none');
+        })
+        .attr('stroke', null)
+        .attr('stroke-width', null);
 
       applySearchHighlight(searchInput.value);
     }
@@ -807,14 +824,172 @@
         .replaceAll('"', '&quot;');
     }
 
-    function artistMatchesQuery(artistId, query, data) {
-      const q = (query || '').trim().toLowerCase();
-      if (!q) return false;
-      const artist = data.artists[artistId] || {};
-      const artistic = (artist.name || '').toLowerCase();
-      const legal = (artist.legal_name || '').toLowerCase();
-      return artistic.includes(q) || legal.includes(q);
+    function normalizeSearchText(s) {
+      return String(s || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
     }
+
+    function levenshtein(a, b) {
+      if (a === b) return 0;
+      if (!a.length) return b.length;
+      if (!b.length) return a.length;
+      const rows = a.length + 1;
+      const cols = b.length + 1;
+      const prev = new Array(cols);
+      const curr = new Array(cols);
+      for (let j = 0; j < cols; j++) prev[j] = j;
+      for (let i = 1; i < rows; i++) {
+        curr[0] = i;
+        for (let j = 1; j < cols; j++) {
+          const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+          curr[j] = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
+        }
+        for (let j = 0; j < cols; j++) prev[j] = curr[j];
+      }
+      return prev[b.length];
+    }
+
+    function similarityRatio(a, b) {
+      const maxLen = Math.max(a.length, b.length);
+      if (!maxLen) return 0;
+      return 1 - (levenshtein(a, b) / maxLen);
+    }
+
+    function bestWindowSimilarity(query, text) {
+      if (!query || !text) return 0;
+      if (text.length <= query.length) return similarityRatio(query, text);
+      let best = 0;
+      const window = Math.max(query.length, Math.min(text.length, query.length + 2));
+      for (let len = Math.max(2, query.length - 2); len <= window; len++) {
+        for (let i = 0; i <= text.length - len; i++) {
+          const score = similarityRatio(query, text.slice(i, i + len));
+          if (score > best) best = score;
+          if (best >= 0.95) return best;
+        }
+      }
+      return best;
+    }
+
+    function fuzzyScore(query, candidate) {
+      const q = normalizeSearchText(query);
+      const c = normalizeSearchText(candidate);
+      if (!q || !c) return 0;
+      if (c === q) return 100;
+      if (c.includes(q)) return 92 - Math.min(12, Math.max(0, c.length - q.length));
+      if (q.includes(c) && c.length >= 3) return 82;
+
+      const tokens = c.split(' ').filter(Boolean);
+      if (tokens.some(t => t.startsWith(q))) return 88;
+      if (tokens.some(t => q.startsWith(t) && t.length >= 3)) return 80;
+
+      let best = similarityRatio(q, c);
+      for (const t of tokens) {
+        best = Math.max(best, similarityRatio(q, t), bestWindowSimilarity(q, t));
+      }
+      best = Math.max(best, bestWindowSimilarity(q, c));
+
+      if (best >= 0.82) return Math.round(75 + best * 20);
+      if (best >= 0.7) return Math.round(60 + best * 15);
+      if (best >= 0.55) return Math.round(40 + best * 20);
+      return 0;
+    }
+
+    const SEARCH_SCORE_THRESHOLD = 45;
+
+    function getArtistSearchScore(artistId, query, data) {
+      const artist = data.artists[artistId] || {};
+      return Math.max(
+        fuzzyScore(query, artist.name || ''),
+        fuzzyScore(query, artist.legal_name || ''),
+        fuzzyScore(query, String(artistId).replace(/^artist::/, ''))
+      );
+    }
+
+    function artistMatchesQuery(artistId, query, data) {
+      return getArtistSearchScore(artistId, query, data) >= SEARCH_SCORE_THRESHOLD;
+    }
+
+    function buildSearchMatchSet(query, data) {
+      const q = (query || '').trim();
+      const matches = new Set();
+      if (!q || !data || !data.artists) return matches;
+      const scored = [];
+      Object.keys(data.artists).forEach(id => {
+        const score = getArtistSearchScore(id, q, data);
+        if (score >= SEARCH_SCORE_THRESHOLD) scored.push({ id, score });
+      });
+      scored.sort((a, b) => b.score - a.score);
+      scored.forEach(item => matches.add(item.id));
+      return matches;
+    }
+
+    function baseNodeOpacity(d) {
+      if (d.id.startsWith('artist::')) return 1;
+      return featuresOn ? 1 : 0;
+    }
+
+    function applySearchHighlight(query) {
+      if (!graphCtx) return;
+      const { node, link, labels, data } = graphCtx;
+      const q = (query || '').trim();
+      const matches = buildSearchMatchSet(q, data);
+      const searching = q.length > 0 && matches.size > 0;
+      const dim = 0.3;
+
+      node
+        .attr('stroke', null)
+        .attr('stroke-width', null)
+        .attr('opacity', d => {
+          const base = baseNodeOpacity(d);
+          if (base === 0) return 0;
+          if (!searching) return base;
+          if (d.id.startsWith('artist::')) return matches.has(d.id) ? 1 : dim;
+          return dim;
+        });
+
+      labels.attr('opacity', d => {
+        const base = baseNodeOpacity(d);
+        if (base === 0) return 0;
+        if (!searching) return base;
+        if (d.id.startsWith('artist::')) return matches.has(d.id) ? 1 : dim;
+        return dim;
+      });
+
+      link
+        .attr('opacity', () => {
+          if (!featuresOn) return 0;
+          if (!searching) return 1;
+          return dim;
+        })
+        .style('pointer-events', 'none');
+
+      if (q.length > 0 && matches.size === 0) {
+        node.attr('opacity', d => baseNodeOpacity(d));
+        labels.attr('opacity', d => baseNodeOpacity(d));
+        link.attr('opacity', featuresOn ? 1 : 0);
+      }
+    }
+
+    function placeSearchInput() {
+      const search = document.getElementById('search-input');
+      const top = document.getElementById('top-left-controls');
+      const bottom = document.getElementById('bottom-bar');
+      if (!search || !top || !bottom) return;
+      if (window.innerWidth <= 768) {
+        if (search.parentElement !== bottom) bottom.insertBefore(search, bottom.firstChild);
+      } else if (search.parentElement !== top) {
+        top.appendChild(search);
+      }
+    }
+
+    searchInput.addEventListener('input', (e) => {
+      applySearchHighlight(e.target.value);
+    });
 
     const DEFAULT_FILTER_ORDER = ['lab', 'department', 'role', 'discipline', 'instruments', 'tools', 'skill set'];
 
@@ -1050,22 +1225,6 @@
       }
       applyFeatureFocus(featureId);
     }
-
-    function applySearchHighlight(query) {
-      if (!graphCtx) return;
-      const q = (query || '').trim();
-      graphCtx.node.attr('stroke', d => {
-        if (!d.id.startsWith('artist::') || !q) return null;
-        return artistMatchesQuery(d.id, q, graphCtx.data) ? HIGHLIGHT : null;
-      }).attr('stroke-width', d => {
-        if (!d.id.startsWith('artist::') || !q) return null;
-        return artistMatchesQuery(d.id, q, graphCtx.data) ? 3 : null;
-      });
-    }
-
-    searchInput.addEventListener('input', (e) => {
-      applySearchHighlight(e.target.value);
-    });
 
     function renderGraph(data, selected) {
       const svgEl = document.querySelector('svg');
@@ -1310,6 +1469,7 @@
 
       if (!resizeBound) {
         window.addEventListener('resize', () => {
+          placeSearchInput();
           if (!window.currentData) return;
           renderGraph(window.currentData, window.currentSelected || {});
         });
@@ -1344,6 +1504,7 @@
     });
 
     syncFeaturesToggle();
+    placeSearchInput();
     loadDataset(activeSetId);
   </script>
 </body>
