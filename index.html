@@ -22,7 +22,7 @@
       --page-bg: #3B3033;
       --page-text: #EAE2D6;
       --accent: #F4A8B3;
-      --muted: #444444;
+      --muted: #5C5255;
     }
 
     html, body {
@@ -64,7 +64,8 @@
       padding: 8px 16px;
       background-color: var(--muted);
       color: var(--page-text);
-      border: 1px solid var(--page-text);
+      border: none;
+      outline: none;
       border-radius: 6px;
       font-size: 14px;
       font-weight: 500;
@@ -74,17 +75,19 @@
     }
 
     .top-btn:hover,
-    .top-btn:focus {
+    .top-btn:focus,
+    .top-btn:active {
       background-color: var(--accent);
       color: var(--muted);
-      border-color: var(--accent);
+      border: none;
       outline: none;
     }
 
     .top-btn.active {
       background-color: var(--accent);
       color: var(--muted);
-      border-color: var(--accent);
+      border: none;
+      outline: none;
     }
 
     .top-left-controls {
@@ -141,7 +144,8 @@
       width: 40px;
       height: 22px;
       background: var(--muted);
-      border: 1px solid var(--page-text);
+      border: none;
+      outline: none;
       border-radius: 999px;
       display: inline-block;
       flex-shrink: 0;
@@ -149,8 +153,8 @@
 
     .switch-thumb {
       position: absolute;
-      top: 2px;
-      left: 2px;
+      top: 3px;
+      left: 3px;
       width: 16px;
       height: 16px;
       background: var(--page-text);
@@ -160,24 +164,27 @@
 
     .features-switch input:checked + .switch-track {
       background: var(--accent);
-      border-color: var(--accent);
+      border: none;
+      outline: none;
     }
 
     .features-switch input:checked + .switch-track .switch-thumb {
-      left: 20px;
+      left: 21px;
       background: var(--muted);
     }
 
     .features-switch:hover .switch-track,
     .features-switch input:focus + .switch-track {
-      border-color: var(--accent);
+      border: none;
+      outline: none;
     }
 
     #search-input {
       width: 180px;
       padding: 8px 12px;
       background-color: var(--muted);
-      border: 1px solid var(--page-text);
+      border: none;
+      outline: none;
       border-radius: 6px;
       color: var(--page-text);
       font-size: 14px;
@@ -186,7 +193,7 @@
 
     #search-input:focus {
       outline: none;
-      border-color: var(--accent);
+      border: none;
       background-color: var(--muted);
     }
 
@@ -228,7 +235,8 @@
       padding: 10px 18px;
       background-color: var(--muted);
       color: var(--page-text);
-      border: 1px solid var(--page-text);
+      border: none;
+      outline: none;
       border-radius: 999px;
       font-size: 14px;
       font-weight: 500;
@@ -238,17 +246,19 @@
     }
 
     .set-btn:hover,
-    .set-btn:focus {
+    .set-btn:focus,
+    .set-btn:active {
       background-color: var(--accent);
       color: var(--muted);
-      border-color: var(--accent);
+      border: none;
       outline: none;
     }
 
     .set-btn.active {
       background-color: var(--accent);
       color: var(--muted);
-      border-color: var(--accent);
+      border: none;
+      outline: none;
     }
 
     @media (max-width: 768px) {
@@ -273,7 +283,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: var(--muted);
+      background-color: transparent;
       z-index: 299;
       display: none;
     }
@@ -287,7 +297,8 @@
       top: 80px;
       left: 16px;
       background-color: var(--page-bg);
-      border: 1px solid var(--page-text);
+      border: none;
+      outline: none;
       border-radius: 8px;
       z-index: 300;
       display: none;
@@ -318,7 +329,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 16px 20px;
-      border-bottom: 1px solid var(--page-text);
+      border-bottom: none;
     }
 
     .filters-popup-header h2 {
@@ -331,6 +342,7 @@
     .close-filters-btn {
       background: none;
       border: none;
+      outline: none;
       color: var(--page-text);
       font-size: 28px;
       cursor: pointer;
@@ -345,9 +357,11 @@
     }
 
     .close-filters-btn:hover,
-    .close-filters-btn:focus {
+    .close-filters-btn:focus,
+    .close-filters-btn:active {
       background-color: var(--accent);
       color: var(--muted);
+      border: none;
       outline: none;
     }
 
@@ -379,7 +393,8 @@
     .filter-tag {
       background-color: var(--muted);
       color: var(--page-text);
-      border: 1px solid var(--page-text);
+      border: none;
+      outline: none;
       border-radius: 6px;
       padding: 6px 12px;
       font-size: 12px;
@@ -388,17 +403,19 @@
     }
 
     .filter-tag:hover,
-    .filter-tag:focus {
+    .filter-tag:focus,
+    .filter-tag:active {
       background-color: var(--accent);
       color: var(--muted);
-      border-color: var(--accent);
+      border: none;
       outline: none;
     }
 
     .filter-tag.active {
       background-color: var(--accent);
       color: var(--muted);
-      border-color: var(--accent);
+      border: none;
+      outline: none;
     }
 
     .popup {
@@ -407,7 +424,8 @@
       color: var(--page-text);
       padding: 12px;
       border-radius: 8px;
-      border: 1px solid var(--page-text);
+      border: none;
+      outline: none;
       z-index: 250;
       width: 240px;
       text-align: center;
@@ -453,7 +471,7 @@
     }
 
     .popup .card-row .label {
-      color: #444444;
+      color: #5C5255;
     }
 
     .popup .card-row .value {
@@ -463,20 +481,20 @@
     .popup .card-tag,
     .popup .card-sep {
       color: #EAE2D6;
+      text-decoration: none;
     }
 
     .popup .card-tag {
       display: inline;
       cursor: pointer;
-      text-decoration: underline;
-      text-decoration-color: #EAE2D6;
-      text-underline-offset: 2px;
+      text-decoration: none;
     }
 
     .popup .card-tag:hover,
-    .popup .card-tag:focus {
+    .popup .card-tag:focus,
+    .popup .card-tag:active {
       color: #F4A8B3;
-      text-decoration-color: #F4A8B3;
+      text-decoration: none;
       outline: none;
     }
 
@@ -485,8 +503,9 @@
       margin-top: 10px;
       padding: 8px 16px;
       background-color: #F4A8B3;
-      color: #444444;
-      border: 1px solid #F4A8B3;
+      color: #5C5255;
+      border: none;
+      outline: none;
       border-radius: 999px;
       font-size: 13px;
       font-family: inherit;
@@ -496,11 +515,13 @@
     }
 
     .popup .connect-btn:hover,
-    .popup .connect-btn:focus {
+    .popup .connect-btn:focus,
+    .popup .connect-btn:active {
       background-color: #EAE2D6;
-      color: #444444;
-      border-color: #EAE2D6;
+      color: #5C5255;
+      border: none;
       outline: none;
+      text-decoration: none;
     }
 
     .popup .telegram-row {
@@ -563,7 +584,7 @@
 
   <script>
     const FEATURE_COLORS = {
-      artist: '#444444',
+      artist: '#5C5255',
       role: '#EAE2D6',
       discipline: '#F4A8B3',
       'skill set': '#ADC99E',
@@ -583,11 +604,10 @@
 
     const ROLE_PRIORITY = ['curator', "curator's helper", 'verticurator', 'participant', 'hosq team'];
     const HIGHLIGHT = '#F4A8B3';
-    const EDGE = '#444444';
+    const EDGE = '#5C5255';
     const TEXT = '#EAE2D6';
     const NODE_RADIUS = 10;
-    const EDGE_MARGIN = 10;
-    const UI_PAD = 8;
+    let savedZoomTransform = null;
 
     const openedAsFullscreen = new URLSearchParams(window.location.search).has('fullscreen');
     const fullscreenBtn = document.getElementById('fullscreen-btn');
@@ -672,10 +692,43 @@
 
     featuresToggle.addEventListener('change', () => {
       featuresOn = featuresToggle.checked;
-      if (window.currentData) {
-        renderGraph(window.currentData, window.currentSelected || {});
-      }
+      applyFeaturesVisibility({ resetFocus: true });
     });
+
+    function applyFeaturesVisibility(options = {}) {
+      if (!graphCtx) return;
+      const { node, link, labels, data } = graphCtx;
+      const resetFocus = options.resetFocus;
+
+      if (resetFocus) {
+        node.attr('display', null);
+        link.attr('display', null);
+        labels.attr('display', null);
+        link.attr('stroke', EDGE);
+      }
+
+      node
+        .attr('fill', d => getNodeColor(d, data))
+        .attr('opacity', d => {
+          if (d.id.startsWith('artist::')) return 1;
+          return featuresOn ? 1 : 0;
+        })
+        .style('pointer-events', d => {
+          if (d.id.startsWith('artist::')) return 'all';
+          return featuresOn ? 'all' : 'none';
+        });
+
+      labels.attr('opacity', d => {
+        if (d.id.startsWith('artist::')) return 1;
+        return featuresOn ? 1 : 0;
+      });
+
+      link
+        .attr('opacity', featuresOn ? 1 : 0)
+        .style('pointer-events', 'none');
+
+      applySearchHighlight(searchInput.value);
+    }
 
     function decodeAt(text) {
       return typeof text === 'string' ? text.replaceAll('&#64;', '@').replaceAll('&amp;#64;', '@') : '';
@@ -868,81 +921,6 @@
       return true;
     }
 
-    function getExpandedRect(el, pad) {
-      if (!el) return null;
-      const r = el.getBoundingClientRect();
-      const parent = document.querySelector('.content').getBoundingClientRect();
-      return {
-        x0: r.left - parent.left - pad,
-        y0: r.top - parent.top - pad,
-        x1: r.right - parent.left + pad,
-        y1: r.bottom - parent.top + pad
-      };
-    }
-
-    function rectsOverlap(a, b) {
-      return !(a.x1 <= b.x0 || a.x0 >= b.x1 || a.y1 <= b.y0 || a.y0 >= b.y1);
-    }
-
-    function circleHitsBlocked(x, y, radius, blocked) {
-      const c = { x0: x - radius, y0: y - radius, x1: x + radius, y1: y + radius };
-      return blocked.some(b => rectsOverlap(c, b));
-    }
-
-    function placeArtistsRandomly(nodes, width, height) {
-      const blocked = [
-        getExpandedRect(document.getElementById('top-left-controls'), UI_PAD),
-        getExpandedRect(document.getElementById('top-right-controls'), UI_PAD),
-        getExpandedRect(document.getElementById('set-switcher'), UI_PAD)
-      ].filter(Boolean);
-
-      const minX = EDGE_MARGIN + NODE_RADIUS;
-      const maxX = Math.max(minX, width - EDGE_MARGIN - NODE_RADIUS);
-      const minY = EDGE_MARGIN + NODE_RADIUS;
-      const maxY = Math.max(minY, height - EDGE_MARGIN - NODE_RADIUS);
-      const minDist = NODE_RADIUS * 2 + 2;
-      const placed = [];
-
-      nodes.forEach(node => {
-        let x = (minX + maxX) / 2;
-        let y = (minY + maxY) / 2;
-        let ok = false;
-        for (let attempt = 0; attempt < 400; attempt++) {
-          const tx = minX + Math.random() * (maxX - minX);
-          const ty = minY + Math.random() * (maxY - minY);
-          if (circleHitsBlocked(tx, ty, NODE_RADIUS, blocked)) continue;
-          let clash = false;
-          for (const p of placed) {
-            const dx = tx - p.x;
-            const dy = ty - p.y;
-            if (dx * dx + dy * dy < minDist * minDist) { clash = true; break; }
-          }
-          if (clash) continue;
-          x = tx; y = ty; ok = true; break;
-        }
-        if (!ok) {
-          // fallback grid walk
-          outer: for (let gy = minY; gy <= maxY; gy += minDist) {
-            for (let gx = minX; gx <= maxX; gx += minDist) {
-              if (circleHitsBlocked(gx, gy, NODE_RADIUS, blocked)) continue;
-              let clash = false;
-              for (const p of placed) {
-                const dx = gx - p.x;
-                const dy = gy - p.y;
-                if (dx * dx + dy * dy < minDist * minDist) { clash = true; break; }
-              }
-              if (!clash) { x = gx; y = gy; break outer; }
-            }
-          }
-        }
-        node.x = x;
-        node.y = y;
-        node.fx = x;
-        node.fy = y;
-        placed.push({ x, y });
-      });
-    }
-
     function renderClickableTags(category, raw) {
       const tags = splitCsvTags(raw);
       if (!tags.length) return '';
@@ -1051,9 +1029,12 @@
         pendingFocusFeatureId = featureId;
         featuresOn = true;
         syncFeaturesToggle();
-        if (window.currentData) {
-          renderGraph(window.currentData, window.currentSelected || {});
-        }
+        applyFeaturesVisibility({ resetFocus: true });
+        requestAnimationFrame(() => {
+          const focusId = pendingFocusFeatureId;
+          pendingFocusFeatureId = null;
+          if (focusId) applyFeatureFocus(focusId);
+        });
         return;
       }
       applyFeatureFocus(featureId);
@@ -1076,6 +1057,11 @@
     });
 
     function renderGraph(data, selected) {
+      const svgEl = document.querySelector('svg');
+      if (svgEl) {
+        try { savedZoomTransform = d3.zoomTransform(svgEl); } catch (e) { /* ignore */ }
+      }
+
       const svg = d3.select('svg');
       svg.selectAll('*').remove();
       const width = svg.node().clientWidth;
@@ -1084,11 +1070,14 @@
 
       const zoom = d3.zoom().scaleExtent([0.3, 4]).on('zoom', (event) => {
         g.attr('transform', event.transform);
+        savedZoomTransform = event.transform;
         if (graphCtx && graphCtx.popupNode) updatePopupPosition(graphCtx.popupNode, svg);
       });
       svg.call(zoom);
 
-      if (featuresOn) {
+      if (savedZoomTransform) {
+        svg.call(zoom.transform, savedZoomTransform);
+      } else {
         const isMobile = window.innerWidth <= 768;
         const initialScale = isMobile ? 0.65 : 1.5;
         const centerX = width / 2;
@@ -1097,8 +1086,7 @@
           .translate(centerX * (1 - initialScale), centerY * (1 - initialScale))
           .scale(initialScale);
         svg.call(zoom.transform, initialTransform);
-      } else {
-        svg.call(zoom.transform, d3.zoomIdentity);
+        savedZoomTransform = initialTransform;
       }
 
       const artistLinksMap = computeArtistLinksMap(data.links);
@@ -1107,51 +1095,39 @@
       );
       const visibleRelatedIds = new Set(visibleArtistIds);
 
-      if (featuresOn) {
-        data.links.forEach(l => {
-          const s = typeof l.source === 'string' ? l.source : l.source.id;
-          const t = typeof l.target === 'string' ? l.target : l.target.id;
-          if (visibleArtistIds.has(s)) visibleRelatedIds.add(t);
-          if (visibleArtistIds.has(t)) visibleRelatedIds.add(s);
-        });
-      }
+      data.links.forEach(l => {
+        const s = typeof l.source === 'string' ? l.source : l.source.id;
+        const t = typeof l.target === 'string' ? l.target : l.target.id;
+        if (visibleArtistIds.has(s)) visibleRelatedIds.add(t);
+        if (visibleArtistIds.has(t)) visibleRelatedIds.add(s);
+      });
 
-      let nodes = data.nodes
+      const nodes = data.nodes
         .filter(n => visibleRelatedIds.has(n.id))
         .map(n => ({ ...n, color: getNodeColor(n, data) }));
 
-      if (!featuresOn) {
-        nodes = nodes.filter(n => n.id.startsWith('artist::'));
-        placeArtistsRandomly(nodes, width, height);
-      }
-
       const nodeIdSet = new Set(nodes.map(n => n.id));
-      const links = featuresOn
-        ? data.links.filter(l => {
-            const s = typeof l.source === 'string' ? l.source : l.source.id;
-            const t = typeof l.target === 'string' ? l.target : l.target.id;
-            return nodeIdSet.has(s) && nodeIdSet.has(t);
-          }).map(l => ({ ...l }))
-        : [];
+      const links = data.links.filter(l => {
+        const s = typeof l.source === 'string' ? l.source : l.source.id;
+        const t = typeof l.target === 'string' ? l.target : l.target.id;
+        return nodeIdSet.has(s) && nodeIdSet.has(t);
+      }).map(l => ({ ...l }));
 
       const MIN_NODE_DISTANCE = NODE_RADIUS * 5;
-      let simulation = null;
-
-      if (featuresOn) {
-        simulation = d3.forceSimulation(nodes)
-          .force('link', d3.forceLink(links).id(d => d.id).distance(MIN_NODE_DISTANCE))
-          .force('charge', d3.forceManyBody().strength(-60))
-          .force('center', d3.forceCenter(width / 2, height / 2))
-          .force('x', d3.forceX(width / 2).strength(0.2))
-          .force('y', d3.forceY(height / 2).strength(0.2))
-          .force('collide', d3.forceCollide(NODE_RADIUS * 1.6));
-      }
+      const simulation = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(d => d.id).distance(MIN_NODE_DISTANCE))
+        .force('charge', d3.forceManyBody().strength(-60))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('x', d3.forceX(width / 2).strength(0.2))
+        .force('y', d3.forceY(height / 2).strength(0.2))
+        .force('collide', d3.forceCollide(NODE_RADIUS * 1.6));
 
       const link = g.append('g')
         .selectAll('line')
         .data(links)
         .enter().append('line')
-        .attr('stroke', EDGE);
+        .attr('stroke', EDGE)
+        .style('pointer-events', 'none');
 
       const node = g.append('g')
         .selectAll('circle')
@@ -1159,9 +1135,7 @@
         .enter().append('circle')
         .attr('r', NODE_RADIUS)
         .attr('fill', d => d.color)
-        .attr('class', 'node')
-        .attr('cx', d => d.x || 0)
-        .attr('cy', d => d.y || 0);
+        .attr('class', 'node');
 
       const labels = g.append('g')
         .selectAll('text')
@@ -1172,37 +1146,25 @@
         .attr('text-anchor', 'middle')
         .attr('dy', 8)
         .attr('fill', TEXT)
-        .attr('x', d => d.x || 0)
-        .attr('y', d => (d.y || 0) + 8)
         .attr('pointer-events', 'none')
         .style('font-family', 'Lexend, sans-serif')
         .style('font-weight', '500');
 
-      const dragBehavior = featuresOn
-        ? d3.drag()
-            .on('start', function(event, d) {
-              if (!event.active) simulation.alphaTarget(0.3).restart();
-              d.fx = d.x; d.fy = d.y;
-            })
-            .on('drag', function(event, d) { d.fx = event.x; d.fy = event.y; })
-            .on('end', function(event, d) {
-              if (!event.active) simulation.alphaTarget(0);
-              d.fx = null; d.fy = null;
-            })
-        : d3.drag()
-            .on('start', function(event, d) { d.fx = d.x; d.fy = d.y; })
-            .on('drag', function(event, d) {
-              d.fx = event.x; d.fy = event.y; d.x = event.x; d.y = event.y;
-              d3.select(this).attr('cx', d.x).attr('cy', d.y);
-              labels.filter(n => n.id === d.id).attr('x', d.x).attr('y', d.y + 8);
-              if (graphCtx && graphCtx.popupNode && graphCtx.popupNode.id === d.id) {
-                updatePopupPosition(d, svg);
-              }
-            })
-            .on('end', function(event, d) { d.fx = d.x; d.fy = d.y; });
+      const dragBehavior = d3.drag()
+        .on('start', function(event, d) {
+          if (!event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x; d.fy = d.y;
+        })
+        .on('drag', function(event, d) { d.fx = event.x; d.fy = event.y; })
+        .on('end', function(event, d) {
+          if (!event.active) simulation.alphaTarget(0);
+          d.fx = null; d.fy = null;
+        });
 
       node.call(dragBehavior)
         .on('mouseover', function(event, d) {
+          if (!featuresOn && !d.id.startsWith('artist::')) return;
+
           if (d.id.startsWith('artist::')) {
             showArtistPopup(d, data, svg);
             graphCtx.popupNode = d;
@@ -1227,12 +1189,13 @@
         })
         .on('mouseout', function() {
           if (featuresOn) {
-            node.attr('opacity', 1);
-            link.attr('stroke', EDGE).attr('opacity', 1);
+            applyFeaturesVisibility();
+            link.attr('stroke', EDGE);
           }
         })
         .on('click', function(event, d) {
           event.stopPropagation();
+          if (!featuresOn && !d.id.startsWith('artist::')) return;
           graphCtx.popupNode = d;
 
           if (d.id.startsWith('artist::')) {
@@ -1259,22 +1222,21 @@
           applyFeatureFocus(d.id);
         });
 
-      if (simulation) {
-        simulation.on('tick', () => {
-          link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
-              .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-          node.attr('cx', d => d.x).attr('cy', d => d.y);
-          labels.attr('x', d => d.x).attr('y', d => d.y + 8);
-          if (graphCtx && graphCtx.popupNode) updatePopupPosition(graphCtx.popupNode, svg);
-        });
-      }
+      simulation.on('tick', () => {
+        link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+            .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+        node.attr('cx', d => d.x).attr('cy', d => d.y);
+        labels.attr('x', d => d.x).attr('y', d => d.y + 8);
+        if (graphCtx && graphCtx.popupNode) updatePopupPosition(graphCtx.popupNode, svg);
+      });
 
       svg.on('click', () => {
         if (graphCtx) graphCtx.popupNode = null;
         document.getElementById('popup').style.display = 'none';
-        node.attr('display', null).attr('opacity', 1).attr('stroke', null).attr('stroke-width', null);
-        link.attr('display', null).attr('stroke', EDGE).attr('opacity', 1);
-        labels.attr('display', null).attr('opacity', 1);
+        node.attr('display', null).attr('stroke', null).attr('stroke-width', null);
+        link.attr('display', null).attr('stroke', EDGE);
+        labels.attr('display', null);
+        applyFeaturesVisibility();
         searchInput.value = '';
         applySearchHighlight('');
       });
@@ -1289,7 +1251,7 @@
         popupNode: null
       };
 
-      applySearchHighlight(searchInput.value);
+      applyFeaturesVisibility();
 
       if (pendingFocusFeatureId) {
         const focusId = pendingFocusFeatureId;
@@ -1348,6 +1310,7 @@
       const file = DATASETS[setId];
       if (!file) return;
       activeSetId = setId;
+      savedZoomTransform = null;
       document.querySelectorAll('.set-btn').forEach(btn => {
         const active = btn.getAttribute('data-set') === setId;
         btn.classList.toggle('active', active);
