@@ -460,7 +460,8 @@
       border: none;
       outline: none;
       z-index: 250;
-      width: 240px;
+      width: max-content;
+      max-width: min(280px, 80vw);
       text-align: center;
       font-size: 14px;
       font-family: 'Lexend', sans-serif;
@@ -468,6 +469,37 @@
       user-select: text;
       pointer-events: auto;
       display: none;
+    }
+
+    .popup.popup-artist {
+      width: 240px;
+      max-width: 240px;
+    }
+
+    .popup.popup-feature {
+      width: max-content;
+      max-width: min(280px, 80vw);
+      padding: 8px 12px;
+    }
+
+    .popup-wrap {
+      position: absolute;
+      z-index: 250;
+      display: none;
+      padding: 50px;
+      pointer-events: auto;
+      box-sizing: content-box;
+    }
+
+    .popup-wrap.active {
+      display: block;
+    }
+
+    .popup-wrap .popup {
+      position: relative;
+      left: auto;
+      top: auto;
+      display: block;
     }
 
     .popup img {
@@ -586,18 +618,20 @@
           <button id="reset-filters" class="top-btn">reset filters</button>
         </div>
         <label class="features-switch" for="features-toggle">
-          <span>features</span>
+          <span>show skills</span>
           <input type="checkbox" id="features-toggle" />
           <span class="switch-track"><span class="switch-thumb"></span></span>
         </label>
-        <input type="text" id="search-input" placeholder="search artist...">
+        <input type="text" id="search-input" placeholder="search">
       </div>
       <div class="top-right-controls" id="top-right-controls">
         <button id="fullscreen-btn" class="top-btn">full screen</button>
         <img src="hosq_logo.png" alt="HOSQ Logo" class="header-logo">
       </div>
       <svg></svg>
-      <div id="popup" class="popup" style="user-select: text; -webkit-user-select: text;"></div>
+      <div id="popup-wrap" class="popup-wrap">
+        <div id="popup" class="popup" style="user-select: text; -webkit-user-select: text;"></div>
+      </div>
       <div class="bottom-bar" id="bottom-bar">
         <div class="set-switcher" id="set-switcher" role="tablist" aria-label="Artist sets">
           <button type="button" class="set-btn active" data-set="notations-26" aria-pressed="true">Notations '26</button>
@@ -643,10 +677,16 @@
     const HIGHLIGHT = '#F4A8B3';
     const EDGE = '#5C5255';
     const TEXT = '#EAE2D6';
+    const NODE_PAD_X = 8;
+    const NODE_PAD_Y = 4;
+    const PAGE_BG = '#3B3033';
     const NODE_RADIUS = 15;
     const LABEL_FONT_SIZE = 9;
     const LABEL_OFFSET_Y = 12;
     let savedZoomTransform = null;
+    let hidePopupTimer = null;
+    let hoveringPopup = false;
+    let hoveringNode = false;
 
     const openedAsFullscreen = new URLSearchParams(window.location.search).has('fullscreen');
     const fullscreenBtn = document.getElementById('fullscreen-btn');
@@ -736,24 +776,20 @@
 
     function applyFeaturesVisibility(options = {}) {
       if (!graphCtx) return;
-      const { node, link, labels, data } = graphCtx;
+      const { node, link, data } = graphCtx;
       const resetFocus = options.resetFocus;
 
       if (resetFocus) {
         node.attr('display', null);
         link.attr('display', null);
-        labels.attr('display', null);
         link.attr('stroke', EDGE);
       }
 
-      node
-        .attr('fill', d => getNodeColor(d, data))
-        .style('pointer-events', d => {
-          if (d.id.startsWith('artist::')) return 'all';
-          return featuresOn ? 'all' : 'none';
-        })
-        .attr('stroke', null)
-        .attr('stroke-width', null);
+      node.select('rect').attr('fill', d => getNodeColor(d, data));
+      node.style('pointer-events', d => {
+        if (d.id.startsWith('artist::')) return 'all';
+        return featuresOn ? 'all' : 'none';
+      });
 
       applySearchHighlight(searchInput.value);
     }
@@ -901,13 +937,49 @@
 
     const SEARCH_SCORE_THRESHOLD = 45;
 
+    function collectArtistSearchFields(artist, artistId) {
+      const fields = [];
+      const push = (v) => {
+        if (v == null) return;
+        const s = String(v).trim();
+        if (!s) return;
+        fields.push(s);
+      };
+      push(artist.name);
+      push(artist.legal_name);
+      push(String(artistId || '').replace(/^artist::/, ''));
+      push(artist.role);
+      push(formatRoleDisplay(artist.role));
+      push(artist.country);
+      push(artist.city);
+      push(artist.lab);
+      push(artist.department);
+      push(artist.discipline);
+      push(artist.tools);
+      push(artist.instruments);
+      push(artist['skill set']);
+      push(artist.projects);
+      push(decodeAt(artist.telegram || ''));
+      push(artist.email);
+      push(artist.social);
+      ['discipline', 'tools', 'instruments', 'skill set', 'role'].forEach(key => {
+        splitCsvTags(artist[key]).forEach(push);
+      });
+      return fields;
+    }
+
     function getArtistSearchScore(artistId, query, data) {
       const artist = data.artists[artistId] || {};
-      return Math.max(
-        fuzzyScore(query, artist.name || ''),
-        fuzzyScore(query, artist.legal_name || ''),
-        fuzzyScore(query, String(artistId).replace(/^artist::/, ''))
-      );
+      const fields = collectArtistSearchFields(artist, artistId);
+      let best = 0;
+      fields.forEach((field, idx) => {
+        const score = fuzzyScore(query, field);
+        if (!score) return;
+        // Slightly prefer name / artistic name hits
+        const boosted = score + (idx < 3 && score >= SEARCH_SCORE_THRESHOLD ? 4 : 0);
+        if (boosted > best) best = boosted;
+      });
+      return Math.min(100, best);
     }
 
     function artistMatchesQuery(artistId, query, data) {
@@ -935,24 +1007,13 @@
 
     function applySearchHighlight(query) {
       if (!graphCtx) return;
-      const { node, link, labels, data } = graphCtx;
+      const { node, link, data } = graphCtx;
       const q = (query || '').trim();
       const matches = buildSearchMatchSet(q, data);
       const searching = q.length > 0 && matches.size > 0;
       const dim = 0.3;
 
-      node
-        .attr('stroke', null)
-        .attr('stroke-width', null)
-        .attr('opacity', d => {
-          const base = baseNodeOpacity(d);
-          if (base === 0) return 0;
-          if (!searching) return base;
-          if (d.id.startsWith('artist::')) return matches.has(d.id) ? 1 : dim;
-          return dim;
-        });
-
-      labels.attr('opacity', d => {
+      node.attr('opacity', d => {
         const base = baseNodeOpacity(d);
         if (base === 0) return 0;
         if (!searching) return base;
@@ -970,7 +1031,6 @@
 
       if (q.length > 0 && matches.size === 0) {
         node.attr('opacity', d => baseNodeOpacity(d));
-        labels.attr('opacity', d => baseNodeOpacity(d));
         link.attr('opacity', featuresOn ? 1 : 0);
       }
     }
@@ -1067,8 +1127,9 @@
       getFilterOrder(window.currentData || {}).forEach(cat => { empty[cat] = []; });
       window.currentSelected = empty;
       searchInput.value = '';
-      document.getElementById('popup').style.display = 'none';
-      if (graphCtx) graphCtx.popupNode = null;
+      hoveringNode = false;
+      hoveringPopup = false;
+      hidePopup();
       if (window.currentData) {
         renderGraph(window.currentData, empty);
       }
@@ -1161,12 +1222,64 @@
       return html;
     }
 
+    function getNodeLabel(d) {
+      return d.group === 'role' ? (formatRoleDisplay(d.label) || d.label) : d.label;
+    }
+
+    function hidePopup() {
+      clearTimeout(hidePopupTimer);
+      hidePopupTimer = null;
+      const wrap = document.getElementById('popup-wrap');
+      const popup = document.getElementById('popup');
+      if (wrap) wrap.classList.remove('active');
+      if (popup) {
+        popup.style.display = 'none';
+        popup.classList.remove('popup-artist', 'popup-feature');
+      }
+      if (graphCtx) graphCtx.popupNode = null;
+    }
+
+    function scheduleHidePopup() {
+      clearTimeout(hidePopupTimer);
+      hidePopupTimer = setTimeout(() => {
+        if (hoveringPopup || hoveringNode) return;
+        hidePopup();
+      }, 80);
+    }
+
+    function showPopupWrap() {
+      const wrap = document.getElementById('popup-wrap');
+      const popup = document.getElementById('popup');
+      if (!wrap || !popup) return;
+      popup.style.display = 'block';
+      wrap.classList.add('active');
+    }
+
+    function bindPopupInteractions() {
+      const wrap = document.getElementById('popup-wrap');
+      if (!wrap || wrap.dataset.bound === '1') return;
+      wrap.dataset.bound = '1';
+      wrap.addEventListener('mouseenter', () => {
+        hoveringPopup = true;
+        clearTimeout(hidePopupTimer);
+      });
+      wrap.addEventListener('mouseleave', () => {
+        hoveringPopup = false;
+        scheduleHidePopup();
+      });
+    }
+
     function showArtistPopup(d, data, svg) {
+      bindPopupInteractions();
       const popup = document.getElementById('popup');
       const artist = data.artists[d.id];
       if (!artist) return;
+      clearTimeout(hidePopupTimer);
+      hoveringNode = true;
+      popup.classList.add('popup-artist');
+      popup.classList.remove('popup-feature');
       popup.innerHTML = buildArtistCardHtml(artist);
-      popup.style.display = 'block';
+      showPopupWrap();
       updatePopupPosition(d, svg);
 
       popup.querySelectorAll('.card-tag').forEach(el => {
@@ -1182,9 +1295,21 @@
       });
     }
 
+    function showFeaturePopup(d, svg) {
+      bindPopupInteractions();
+      const popup = document.getElementById('popup');
+      clearTimeout(hidePopupTimer);
+      hoveringNode = true;
+      popup.classList.add('popup-feature');
+      popup.classList.remove('popup-artist');
+      popup.innerHTML = `<div><strong>${escapeHtml(getNodeLabel(d))}</strong></div>`;
+      showPopupWrap();
+      updatePopupPosition(d, svg);
+    }
+
     function applyFeatureFocus(featureId) {
       if (!graphCtx) return;
-      const { node, link, labels, linksData, svg } = graphCtx;
+      const { node, link, linksData, svg } = graphCtx;
       const featureNode = node.data().find(n => n.id === featureId);
       if (!featureNode) return;
 
@@ -1201,13 +1326,8 @@
       link.attr('display', l => allVisible.has(l.source.id) && allVisible.has(l.target.id) ? null : 'none')
           .attr('stroke', l => (l.source.id === featureId || l.target.id === featureId) ? HIGHLIGHT : EDGE)
           .attr('opacity', l => (l.source.id === featureId || l.target.id === featureId) ? 1 : 0.1);
-      labels.attr('display', n => allVisible.has(n.id) ? null : 'none')
-            .attr('opacity', n => firstDegree.has(n.id) || n.id === featureId ? 1 : 0.5);
 
-      const popup = document.getElementById('popup');
-      popup.innerHTML = `<div><strong>${escapeHtml(featureNode.label)}</strong></div>`;
-      popup.style.display = 'block';
-      updatePopupPosition(featureNode, svg);
+      showFeaturePopup(featureNode, svg);
     }
 
     function selectFeatureFromCard(featureId) {
@@ -1238,7 +1358,7 @@
       const height = svg.node().clientHeight;
       const g = svg.append('g');
 
-      const zoom = d3.zoom().scaleExtent([0.3, 4]).on('zoom', (event) => {
+      const zoom = d3.zoom().scaleExtent([0.2, 4]).on('zoom', (event) => {
         g.attr('transform', event.transform);
         savedZoomTransform = event.transform;
         if (graphCtx && graphCtx.popupNode) updatePopupPosition(graphCtx.popupNode, svg);
@@ -1283,16 +1403,8 @@
         return nodeIdSet.has(s) && nodeIdSet.has(t);
       }).map(l => ({ ...l }));
 
-      const MIN_NODE_DISTANCE = NODE_RADIUS * 5;
-      const simulation = d3.forceSimulation(nodes)
-        .force('link', d3.forceLink(links).id(d => d.id).distance(MIN_NODE_DISTANCE))
-        .force('charge', d3.forceManyBody().strength(-60))
-        .force('center', d3.forceCenter(width / 2, height / 2))
-        .force('x', d3.forceX(width / 2).strength(0.2))
-        .force('y', d3.forceY(height / 2).strength(0.2))
-        .force('collide', d3.forceCollide(NODE_RADIUS * 1.6));
-
       const link = g.append('g')
+        .attr('class', 'links')
         .selectAll('line')
         .data(links)
         .enter().append('line')
@@ -1300,25 +1412,53 @@
         .style('pointer-events', 'none');
 
       const node = g.append('g')
-        .selectAll('circle')
+        .attr('class', 'nodes')
+        .selectAll('g')
         .data(nodes)
-        .enter().append('circle')
-        .attr('r', NODE_RADIUS)
-        .attr('fill', d => d.color)
+        .enter().append('g')
         .attr('class', 'node');
 
-      const labels = g.append('g')
-        .selectAll('text')
-        .data(nodes)
-        .enter().append('text')
-        .text(d => d.group === 'role' ? (formatRoleDisplay(d.label) || d.label) : d.label)
-        .attr('font-size', LABEL_FONT_SIZE)
+      node.append('rect')
+        .attr('rx', 6)
+        .attr('ry', 6)
+        .attr('fill', d => d.color);
+
+      node.append('text')
+        .text(d => getNodeLabel(d))
         .attr('text-anchor', 'middle')
-        .attr('dy', LABEL_OFFSET_Y)
-        .attr('fill', TEXT)
+        .attr('dominant-baseline', 'central')
+        .attr('fill', PAGE_BG)
+        .attr('font-size', LABEL_FONT_SIZE)
         .attr('pointer-events', 'none')
         .style('font-family', 'Lexend, sans-serif')
         .style('font-weight', '500');
+
+      node.each(function(d) {
+        const textNode = d3.select(this).select('text').node();
+        const bbox = textNode.getBBox();
+        d.width = Math.max(bbox.width + NODE_PAD_X * 2, 24);
+        d.height = Math.max(bbox.height + NODE_PAD_Y * 2, 16);
+        d.radius = Math.sqrt((d.width / 2) ** 2 + (d.height / 2) ** 2);
+        d3.select(this).select('rect')
+          .attr('x', -d.width / 2)
+          .attr('y', -d.height / 2)
+          .attr('width', d.width)
+          .attr('height', d.height);
+      });
+
+      const simulation = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(d => d.id).distance(link => {
+          const s = typeof link.source === 'object' ? link.source : null;
+          const t = typeof link.target === 'object' ? link.target : null;
+          const aw = (s && s.width) || 40;
+          const bw = (t && t.width) || 40;
+          return Math.max(80, (aw + bw) / 2 + 30);
+        }))
+        .force('charge', d3.forceManyBody().strength(-140))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('x', d3.forceX(width / 2).strength(0.15))
+        .force('y', d3.forceY(height / 2).strength(0.15))
+        .force('collide', d3.forceCollide().radius(d => (d.radius || 20) + 8).iterations(3));
 
       const dragBehavior = d3.drag()
         .on('start', function(event, d) {
@@ -1334,16 +1474,14 @@
       node.call(dragBehavior)
         .on('mouseover', function(event, d) {
           if (!featuresOn && !d.id.startsWith('artist::')) return;
+          hoveringNode = true;
+          clearTimeout(hidePopupTimer);
+          graphCtx.popupNode = d;
 
           if (d.id.startsWith('artist::')) {
             showArtistPopup(d, data, svg);
-            graphCtx.popupNode = d;
           } else {
-            const popup = document.getElementById('popup');
-            popup.innerHTML = `<div><strong>${escapeHtml(d.label)}</strong></div>`;
-            popup.style.display = 'block';
-            updatePopupPosition(d, svg);
-            graphCtx.popupNode = d;
+            showFeaturePopup(d, svg);
           }
 
           if (featuresOn) {
@@ -1352,12 +1490,17 @@
               if (l.source.id === d.id) connected.add(l.target.id);
               if (l.target.id === d.id) connected.add(l.source.id);
             });
-            node.attr('opacity', n => connected.has(n.id) || n.id === d.id ? 1 : 0.5);
+            node.attr('opacity', n => {
+              if (!featuresOn && !n.id.startsWith('artist::')) return 0;
+              return connected.has(n.id) || n.id === d.id ? 1 : 0.5;
+            });
             link.attr('stroke', l => (l.source.id === d.id || l.target.id === d.id) ? HIGHLIGHT : EDGE)
                 .attr('opacity', l => (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.2);
           }
         })
         .on('mouseout', function() {
+          hoveringNode = false;
+          scheduleHidePopup();
           if (featuresOn) {
             applyFeaturesVisibility();
             link.attr('stroke', EDGE);
@@ -1366,6 +1509,8 @@
         .on('click', function(event, d) {
           event.stopPropagation();
           if (!featuresOn && !d.id.startsWith('artist::')) return;
+          hoveringNode = true;
+          clearTimeout(hidePopupTimer);
           graphCtx.popupNode = d;
 
           if (d.id.startsWith('artist::')) {
@@ -1383,10 +1528,9 @@
               if (firstDegree.has(l.target.id)) secondDegree.add(l.source.id);
             });
             const allVisible = new Set([d.id, ...firstDegree, ...secondDegree]);
-            node.attr('display', n => allVisible.has(n.id) ? null : 'none');
+            node.attr('display', n => allVisible.has(n.id) ? null : 'none')
+                .attr('opacity', n => firstDegree.has(n.id) || n.id === d.id ? 1 : 0.5);
             link.attr('display', l => allVisible.has(l.source.id) && allVisible.has(l.target.id) ? null : 'none');
-            labels.attr('display', n => allVisible.has(n.id) ? null : 'none')
-                  .attr('opacity', n => firstDegree.has(n.id) || n.id === d.id ? 1 : 0.5);
             return;
           }
           applyFeatureFocus(d.id);
@@ -1395,17 +1539,16 @@
       simulation.on('tick', () => {
         link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
             .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-        node.attr('cx', d => d.x).attr('cy', d => d.y);
-        labels.attr('x', d => d.x).attr('y', d => d.y + LABEL_OFFSET_Y);
+        node.attr('transform', d => `translate(${d.x},${d.y})`);
         if (graphCtx && graphCtx.popupNode) updatePopupPosition(graphCtx.popupNode, svg);
       });
 
       svg.on('click', () => {
-        if (graphCtx) graphCtx.popupNode = null;
-        document.getElementById('popup').style.display = 'none';
-        node.attr('display', null).attr('stroke', null).attr('stroke-width', null);
+        hoveringNode = false;
+        hoveringPopup = false;
+        hidePopup();
+        node.attr('display', null);
         link.attr('display', null).attr('stroke', EDGE);
-        labels.attr('display', null);
         applyFeaturesVisibility();
         searchInput.value = '';
         applySearchHighlight('');
@@ -1414,7 +1557,7 @@
       graphCtx = {
         node,
         link,
-        labels,
+        labels: node.select('text'),
         linksData: links,
         data,
         svg,
@@ -1432,12 +1575,16 @@
 
     function updatePopupPosition(d, svg) {
       if (!d || d.x == null || d.y == null) return;
-      const popup = document.getElementById('popup');
+      const wrap = document.getElementById('popup-wrap');
+      if (!wrap) return;
       const transform = d3.zoomTransform(svg.node());
       const x = d.x * transform.k + transform.x;
       const y = d.y * transform.k + transform.y;
-      popup.style.left = (x + 15) + 'px';
-      popup.style.top = (y + 15) + 'px';
+      // Inner popup sits near the node; wrap padding (50px) expands the hover hit-area
+      const contentLeft = x + 12;
+      const contentTop = y + 12;
+      wrap.style.left = (contentLeft - 50) + 'px';
+      wrap.style.top = (contentTop - 50) + 'px';
     }
 
     const DATASETS = {
@@ -1464,7 +1611,9 @@
       );
       window.currentSelected = currentSelected;
       searchInput.value = '';
-      document.getElementById('popup').style.display = 'none';
+      hoveringNode = false;
+      hoveringPopup = false;
+      hidePopup();
       renderGraph(data, currentSelected);
 
       if (!resizeBound) {
