@@ -103,6 +103,13 @@
       max-width: calc(100vw - 140px);
     }
 
+    .toolbar-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+    }
+
     .top-right-controls {
       position: absolute;
       top: 16px;
@@ -548,8 +555,10 @@
   <div class="layout">
     <main class="content">
       <div class="top-left-controls" id="top-left-controls">
-        <button id="filters-btn" class="top-btn">filters</button>
-        <button id="reset-filters" class="top-btn">reset filters</button>
+        <div class="toolbar-row">
+          <button id="filters-btn" class="top-btn">filters</button>
+          <button id="reset-filters" class="top-btn">reset filters</button>
+        </div>
         <label class="features-switch" for="features-toggle">
           <span>features</span>
           <input type="checkbox" id="features-toggle" />
@@ -606,7 +615,9 @@
     const HIGHLIGHT = '#F4A8B3';
     const EDGE = '#5C5255';
     const TEXT = '#EAE2D6';
-    const NODE_RADIUS = 10;
+    const NODE_RADIUS = 15;
+    const LABEL_FONT_SIZE = 9;
+    const LABEL_OFFSET_Y = 12;
     let savedZoomTransform = null;
 
     const openedAsFullscreen = new URLSearchParams(window.location.search).has('fullscreen');
@@ -1142,9 +1153,9 @@
         .data(nodes)
         .enter().append('text')
         .text(d => d.group === 'role' ? (formatRoleDisplay(d.label) || d.label) : d.label)
-        .attr('font-size', 6)
+        .attr('font-size', LABEL_FONT_SIZE)
         .attr('text-anchor', 'middle')
-        .attr('dy', 8)
+        .attr('dy', LABEL_OFFSET_Y)
         .attr('fill', TEXT)
         .attr('pointer-events', 'none')
         .style('font-family', 'Lexend, sans-serif')
@@ -1226,7 +1237,7 @@
         link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
             .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
         node.attr('cx', d => d.x).attr('cy', d => d.y);
-        labels.attr('x', d => d.x).attr('y', d => d.y + 8);
+        labels.attr('x', d => d.x).attr('y', d => d.y + LABEL_OFFSET_Y);
         if (graphCtx && graphCtx.popupNode) updatePopupPosition(graphCtx.popupNode, svg);
       });
 
