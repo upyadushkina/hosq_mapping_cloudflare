@@ -1,1267 +1,1405 @@
 {
   "nodes": [
     {
+      "id": "artist::Zoya Sargsyan",
+      "label": "Bokusho",
+      "group": "artist",
+      "color": "#5C5255"
+    },
+    {
       "id": "artist::Anna Terzikyan",
       "label": "Anna Vahrami",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Arev Hayrapetyan",
       "label": "Arev",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Anton Shanikhin",
       "label": "Tony “Everydaypony” Shanikhin",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Mariam Gevorgyan",
       "label": "Mariam Gevorgyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Kristina Manucharyan",
       "label": "Kristina Arark Manucharyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Inna Ghazaryan",
       "label": "Inna Ghazaryan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Tatiana Iaksina",
       "label": "helical_worm",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::SU JINGXIANG",
       "label": "JAXTON SU",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Solomon Fatoma",
       "label": "solo's beat",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Nikolai Zheltukhin",
       "label": "Nikolai Zheltukhin (yomoyo)",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Tigran Gevorkian",
       "label": "Tigran Gevorkian",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Wanbo Li",
       "label": "Ember Li",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Ara Ter-Gabrielyants",
       "label": "Ara Ter-Gabrielyants",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Hooman Talakian",
       "label": "Hooman Talakian",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Zhiqiang Li",
       "label": "Lee",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
-      "id": "artist::Grigory Tsvetkov",
-      "label": "Grigory Tsvetkov",
+      "id": "artist::Grisha Tsvetkov",
+      "label": "Grisha Tsvetkov",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Lia Potikyan",
       "label": "pistak",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Jessica James",
       "label": "Winter",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Diren Demir",
       "label": "DİREN",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Vedant Manwadkar",
       "label": "Vedant Manwadkar",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Elena Chadaeva",
       "label": "Chadaeva",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Gohar Gizhlaryan",
       "label": "Gohar Gizhlaryan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Rhys Votano",
       "label": "weight of light",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Kate Sadovnikova",
       "label": "Kate Sadovnikova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Zygmund de Somogyi",
       "label": "Zygmund de Somogyi",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Olivia Melkonian",
       "label": "khanum",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Evgeny Bylina",
       "label": "Evgeny Bylina",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Yulia Nemova",
       "label": "Yulia Nemova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Hugo Pinto",
       "label": "Kino Pinto",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Hannah Koshgarian",
       "label": "Hannah Koshgarian",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Louise Gorm",
       "label": "Louise Gorm",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Maksim Sergeev",
       "label": "Maksim Sergeev",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Matteo Cenerini",
       "label": "Matteo Cenerini",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Artak Kostandian",
       "label": "dreamy0psis",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Veronika Poghosyan",
-      "label": "Veronika Poghosyan",
+      "label": "Who Is Veronika Poghosyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Evgeniia Starikova",
       "label": "Evgeniia Starikova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Yuliia Potapova",
       "label": "Yuliia Potapova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Aleksandr Kuritsyn",
       "label": "blue pencil",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Melanya Torosyan",
       "label": "Marl Superstarl",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Valentin Ryzhov",
       "label": "zvukofor",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Van Sadagh",
       "label": "Van Sadagh",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Lubomir Andrei",
       "label": "Lubomir Andrei",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Frederick Bernas",
       "label": "Freddie Fiasco",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Minami KINTO",
       "label": "Minami KINTO",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Fernando Damon",
       "label": "Fernando Damon",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Anton Khlabov",
       "label": "Anton Khlabov",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Varder Baghdasaryan",
       "label": "Qi",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Karine Avetisyan",
       "label": "Kariné",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Aleksandra Zakaryan",
       "label": "XANDRA",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Vardui Mirzoyan",
       "label": "Vardui Mirzoyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Anna Ghazaryan Vladimirskaya",
       "label": "Anna Ghazaryan Vladimirskaya",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Elen Poghosyan",
       "label": "Elen Poghosyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Ana Kipshidze",
       "label": "Anuka Kipshidze",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Anna Kalenchyan",
       "label": "Anna Kalenchyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Shahane Harutyunyan",
       "label": "22194 (Shahane)",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::David Grigoryan",
       "label": "David Grigoryan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Aleksandr Veselov",
       "label": "Aleksandr Veselov",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Nelli Vardanyan",
       "label": "Echoes in dust",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Kristina Iskandaryan",
       "label": "Kiara",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Anna Esaian",
       "label": "esai",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Ani Yeghoyan",
       "label": "NODE",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Syuzanna Ginosyan",
       "label": "Suzy Ginosyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Kristine Danielyan",
       "label": "Christina Danielyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Arno Melkonyan",
       "label": "Arno Melkonyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Maria Tsharakyan",
       "label": "manu",
       "group": "artist",
-      "color": "#4C4646"
-    },
-    {
-      "id": "artist::Anna Khudadyan",
-      "label": "Anna Khudadyan",
-      "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Henrik Meliqyan",
       "label": "Henrik Meliqyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Svetlana Hakobyan",
       "label": "Svetlana Hakobyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Ekaterina Ishkhanova",
       "label": "ishkhan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Vardan Sargsyan",
       "label": "duke",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Elena Korkina",
       "label": "Elena Korkina",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Carolina Zakharova",
       "label": "Carolina Zakharova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Toma Aydinyan",
       "label": "Toma Aydinyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Syuzanna Misakyan",
       "label": "Syuzan Misakyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Anika Krbetschek",
       "label": "Anika Krbetschek",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Dmitrii Nenadyshin",
       "label": "Ptichka Soe",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Juliette Martirosyan",
       "label": "Juliette Martirosyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Julia Krivosheenko",
       "label": "Julia Krivosheenko",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Emilya Nikoghosyan",
       "label": "Emilya Nikoghosyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Davit Aydiyan",
       "label": "Davit Aydiyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Vahe Abrahamyan",
       "label": "Nerøx",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Grigor Budaghyan",
       "label": "Grigor Budaghyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Nikola Chen",
       "label": "Nikola Chen",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Levon Yerkanyan",
       "label": "Lerk",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Mileta Ghazanchyan",
       "label": "MILETA",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Evgeniia Kovalchuk",
       "label": "arnet",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Elizabeth Telnaya",
       "label": "Black Babette",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Nasrin Shojaei",
       "label": "Nasrin",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Dubljević Dragan",
       "label": "Dubljević Dragan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Varvara Misyurina",
       "label": "Varvara Misyurina",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Venera Kazarova",
       "label": "Venera Kazarova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Artem Semenov",
       "label": "Artem Semenov",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Evgeniy Sharakshane",
       "label": "Evgeniy Sharakshane",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Arman Peshtmaljyan",
       "label": "Arman Peshtmaljyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Shahen Khandkaryan (Shhau)",
       "label": "Shhau",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Kai Khachatryan",
       "label": "Kai Khachatryan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Nadya Xyxu",
       "label": "Nadya Xyxu",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Misak Samokatian",
       "label": "Misak Samokatian",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Gevorg Grigoryan",
       "label": "Gevorg Grigoryan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Tanya Chizhikova",
       "label": "Tanya Chizhikova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Aram Hovhannisyan",
       "label": "Aram Hovhannisyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Sergey Umroyan",
       "label": "Sergey Umroyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Tigran Suchyan",
       "label": "Tigran Suchyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Mesrop Sarkisyan",
       "label": "Mesrop Sarkisyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Ben Wheeler",
       "label": "Ben Wheeler",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Zhanna Davtyan",
       "label": "Zhanna Davtyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Jeanne Kormina",
       "label": "Jeanne Kormina",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Dima Ustinov",
       "label": "Dima Ustinov",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Andronik Khachiian",
       "label": "Andronik Khachiian",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Andriesh Gandrabur",
       "label": "Andriesh Gandrabur",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Arthur Atayan",
       "label": "Arthur Atayan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Daria Sadovnikova",
       "label": "Daria Sadovnikova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Karina Malik",
       "label": "Karina Malik",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Aleksei Leontev",
       "label": "Aleksei Leontev",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Yurii Avdeev",
       "label": "Yurii Avdeev",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Georgy Safarov",
       "label": "Georgy Safarov",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Lusine MLKE-Galstyan",
       "label": "Lusine MLKE-Galstyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Shoghakat MLKE-Galstyan",
       "label": "Shoghakat MLKE-Galstyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Uliana Pyadushkina",
       "label": "Uliana Pyadushkina",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Sonya Ovchinnikova",
       "label": "Sonya Ovchinnikova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Syuzi Juharyan",
       "label": "Syuzi Juharyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Evgeniy Lyalin",
       "label": "Evgeniy Lyalin",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Nikita Maksimenko",
       "label": "Nikita Maksimenko",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Vladimir Gurskii",
       "label": "Vladimir Gurskii",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Maria Makora",
       "label": "Maria Makora",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Mitya Lyalin",
       "label": "Mitya Lyalin",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Flora Gevorgyan",
       "label": "Flora Gevorgyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Lin Paravyan",
       "label": "Lin Paravyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Natalia Kupriyanova",
       "label": "Natalia Kupriyanova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Daniil Yakushov",
       "label": "Daniil Yakushov",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Aksanna Poghosyan",
       "label": "Aksanna Poghosyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Agatha Karapetyan",
       "label": "Agatha Karapetyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Liz Victorova",
       "label": "Liz Victorova",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Christian Ginosyan",
       "label": "Christian Ginosyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
     },
     {
       "id": "artist::Petros Goroyan",
       "label": "Petros Goroyan",
       "group": "artist",
-      "color": "#4C4646"
+      "color": "#5C5255"
+    },
+    {
+      "id": "project::Ambisonic Installation",
+      "label": "Ambisonic Installation",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Art To Wear",
+      "label": "Art To Wear",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Assembling Ritual",
+      "label": "Assembling Ritual",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Communitas",
+      "label": "Communitas",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Contemporary Art",
+      "label": "Contemporary Art",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Documental Art",
+      "label": "Documental Art",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Installation",
+      "label": "Installation",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Music Production",
+      "label": "Music Production",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Neo-Tribes",
+      "label": "Neo-Tribes",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Reverse Tower Ritual",
+      "label": "Reverse Tower Ritual",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Sama Soundbath",
+      "label": "Sama Soundbath",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Set Design",
+      "label": "Set Design",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Somatic Practices",
+      "label": "Somatic Practices",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::The Refrain",
+      "label": "The Refrain",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Video Art",
+      "label": "Video Art",
+      "group": "project",
+      "color": "#FFE2C4"
+    },
+    {
+      "id": "project::Zine Art",
+      "label": "Zine Art",
+      "group": "project",
+      "color": "#FFE2C4"
     },
     {
       "id": "discipline::Acting",
       "label": "Acting",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Animation",
       "label": "Animation",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Art Management",
       "label": "Art Management",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Art to Wear",
       "label": "Art to Wear",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Choreography",
       "label": "Choreography",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Classical Music",
       "label": "Classical Music",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Directing",
       "label": "Directing",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Electronics",
       "label": "Electronics",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Filming",
       "label": "Filming",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Installation",
       "label": "Installation",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Jazz",
       "label": "Jazz",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Light",
       "label": "Light",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Media Art",
       "label": "Media Art",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
+    },
+    {
+      "id": "discipline::Multimedia  Journalism",
+      "label": "Multimedia  Journalism",
+      "group": "discipline",
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Music Production",
       "label": "Music Production",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Performance",
       "label": "Performance",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Photography",
       "label": "Photography",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Production",
       "label": "Production",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Set Design",
       "label": "Set Design",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Sound Design",
       "label": "Sound Design",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Theatre",
       "label": "Theatre",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Visual Art",
       "label": "Visual Art",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "discipline::Writing",
       "label": "Writing",
       "group": "discipline",
-      "color": "#B882EF"
+      "color": "#F4A8B3"
     },
     {
       "id": "role::curator",
       "label": "curator",
       "group": "role",
-      "color": "#FF7556"
+      "color": "#EAE2D6"
+    },
+    {
+      "id": "role::curator's helper",
+      "label": "curator's helper",
+      "group": "role",
+      "color": "#EAE2D6"
     },
     {
       "id": "role::hosq team",
       "label": "hosq team",
       "group": "role",
-      "color": "#FF7556"
+      "color": "#EAE2D6"
     },
     {
       "id": "role::participant",
       "label": "participant",
       "group": "role",
-      "color": "#FF7556"
+      "color": "#EAE2D6"
     },
     {
       "id": "role::verticurator",
       "label": "verticurator",
       "group": "role",
-      "color": "#FF7556"
-    },
-    {
-      "id": "role::volunteer / participant",
-      "label": "volunteer / participant",
-      "group": "role",
-      "color": "#FF7556"
+      "color": "#EAE2D6"
     },
     {
       "id": "skill set::3D",
       "label": "3D",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
-      "id": "skill set::AI Sound",
-      "label": "AI Sound",
+      "id": "skill set::AI sound",
+      "label": "AI sound",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::AI Visual",
       "label": "AI Visual",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::AI visual",
       "label": "AI visual",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Arranging",
       "label": "Arranging",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Coding and Patching",
       "label": "Coding and Patching",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Composing",
       "label": "Composing",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Design",
       "label": "Design",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Engineering",
       "label": "Engineering",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Illustration and Painting",
       "label": "Illustration and Painting",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Improvisation",
       "label": "Improvisation",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Instrument Design",
       "label": "Instrument Design",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Instrumentalist",
       "label": "Instrumentalist",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Mixing and Mastering",
       "label": "Mixing and Mastering",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Research",
       "label": "Research",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Sampling",
       "label": "Sampling",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Sculpture",
       "label": "Sculpture",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Singing",
       "label": "Singing",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Sound Recording",
       "label": "Sound Recording",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Sound Synthesis",
       "label": "Sound Synthesis",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "skill set::Teaching",
       "label": "Teaching",
       "group": "skill set",
-      "color": "#819CE3"
+      "color": "#ADC99E"
     },
     {
       "id": "tools::Ableton Live",
       "label": "Ableton Live",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Adobe",
       "label": "Adobe",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::AI",
       "label": "AI",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Bass",
       "label": "Bass",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Blender",
       "label": "Blender",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Body",
       "label": "Body",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Cello",
       "label": "Cello",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Clarinet",
       "label": "Clarinet",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Coding",
       "label": "Coding",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Cubase",
       "label": "Cubase",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Da Vinci Resolve",
       "label": "Da Vinci Resolve",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::DIY",
       "label": "DIY",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Dragon Frame",
       "label": "Dragon Frame",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Drums",
       "label": "Drums",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Electronics",
       "label": "Electronics",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Flute",
       "label": "Flute",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Guitar",
       "label": "Guitar",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Logic Pro",
       "label": "Logic Pro",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Max/MSP",
       "label": "Max/MSP",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Piano",
       "label": "Piano",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Procreate",
       "label": "Procreate",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
+    },
+    {
+      "id": "tools::Qanun",
+      "label": "Qanun",
+      "group": "tools",
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Resolume",
       "label": "Resolume",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
+    },
+    {
+      "id": "tools::Saxophone",
+      "label": "Saxophone",
+      "group": "tools",
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Synthesizers",
       "label": "Synthesizers",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Touch Designer",
       "label": "Touch Designer",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Unreal Engine",
       "label": "Unreal Engine",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Violin",
       "label": "Violin",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     },
     {
       "id": "tools::Vocal",
       "label": "Vocal",
       "group": "tools",
-      "color": "#E673C8"
+      "color": "#B8D5E7"
     }
   ],
   "links": [
+    {
+      "source": "artist::Zoya Sargsyan",
+      "target": "role::participant"
+    },
+    {
+      "source": "artist::Zoya Sargsyan",
+      "target": "discipline::Music Production"
+    },
+    {
+      "source": "artist::Zoya Sargsyan",
+      "target": "discipline::Classical Music"
+    },
+    {
+      "source": "artist::Zoya Sargsyan",
+      "target": "discipline::Jazz"
+    },
+    {
+      "source": "artist::Zoya Sargsyan",
+      "target": "skill set::Improvisation"
+    },
+    {
+      "source": "artist::Zoya Sargsyan",
+      "target": "skill set::Instrumentalist"
+    },
     {
       "source": "artist::Anna Terzikyan",
       "target": "role::participant"
@@ -1644,6 +1782,10 @@
     },
     {
       "source": "artist::Nikolai Zheltukhin",
+      "target": "tools::Saxophone"
+    },
+    {
+      "source": "artist::Nikolai Zheltukhin",
       "target": "skill set::Improvisation"
     },
     {
@@ -1812,11 +1954,11 @@
     },
     {
       "source": "artist::Hooman Talakian",
-      "target": "skill set::AI Sound"
+      "target": "skill set::Singing"
     },
     {
       "source": "artist::Hooman Talakian",
-      "target": "skill set::Singing"
+      "target": "skill set::AI sound"
     },
     {
       "source": "artist::Zhiqiang Li",
@@ -1863,55 +2005,59 @@
       "target": "skill set::Engineering"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "role::participant"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "discipline::Animation"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "discipline::Media Art"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "discipline::Installation"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "discipline::Photography"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "discipline::Performance"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "discipline::Visual Art"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "tools::Coding"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "tools::Adobe"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
+      "target": "tools::Touch Designer"
+    },
+    {
+      "source": "artist::Grisha Tsvetkov",
       "target": "skill set::Coding and Patching"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "skill set::Teaching"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "skill set::3D"
     },
     {
-      "source": "artist::Grigory Tsvetkov",
+      "source": "artist::Grisha Tsvetkov",
       "target": "skill set::Design"
     },
     {
@@ -2153,6 +2299,10 @@
     {
       "source": "artist::Gohar Gizhlaryan",
       "target": "discipline::Performance"
+    },
+    {
+      "source": "artist::Gohar Gizhlaryan",
+      "target": "tools::Qanun"
     },
     {
       "source": "artist::Gohar Gizhlaryan",
@@ -2880,6 +3030,10 @@
     },
     {
       "source": "artist::Frederick Bernas",
+      "target": "tools::Saxophone"
+    },
+    {
+      "source": "artist::Frederick Bernas",
       "target": "skill set::Instrumentalist"
     },
     {
@@ -3292,6 +3446,10 @@
     },
     {
       "source": "artist::David Grigoryan",
+      "target": "tools::Saxophone"
+    },
+    {
+      "source": "artist::David Grigoryan",
       "target": "skill set::Instrumentalist"
     },
     {
@@ -3341,6 +3499,10 @@
     {
       "source": "artist::Nelli Vardanyan",
       "target": "tools::Logic Pro"
+    },
+    {
+      "source": "artist::Nelli Vardanyan",
+      "target": "tools::Qanun"
     },
     {
       "source": "artist::Nelli Vardanyan",
@@ -3543,26 +3705,6 @@
       "target": "skill set::Composing"
     },
     {
-      "source": "artist::Anna Khudadyan",
-      "target": "role::participant"
-    },
-    {
-      "source": "artist::Anna Khudadyan",
-      "target": "discipline::Classical Music"
-    },
-    {
-      "source": "artist::Anna Khudadyan",
-      "target": "discipline::Jazz"
-    },
-    {
-      "source": "artist::Anna Khudadyan",
-      "target": "tools::Flute"
-    },
-    {
-      "source": "artist::Anna Khudadyan",
-      "target": "skill set::Instrumentalist"
-    },
-    {
       "source": "artist::Henrik Meliqyan",
       "target": "role::participant"
     },
@@ -3577,6 +3719,10 @@
     {
       "source": "artist::Henrik Meliqyan",
       "target": "tools::Clarinet"
+    },
+    {
+      "source": "artist::Henrik Meliqyan",
+      "target": "tools::Saxophone"
     },
     {
       "source": "artist::Henrik Meliqyan",
@@ -3964,7 +4110,7 @@
     },
     {
       "source": "artist::Davit Aydiyan",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Davit Aydiyan",
@@ -3980,7 +4126,7 @@
     },
     {
       "source": "artist::Vahe Abrahamyan",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Vahe Abrahamyan",
@@ -4004,7 +4150,7 @@
     },
     {
       "source": "artist::Grigor Budaghyan",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Grigor Budaghyan",
@@ -4020,11 +4166,15 @@
     },
     {
       "source": "artist::Grigor Budaghyan",
+      "target": "tools::Saxophone"
+    },
+    {
+      "source": "artist::Grigor Budaghyan",
       "target": "skill set::Instrumentalist"
     },
     {
       "source": "artist::Nikola Chen",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Nikola Chen",
@@ -4088,7 +4238,7 @@
     },
     {
       "source": "artist::Levon Yerkanyan",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Levon Yerkanyan",
@@ -4128,7 +4278,7 @@
     },
     {
       "source": "artist::Mileta Ghazanchyan",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Mileta Ghazanchyan",
@@ -4152,7 +4302,7 @@
     },
     {
       "source": "artist::Evgeniia Kovalchuk",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Evgeniia Kovalchuk",
@@ -4184,7 +4334,7 @@
     },
     {
       "source": "artist::Elizabeth Telnaya",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Elizabeth Telnaya",
@@ -4240,7 +4390,7 @@
     },
     {
       "source": "artist::Nasrin Shojaei",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Nasrin Shojaei",
@@ -4256,7 +4406,7 @@
     },
     {
       "source": "artist::Dubljević Dragan",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Dubljević Dragan",
@@ -4288,7 +4438,7 @@
     },
     {
       "source": "artist::Varvara Misyurina",
-      "target": "role::volunteer / participant"
+      "target": "role::curator's helper"
     },
     {
       "source": "artist::Varvara Misyurina",
@@ -5692,15 +5842,11 @@
     },
     {
       "source": "artist::Christian Ginosyan",
-      "target": "discipline::Art Management"
+      "target": "discipline::Multimedia  Journalism"
     },
     {
       "source": "artist::Christian Ginosyan",
-      "target": "tools::Flute"
-    },
-    {
-      "source": "artist::Christian Ginosyan",
-      "target": "tools::Guitar"
+      "target": "discipline::Production"
     },
     {
       "source": "artist::Christian Ginosyan",
@@ -5737,9 +5883,487 @@
     {
       "source": "artist::Petros Goroyan",
       "target": "skill set::Engineering"
+    },
+    {
+      "source": "artist::Zoya Sargsyan",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Anna Terzikyan",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::Arev Hayrapetyan",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Anton Shanikhin",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Mariam Gevorgyan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Kristina Manucharyan",
+      "target": "project::Documental Art"
+    },
+    {
+      "source": "artist::Inna Ghazaryan",
+      "target": "project::Somatic Practices"
+    },
+    {
+      "source": "artist::Tatiana Iaksina",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::SU JINGXIANG",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::Solomon Fatoma",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Nikolai Zheltukhin",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Tigran Gevorkian",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Wanbo Li",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::Ara Ter-Gabrielyants",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Hooman Talakian",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Zhiqiang Li",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Grisha Tsvetkov",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Lia Potikyan",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Jessica James",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Diren Demir",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Vedant Manwadkar",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::Elena Chadaeva",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Gohar Gizhlaryan",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Rhys Votano",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::Kate Sadovnikova",
+      "target": "project::Zine Art"
+    },
+    {
+      "source": "artist::Zygmund de Somogyi",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Olivia Melkonian",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Evgeny Bylina",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Yulia Nemova",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::Hugo Pinto",
+      "target": "project::Sama Soundbath"
+    },
+    {
+      "source": "artist::Hannah Koshgarian",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Louise Gorm",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Maksim Sergeev",
+      "target": "project::Sama Soundbath"
+    },
+    {
+      "source": "artist::Matteo Cenerini",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Artak Kostandian",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Veronika Poghosyan",
+      "target": "project::Documental Art"
+    },
+    {
+      "source": "artist::Evgeniia Starikova",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::Yuliia Potapova",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Aleksandr Kuritsyn",
+      "target": "project::Zine Art"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "project::Zine Art"
+    },
+    {
+      "source": "artist::Valentin Ryzhov",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Van Sadagh",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Lubomir Andrei",
+      "target": "project::Somatic Practices"
+    },
+    {
+      "source": "artist::Frederick Bernas",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Minami KINTO",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Fernando Damon",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Anton Khlabov",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Varder Baghdasaryan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Karine Avetisyan",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Aleksandra Zakaryan",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Vardui Mirzoyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Anna Ghazaryan Vladimirskaya",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::Elen Poghosyan",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Ana Kipshidze",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Anna Kalenchyan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Shahane Harutyunyan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::David Grigoryan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Aleksandr Veselov",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Nelli Vardanyan",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Kristina Iskandaryan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Anna Esaian",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::Ani Yeghoyan",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Syuzanna Ginosyan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Kristine Danielyan",
+      "target": "project::Somatic Practices"
+    },
+    {
+      "source": "artist::Arno Melkonyan",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Maria Tsharakyan",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Henrik Meliqyan",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Svetlana Hakobyan",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Ekaterina Ishkhanova",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Vardan Sargsyan",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Elena Korkina",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Carolina Zakharova",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Toma Aydinyan",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Syuzanna Misakyan",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Anika Krbetschek",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Dmitrii Nenadyshin",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Juliette Martirosyan",
+      "target": "project::Documental Art"
+    },
+    {
+      "source": "artist::Julia Krivosheenko",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::Emilya Nikoghosyan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Davit Aydiyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Vahe Abrahamyan",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Grigor Budaghyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Nikola Chen",
+      "target": "project::Sama Soundbath"
+    },
+    {
+      "source": "artist::Levon Yerkanyan",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Mileta Ghazanchyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Evgeniia Kovalchuk",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Elizabeth Telnaya",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Nasrin Shojaei",
+      "target": "project::Somatic Practices"
+    },
+    {
+      "source": "artist::Dubljević Dragan",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Varvara Misyurina",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Venera Kazarova",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Artem Semenov",
+      "target": "project::Documental Art"
+    },
+    {
+      "source": "artist::Evgeniy Sharakshane",
+      "target": "project::Documental Art"
+    },
+    {
+      "source": "artist::Arman Peshtmaljyan",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Shahen Khandkaryan (Shhau)",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Kai Khachatryan",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Nadya Xyxu",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::Misak Samokatian",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::Gevorg Grigoryan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Tanya Chizhikova",
+      "target": "project::Somatic Practices"
+    },
+    {
+      "source": "artist::Aram Hovhannisyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Sergey Umroyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Tigran Suchyan",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Mesrop Sarkisyan",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Ben Wheeler",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Zhanna Davtyan",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Jeanne Kormina",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Dima Ustinov",
+      "target": "project::Sama Soundbath"
+    },
+    {
+      "source": "artist::Andronik Khachiian",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::Andriesh Gandrabur",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Arthur Atayan",
+      "target": "project::Zine Art"
+    },
+    {
+      "source": "artist::Daria Sadovnikova",
+      "target": "project::Set Design"
+    },
+    {
+      "source": "artist::Karina Malik",
+      "target": "project::Set Design"
+    },
+    {
+      "source": "artist::Aleksei Leontev",
+      "target": "project::Set Design"
+    },
+    {
+      "source": "artist::Yurii Avdeev",
+      "target": "project::Set Design"
     }
   ],
   "artists": {
+    "artist::Zoya Sargsyan": {
+      "name": "Bokusho",
+      "legal_name": "Zoya Sargsyan",
+      "photo": "https://drive.google.com/thumbnail?id=1w6WR8R5XsoJA5goB8LlY0a1M0_9nRlhB",
+      "telegram": "(+37477797311)",
+      "email": "",
+      "social": "",
+      "country": "Armenia",
+      "role": "participant",
+      "projects": "Notations '26",
+      "discipline": "Music Production, Classical Music, Jazz",
+      "tools": "",
+      "skill set": "Improvisation, Instrumentalist",
+      "lab": "",
+      "department": "",
+      "instruments": "",
+      "project": "Neo-Tribes"
+    },
     "artist::Anna Terzikyan": {
       "name": "Anna Vahrami",
       "legal_name": "Anna Terzikyan",
@@ -5755,7 +6379,8 @@
       "skill set": "Composing, Improvisation, Singing, Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Installation"
     },
     "artist::Arev Hayrapetyan": {
       "name": "Arev",
@@ -5772,7 +6397,8 @@
       "skill set": "Instrumentalist, Composing",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Assembling Ritual"
     },
     "artist::Anton Shanikhin": {
       "name": "Tony “Everydaypony” Shanikhin",
@@ -5789,7 +6415,8 @@
       "skill set": "Composing, Sampling, Sound Synthesis, Instrumentalist, Coding and Patching",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Mariam Gevorgyan": {
       "name": "Mariam Gevorgyan",
@@ -5806,7 +6433,8 @@
       "skill set": "Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::Kristina Manucharyan": {
       "name": "Kristina Arark Manucharyan",
@@ -5823,7 +6451,8 @@
       "skill set": "Illustration and Painting, Sculpture",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Documental Art"
     },
     "artist::Inna Ghazaryan": {
       "name": "Inna Ghazaryan",
@@ -5840,7 +6469,8 @@
       "skill set": "Teaching, Improvisation, Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Somatic Practices"
     },
     "artist::Tatiana Iaksina": {
       "name": "helical_worm",
@@ -5857,7 +6487,8 @@
       "skill set": "Coding and Patching, Illustration and Painting, Instrument Design, Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Contemporary Art"
     },
     "artist::SU JINGXIANG": {
       "name": "JAXTON SU",
@@ -5874,7 +6505,8 @@
       "skill set": "Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Installation"
     },
     "artist::Solomon Fatoma": {
       "name": "solo's beat",
@@ -5891,7 +6523,8 @@
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Nikolai Zheltukhin": {
       "name": "Nikolai Zheltukhin (yomoyo)",
@@ -5904,11 +6537,12 @@
       "role": "participant",
       "projects": "Notations '26",
       "discipline": "Music Production, Jazz",
-      "tools": "Flute, Guitar, Bass, Piano",
+      "tools": "Flute, Guitar, Bass, Piano, Saxophone",
       "skill set": "Improvisation, Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Neo-Tribes"
     },
     "artist::Tigran Gevorkian": {
       "name": "Tigran Gevorkian",
@@ -5925,7 +6559,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Art To Wear"
     },
     "artist::Wanbo Li": {
       "name": "Ember Li",
@@ -5942,7 +6577,8 @@
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Contemporary Art"
     },
     "artist::Ara Ter-Gabrielyants": {
       "name": "Ara Ter-Gabrielyants",
@@ -5959,7 +6595,8 @@
       "skill set": "Singing, Instrumentalist, Composing",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Hooman Talakian": {
       "name": "Hooman Talakian",
@@ -5973,10 +6610,11 @@
       "projects": "Notations '26",
       "discipline": "Performance, Music Production, Sound Design, Media Art, Electronics",
       "tools": "Vocal, Piano, Coding",
-      "skill set": "Composing, Sampling, Mixing and Mastering, Sound Recording, Teaching, Coding and Patching, AI Sound, Singing",
+      "skill set": "Composing, Sampling, Mixing and Mastering, Sound Recording, Teaching, Coding and Patching, Singing, AI sound",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Reverse Tower Ritual"
     },
     "artist::Zhiqiang Li": {
       "name": "Lee",
@@ -5993,11 +6631,12 @@
       "skill set": "Sound Recording, Research, Instrument Design, Engineering",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Reverse Tower Ritual"
     },
-    "artist::Grigory Tsvetkov": {
-      "name": "Grigory Tsvetkov",
-      "legal_name": "Grigory Tsvetkov",
+    "artist::Grisha Tsvetkov": {
+      "name": "Grisha Tsvetkov",
+      "legal_name": "Grisha Tsvetkov",
       "photo": "https://drive.google.com/thumbnail?id=1fUU8hrYDz0kHzqffWMEYHCA2gKTfb18v",
       "telegram": "&#64;g_tsvet",
       "email": "",
@@ -6006,11 +6645,12 @@
       "role": "participant",
       "projects": "Notations '26",
       "discipline": "Animation, Media Art, Installation, Photography, Performance, Visual Art",
-      "tools": "Coding, Adobe",
+      "tools": "Coding, Adobe, Touch Designer",
       "skill set": "Coding and Patching, Teaching, 3D, Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::Lia Potikyan": {
       "name": "pistak",
@@ -6027,7 +6667,8 @@
       "skill set": "Composing, Instrument Design, Engineering, Illustration and Painting, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Reverse Tower Ritual"
     },
     "artist::Jessica James": {
       "name": "Winter",
@@ -6044,7 +6685,8 @@
       "skill set": "Composing, Improvisation, Singing, Teaching, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Diren Demir": {
       "name": "DİREN",
@@ -6061,7 +6703,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Ambisonic Installation"
     },
     "artist::Vedant Manwadkar": {
       "name": "Vedant Manwadkar",
@@ -6078,7 +6721,8 @@
       "skill set": "Composing, Coding and Patching, Design, Research, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Installation"
     },
     "artist::Elena Chadaeva": {
       "name": "Chadaeva",
@@ -6095,7 +6739,8 @@
       "skill set": "Coding and Patching, Instrument Design, Engineering",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Reverse Tower Ritual"
     },
     "artist::Gohar Gizhlaryan": {
       "name": "Gohar Gizhlaryan",
@@ -6108,11 +6753,12 @@
       "role": "participant",
       "projects": "Notations '26",
       "discipline": "Visual Art, Photography, Writing, Classical Music, Performance",
-      "tools": "",
+      "tools": "Qanun",
       "skill set": "Improvisation, Illustration and Painting, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Rhys Votano": {
       "name": "weight of light",
@@ -6129,7 +6775,8 @@
       "skill set": "Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Contemporary Art"
     },
     "artist::Kate Sadovnikova": {
       "name": "Kate Sadovnikova",
@@ -6146,7 +6793,8 @@
       "skill set": "Composing, Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Zine Art"
     },
     "artist::Zygmund de Somogyi": {
       "name": "Zygmund de Somogyi",
@@ -6163,7 +6811,8 @@
       "skill set": "Composing, Teaching",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Olivia Melkonian": {
       "name": "khanum",
@@ -6180,7 +6829,8 @@
       "skill set": "Composing, Sound Recording, Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Evgeny Bylina": {
       "name": "Evgeny Bylina",
@@ -6197,7 +6847,8 @@
       "skill set": "Research, Teaching, Improvisation, Instrumentalist, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Neo-Tribes"
     },
     "artist::Yulia Nemova": {
       "name": "Yulia Nemova",
@@ -6214,7 +6865,8 @@
       "skill set": "Teaching, AI Visual, 3D, Illustration and Painting, Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Contemporary Art"
     },
     "artist::Hugo Pinto": {
       "name": "Kino Pinto",
@@ -6231,7 +6883,8 @@
       "skill set": "Composing, Instrumentalist, Sound Recording",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Sama Soundbath"
     },
     "artist::Hannah Koshgarian": {
       "name": "Hannah Koshgarian",
@@ -6248,7 +6901,8 @@
       "skill set": "Instrumentalist, Arranging, Research, Improvisation",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Louise Gorm": {
       "name": "Louise Gorm",
@@ -6265,7 +6919,8 @@
       "skill set": "Improvisation, Composing, Research, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Maksim Sergeev": {
       "name": "Maksim Sergeev",
@@ -6282,7 +6937,8 @@
       "skill set": "Composing, Singing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Sama Soundbath"
     },
     "artist::Matteo Cenerini": {
       "name": "Matteo Cenerini",
@@ -6299,7 +6955,8 @@
       "skill set": "Composing, Arranging, Improvisation, Instrumentalist, Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Artak Kostandian": {
       "name": "dreamy0psis",
@@ -6316,10 +6973,11 @@
       "skill set": "Sculpture, 3D, Composing",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Veronika Poghosyan": {
-      "name": "Veronika Poghosyan",
+      "name": "Who Is Veronika Poghosyan",
       "legal_name": "Veronika Poghosyan",
       "photo": "https://drive.google.com/thumbnail?id=170pdeM3nZBcKTOAsIIXeU_rwC3g2CHrJ",
       "telegram": "&#64;mermaidbuttercookies",
@@ -6333,7 +6991,8 @@
       "skill set": "Sculpture, Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Documental Art"
     },
     "artist::Evgeniia Starikova": {
       "name": "Evgeniia Starikova",
@@ -6350,7 +7009,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Contemporary Art"
     },
     "artist::Yuliia Potapova": {
       "name": "Yuliia Potapova",
@@ -6367,7 +7027,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Assembling Ritual"
     },
     "artist::Aleksandr Kuritsyn": {
       "name": "blue pencil",
@@ -6384,7 +7045,8 @@
       "skill set": "Research, Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Zine Art"
     },
     "artist::Melanya Torosyan": {
       "name": "Marl Superstarl",
@@ -6401,7 +7063,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Zine Art"
     },
     "artist::Valentin Ryzhov": {
       "name": "zvukofor",
@@ -6410,7 +7073,7 @@
       "telegram": "&#64;zvukofor",
       "email": "",
       "social": "http://instagram.com/zvukofor",
-      "country": "Russia",
+      "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
       "discipline": "Music Production, Sound Design, Visual Art, Filming",
@@ -6418,7 +7081,8 @@
       "skill set": "Sound Recording, Instrumentalist, Sound Synthesis, Engineering",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Van Sadagh": {
       "name": "Van Sadagh",
@@ -6435,7 +7099,8 @@
       "skill set": "Composing, Singing, Teaching, Illustration and Painting, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Lubomir Andrei": {
       "name": "Lubomir Andrei",
@@ -6452,7 +7117,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Somatic Practices"
     },
     "artist::Frederick Bernas": {
       "name": "Freddie Fiasco",
@@ -6465,11 +7131,12 @@
       "role": "participant",
       "projects": "Notations '26",
       "discipline": "Filming, Media Art, Music Production, Sound Design",
-      "tools": "",
+      "tools": "Saxophone",
       "skill set": "Instrumentalist, Composing",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::Minami KINTO": {
       "name": "Minami KINTO",
@@ -6486,7 +7153,8 @@
       "skill set": "Research, Illustration and Painting, Sculpture",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Art To Wear"
     },
     "artist::Fernando Damon": {
       "name": "Fernando Damon",
@@ -6503,7 +7171,8 @@
       "skill set": "Sampling, Sound Synthesis, Instrumentalist, Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Neo-Tribes"
     },
     "artist::Anton Khlabov": {
       "name": "Anton Khlabov",
@@ -6520,7 +7189,8 @@
       "skill set": "Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::Varder Baghdasaryan": {
       "name": "Qi",
@@ -6537,7 +7207,8 @@
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Karine Avetisyan": {
       "name": "Kariné",
@@ -6554,7 +7225,8 @@
       "skill set": "Composing, Sound Synthesis, Singing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Aleksandra Zakaryan": {
       "name": "XANDRA",
@@ -6571,7 +7243,8 @@
       "skill set": "Sound Recording, Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Ambisonic Installation"
     },
     "artist::Vardui Mirzoyan": {
       "name": "Vardui Mirzoyan",
@@ -6588,7 +7261,8 @@
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Anna Ghazaryan Vladimirskaya": {
       "name": "Anna Ghazaryan Vladimirskaya",
@@ -6605,7 +7279,8 @@
       "skill set": "Design, Sculpture, Coding and Patching, Research, 3D, Engineering",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Installation"
     },
     "artist::Elen Poghosyan": {
       "name": "Elen Poghosyan",
@@ -6622,7 +7297,8 @@
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Ana Kipshidze": {
       "name": "Anuka Kipshidze",
@@ -6639,7 +7315,8 @@
       "skill set": "Instrumentalist, Composing, Sound Recording, Instrument Design, Engineering, Mixing and Mastering",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Anna Kalenchyan": {
       "name": "Anna Kalenchyan",
@@ -6656,12 +7333,13 @@
       "skill set": "Design, 3D, AI Visual",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::Shahane Harutyunyan": {
       "name": "22194 (Shahane)",
       "legal_name": "Shahane Harutyunyan",
-      "photo": "",
+      "photo": "https://drive.google.com/thumbnail?id=1xdlTK-DPAW0MAy8VfdHbcNiJAKVeUyAK",
       "telegram": "&#64;N22195",
       "email": "",
       "social": "",
@@ -6673,7 +7351,8 @@
       "skill set": "Coding and Patching",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::David Grigoryan": {
       "name": "David Grigoryan",
@@ -6686,11 +7365,12 @@
       "role": "participant",
       "projects": "Notations '26",
       "discipline": "Classical Music, Set Design, Visual Art",
-      "tools": "",
+      "tools": "Saxophone",
       "skill set": "Instrumentalist, Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Aleksandr Veselov": {
       "name": "Aleksandr Veselov",
@@ -6707,7 +7387,8 @@
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Assembling Ritual"
     },
     "artist::Nelli Vardanyan": {
       "name": "Echoes in dust",
@@ -6720,11 +7401,12 @@
       "role": "participant",
       "projects": "Notations '26",
       "discipline": "Music Production, Sound Design, Classical Music",
-      "tools": "Ableton Live, Logic Pro",
+      "tools": "Ableton Live, Logic Pro, Qanun",
       "skill set": "Instrumentalist, Composing, Sound Recording",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Kristina Iskandaryan": {
       "name": "Kiara",
@@ -6741,7 +7423,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::Anna Esaian": {
       "name": "esai",
@@ -6758,7 +7441,8 @@
       "skill set": "Sculpture, Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Installation"
     },
     "artist::Ani Yeghoyan": {
       "name": "NODE",
@@ -6775,7 +7459,8 @@
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Ambisonic Installation"
     },
     "artist::Syuzanna Ginosyan": {
       "name": "Suzy Ginosyan",
@@ -6792,7 +7477,8 @@
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::Kristine Danielyan": {
       "name": "Christina Danielyan",
@@ -6809,7 +7495,8 @@
       "skill set": "Teaching",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Somatic Practices"
     },
     "artist::Arno Melkonyan": {
       "name": "Arno Melkonyan",
@@ -6826,7 +7513,8 @@
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Neo-Tribes"
     },
     "artist::Maria Tsharakyan": {
       "name": "manu",
@@ -6843,24 +7531,8 @@
       "skill set": "Instrumentalist, Teaching, Engineering, Composing",
       "lab": "",
       "department": "",
-      "instruments": ""
-    },
-    "artist::Anna Khudadyan": {
-      "name": "Anna Khudadyan",
-      "legal_name": "Anna Khudadyan",
-      "photo": "https://drive.google.com/thumbnail?id=1J9khPd_g8kPx55mLoGI4vIeTj_zaZvpg",
-      "telegram": "Anna_yn",
-      "email": "",
-      "social": "https://www.instagram.com/anna_khudadyan___/",
-      "country": "Armenia",
-      "role": "participant",
-      "projects": "Notations '26",
-      "discipline": "Classical Music, Jazz",
-      "tools": "Flute",
-      "skill set": "Instrumentalist",
-      "lab": "",
-      "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Henrik Meliqyan": {
       "name": "Henrik Meliqyan",
@@ -6873,11 +7545,12 @@
       "role": "participant",
       "projects": "Notations '26",
       "discipline": "Classical Music, Jazz",
-      "tools": "Clarinet",
+      "tools": "Clarinet, Saxophone",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Neo-Tribes"
     },
     "artist::Svetlana Hakobyan": {
       "name": "Svetlana Hakobyan",
@@ -6894,7 +7567,8 @@
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Neo-Tribes"
     },
     "artist::Ekaterina Ishkhanova": {
       "name": "ishkhan",
@@ -6911,7 +7585,8 @@
       "skill set": "Instrumentalist, Singing, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Reverse Tower Ritual"
     },
     "artist::Vardan Sargsyan": {
       "name": "duke",
@@ -6928,7 +7603,8 @@
       "skill set": "Composing, Arranging, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Ambisonic Installation"
     },
     "artist::Elena Korkina": {
       "name": "Elena Korkina",
@@ -6945,7 +7621,8 @@
       "skill set": "Research, Teaching",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Assembling Ritual"
     },
     "artist::Carolina Zakharova": {
       "name": "Carolina Zakharova",
@@ -6962,7 +7639,8 @@
       "skill set": "Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Art To Wear"
     },
     "artist::Toma Aydinyan": {
       "name": "Toma Aydinyan",
@@ -6979,7 +7657,8 @@
       "skill set": "Improvisation",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Art To Wear"
     },
     "artist::Syuzanna Misakyan": {
       "name": "Syuzan Misakyan",
@@ -6996,7 +7675,8 @@
       "skill set": "Teaching",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Art To Wear"
     },
     "artist::Anika Krbetschek": {
       "name": "Anika Krbetschek",
@@ -7013,7 +7693,8 @@
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Assembling Ritual"
     },
     "artist::Dmitrii Nenadyshin": {
       "name": "Ptichka Soe",
@@ -7030,7 +7711,8 @@
       "skill set": "Composing, Singing, Instrumentalist, Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Reverse Tower Ritual"
     },
     "artist::Juliette Martirosyan": {
       "name": "Juliette Martirosyan",
@@ -7047,7 +7729,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Documental Art"
     },
     "artist::Julia Krivosheenko": {
       "name": "Julia Krivosheenko",
@@ -7064,7 +7747,8 @@
       "skill set": "Coding and Patching, Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Installation"
     },
     "artist::Emilya Nikoghosyan": {
       "name": "Emilya Nikoghosyan",
@@ -7081,7 +7765,8 @@
       "skill set": "Coding and Patching, Design, Engineering, 3D",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::Davit Aydiyan": {
       "name": "Davit Aydiyan",
@@ -7091,14 +7776,15 @@
       "email": "",
       "social": "",
       "country": "Armenia / Germany",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Classical Music",
       "tools": "Violin",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Vahe Abrahamyan": {
       "name": "Nerøx",
@@ -7108,14 +7794,15 @@
       "email": "",
       "social": "https://www.instagram.com/vahe.abrahamyan___?igsh=MTFyanFsazB0OHJ4eg%3D%3D&utm_source=qr",
       "country": "Armenia / Germany",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Electronics, Music Production, Classical Music",
       "tools": "Ableton Live",
       "skill set": "Composing",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Grigor Budaghyan": {
       "name": "Grigor Budaghyan",
@@ -7125,14 +7812,15 @@
       "email": "",
       "social": "https://www.instagram.com/grig_budaghyan/",
       "country": "Armenia",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Classical Music, Jazz",
-      "tools": "Clarinet",
+      "tools": "Clarinet, Saxophone",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Nikola Chen": {
       "name": "Nikola Chen",
@@ -7142,14 +7830,15 @@
       "email": "",
       "social": "https://www.instagram.com/nikolachenmusic/",
       "country": "Russia / Armenia",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Electronics, Music Production, Sound Design, Classical Music, Media Art, Performance",
       "tools": "Piano, Clarinet, Synthesizers, Electronics",
       "skill set": "Composing, Sound Synthesis, Improvisation, Instrumentalist, Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Sama Soundbath"
     },
     "artist::Levon Yerkanyan": {
       "name": "Lerk",
@@ -7159,14 +7848,15 @@
       "email": "",
       "social": "https://www.instagram.com/leeerk/",
       "country": "Armenia",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Classical Music, Music Production, Photography",
       "tools": "Vocal, Guitar, Ableton Live, Logic Pro",
       "skill set": "Singing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Mileta Ghazanchyan": {
       "name": "MILETA",
@@ -7176,14 +7866,15 @@
       "email": "",
       "social": "https://www.instagram.com/mileta_gn?igsh=MTJrd2sxcnViYmZuZA%3D%3D&utm_source=qr",
       "country": "Armenia",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Jazz, Music Production",
       "tools": "Piano",
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Evgeniia Kovalchuk": {
       "name": "arnet",
@@ -7193,14 +7884,15 @@
       "email": "",
       "social": "https://www.instagram.com/skinny.wrist?igsh=MWlpcGpiMDZmYzF2cg%3D%3D&utm_source=qr",
       "country": "Armenia",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Electronics, Music Production, Visual Art",
       "tools": "Ableton Live, Synthesizers",
       "skill set": "Design, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Ambisonic Installation"
     },
     "artist::Elizabeth Telnaya": {
       "name": "Black Babette",
@@ -7210,14 +7902,15 @@
       "email": "",
       "social": "https://www.instagram.com/babette.deziree/",
       "country": "Russia",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Music Production, Sound Design, Performance",
       "tools": "Ableton Live, Synthesizers, Electronics, Body",
       "skill set": "Composing, Sound Recording, Sound Synthesis, Sampling, Singing, Improvisation",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Reverse Tower Ritual"
     },
     "artist::Nasrin Shojaei": {
       "name": "Nasrin",
@@ -7227,14 +7920,15 @@
       "email": "",
       "social": "https://www.instagram.com/nasr.sho.injaei/",
       "country": "Iran",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Performance",
       "tools": "Body",
       "skill set": "Improvisation",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Somatic Practices"
     },
     "artist::Dubljević Dragan": {
       "name": "Dubljević Dragan",
@@ -7244,14 +7938,15 @@
       "email": "",
       "social": "https://www.instagram.com/dubljevic_dragan/",
       "country": "Montenegro",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Music Production, Production, Sound Design",
       "tools": "Ableton Live, Electronics",
       "skill set": "Composing, Arranging",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Varvara Misyurina": {
       "name": "Varvara Misyurina",
@@ -7261,14 +7956,15 @@
       "email": "",
       "social": "",
       "country": "Russia",
-      "role": "volunteer / participant",
+      "role": "curator's helper",
       "projects": "Notations '26",
       "discipline": "Music Production",
       "tools": "Ableton Live",
       "skill set": "Composing",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Reverse Tower Ritual"
     },
     "artist::Venera Kazarova": {
       "name": "Venera Kazarova",
@@ -7285,7 +7981,8 @@
       "skill set": "Sculpture, Illustration and Painting, Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Art To Wear"
     },
     "artist::Artem Semenov": {
       "name": "Artem Semenov",
@@ -7302,7 +7999,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Documental Art"
     },
     "artist::Evgeniy Sharakshane": {
       "name": "Evgeniy Sharakshane",
@@ -7319,7 +8017,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Documental Art"
     },
     "artist::Arman Peshtmaljyan": {
       "name": "Arman Peshtmaljyan",
@@ -7336,7 +8035,8 @@
       "skill set": "Composing, Instrumentalist, Arranging, Instrument Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Shahen Khandkaryan (Shhau)": {
       "name": "Shhau",
@@ -7353,7 +8053,8 @@
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling, Mixing and Mastering, Instrument Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Music Production"
     },
     "artist::Kai Khachatryan": {
       "name": "Kai Khachatryan",
@@ -7370,7 +8071,8 @@
       "skill set": "Composing, Sound Recording, Sound Synthesis, Sampling, Mixing and Mastering",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Ambisonic Installation"
     },
     "artist::Nadya Xyxu": {
       "name": "Nadya Xyxu",
@@ -7387,7 +8089,8 @@
       "skill set": "Sound Synthesis, Coding and Patching, Instrument Design, Illustration and Painting, Singing, Sound Recording",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Installation"
     },
     "artist::Misak Samokatian": {
       "name": "Misak Samokatian",
@@ -7404,7 +8107,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Installation"
     },
     "artist::Gevorg Grigoryan": {
       "name": "Gevorg Grigoryan",
@@ -7421,7 +8125,8 @@
       "skill set": "Coding and Patching, AI visual",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Video Art"
     },
     "artist::Tanya Chizhikova": {
       "name": "Tanya Chizhikova",
@@ -7438,7 +8143,8 @@
       "skill set": "Improvisation",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Somatic Practices"
     },
     "artist::Aram Hovhannisyan": {
       "name": "Aram Hovhannisyan",
@@ -7455,7 +8161,8 @@
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Sergey Umroyan": {
       "name": "Sergey Umroyan",
@@ -7472,13 +8179,14 @@
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "The Refrain"
     },
     "artist::Tigran Suchyan": {
       "name": "Tigran Suchyan",
       "legal_name": "Tigran Suchyan",
       "photo": "https://drive.google.com/thumbnail?id=1oroJE3idyh9ohx40_2nAowZsNnWyz5UF",
-      "telegram": "phone number: +374 99 392285",
+      "telegram": "(+37499392285)",
       "email": "",
       "social": "https://www.instagram.com/tigrantoti/",
       "country": "Armenia",
@@ -7489,7 +8197,8 @@
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Neo-Tribes"
     },
     "artist::Mesrop Sarkisyan": {
       "name": "Mesrop Sarkisyan",
@@ -7506,7 +8215,8 @@
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Neo-Tribes"
     },
     "artist::Ben Wheeler": {
       "name": "Ben Wheeler",
@@ -7523,7 +8233,8 @@
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Zhanna Davtyan": {
       "name": "Zhanna Davtyan",
@@ -7540,7 +8251,8 @@
       "skill set": "Composing, Singing, Improvisation",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Communitas"
     },
     "artist::Jeanne Kormina": {
       "name": "Jeanne Kormina",
@@ -7557,7 +8269,8 @@
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Assembling Ritual"
     },
     "artist::Dima Ustinov": {
       "name": "Dima Ustinov",
@@ -7574,7 +8287,8 @@
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling, Mixing and Mastering",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Sama Soundbath"
     },
     "artist::Andronik Khachiian": {
       "name": "Andronik Khachiian",
@@ -7591,7 +8305,8 @@
       "skill set": "AI visual, Design, Illustration and Painting, Improvisation",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Contemporary Art"
     },
     "artist::Andriesh Gandrabur": {
       "name": "Andriesh Gandrabur",
@@ -7608,7 +8323,8 @@
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling, Mixing and Mastering, Research, Improvisation, Teaching",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Reverse Tower Ritual"
     },
     "artist::Arthur Atayan": {
       "name": "Arthur Atayan",
@@ -7625,7 +8341,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Zine Art"
     },
     "artist::Daria Sadovnikova": {
       "name": "Daria Sadovnikova",
@@ -7642,7 +8359,8 @@
       "skill set": "Composing, Sound Recording, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Set Design"
     },
     "artist::Karina Malik": {
       "name": "Karina Malik",
@@ -7659,7 +8377,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Set Design"
     },
     "artist::Aleksei Leontev": {
       "name": "Aleksei Leontev",
@@ -7676,7 +8395,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Set Design"
     },
     "artist::Yurii Avdeev": {
       "name": "Yurii Avdeev",
@@ -7693,7 +8413,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": "Set Design"
     },
     "artist::Georgy Safarov": {
       "name": "Georgy Safarov",
@@ -7710,7 +8431,8 @@
       "skill set": "Sampling",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Lusine MLKE-Galstyan": {
       "name": "Lusine MLKE-Galstyan",
@@ -7727,7 +8449,8 @@
       "skill set": "Composing, Instrumentalist, Arranging",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Shoghakat MLKE-Galstyan": {
       "name": "Shoghakat MLKE-Galstyan",
@@ -7744,7 +8467,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Uliana Pyadushkina": {
       "name": "Uliana Pyadushkina",
@@ -7761,7 +8485,8 @@
       "skill set": "Sound Recording, Sound Synthesis, Sampling, Coding and Patching, AI visual, 3D, Design, Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Sonya Ovchinnikova": {
       "name": "Sonya Ovchinnikova",
@@ -7778,7 +8503,8 @@
       "skill set": "Sound Recording, Arranging, Singing",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Syuzi Juharyan": {
       "name": "Syuzi Juharyan",
@@ -7795,7 +8521,8 @@
       "skill set": "Singing",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Evgeniy Lyalin": {
       "name": "Evgeniy Lyalin",
@@ -7812,7 +8539,8 @@
       "skill set": "Singing",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Nikita Maksimenko": {
       "name": "Nikita Maksimenko",
@@ -7829,7 +8557,8 @@
       "skill set": "Engineering, Sound Synthesis, Sound Recording, Composing, Sampling, Coding and Patching",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Vladimir Gurskii": {
       "name": "Vladimir Gurskii",
@@ -7846,7 +8575,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Maria Makora": {
       "name": "Maria Makora",
@@ -7863,7 +8593,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Mitya Lyalin": {
       "name": "Mitya Lyalin",
@@ -7880,7 +8611,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Flora Gevorgyan": {
       "name": "Flora Gevorgyan",
@@ -7897,7 +8629,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Lin Paravyan": {
       "name": "Lin Paravyan",
@@ -7914,7 +8647,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Natalia Kupriyanova": {
       "name": "Natalia Kupriyanova",
@@ -7931,7 +8665,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Daniil Yakushov": {
       "name": "Daniil Yakushov",
@@ -7948,7 +8683,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Aksanna Poghosyan": {
       "name": "Aksanna Poghosyan",
@@ -7965,7 +8701,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Agatha Karapetyan": {
       "name": "Agatha Karapetyan",
@@ -7982,7 +8719,8 @@
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Liz Victorova": {
       "name": "Liz Victorova",
@@ -7999,24 +8737,26 @@
       "skill set": "Design",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Christian Ginosyan": {
       "name": "Christian Ginosyan",
       "legal_name": "Christian Ginosyan",
-      "photo": "https://drive.google.com/thumbnail?id=1D19_WSQ6ZCuZGlktaTm1ewrIOQzY2aKs",
+      "photo": "https://drive.google.com/thumbnail?id=1LgMvvAUyTfwjMjEcKhjuYeGJDPCrJR-a",
       "telegram": "&#64;antarapan",
       "email": "",
       "social": "https://www.instagram.com/antarapan/?hl=en",
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
-      "discipline": "Writing, Art Management",
-      "tools": "Flute, Guitar",
+      "discipline": "Writing, Multimedia  Journalism, Production",
+      "tools": "",
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     },
     "artist::Petros Goroyan": {
       "name": "Petros Goroyan",
@@ -8033,16 +8773,35 @@
       "skill set": "Sound Recording, Mixing and Mastering, Engineering",
       "lab": "",
       "department": "",
-      "instruments": ""
+      "instruments": "",
+      "project": ""
     }
   },
   "filter_options": {
     "role": [
       "curator",
+      "curator's helper",
       "hosq team",
       "participant",
-      "verticurator",
-      "volunteer / participant"
+      "verticurator"
+    ],
+    "project": [
+      "Ambisonic Installation",
+      "Art To Wear",
+      "Assembling Ritual",
+      "Communitas",
+      "Contemporary Art",
+      "Documental Art",
+      "Installation",
+      "Music Production",
+      "Neo-Tribes",
+      "Reverse Tower Ritual",
+      "Sama Soundbath",
+      "Set Design",
+      "Somatic Practices",
+      "The Refrain",
+      "Video Art",
+      "Zine Art"
     ],
     "discipline": [
       "Acting",
@@ -8058,6 +8817,7 @@
       "Jazz",
       "Light",
       "Media Art",
+      "Multimedia  Journalism",
       "Music Production",
       "Performance",
       "Photography",
@@ -8067,6 +8827,29 @@
       "Theatre",
       "Visual Art",
       "Writing"
+    ],
+    "skill set": [
+      "3D",
+      "AI sound",
+      "AI visual",
+      "AI Visual",
+      "Arranging",
+      "Coding and Patching",
+      "Composing",
+      "Design",
+      "Engineering",
+      "Illustration and Painting",
+      "Improvisation",
+      "Instrument Design",
+      "Instrumentalist",
+      "Mixing and Mastering",
+      "Research",
+      "Sampling",
+      "Sculpture",
+      "Singing",
+      "Sound Recording",
+      "Sound Synthesis",
+      "Teaching"
     ],
     "tools": [
       "Ableton Live",
@@ -8090,39 +8873,19 @@
       "Max/MSP",
       "Piano",
       "Procreate",
+      "Qanun",
       "Resolume",
+      "Saxophone",
       "Synthesizers",
       "Touch Designer",
       "Unreal Engine",
       "Violin",
       "Vocal"
-    ],
-    "skill set": [
-      "3D",
-      "AI Sound",
-      "AI Visual",
-      "AI visual",
-      "Arranging",
-      "Coding and Patching",
-      "Composing",
-      "Design",
-      "Engineering",
-      "Illustration and Painting",
-      "Improvisation",
-      "Instrument Design",
-      "Instrumentalist",
-      "Mixing and Mastering",
-      "Research",
-      "Sampling",
-      "Sculpture",
-      "Singing",
-      "Sound Recording",
-      "Sound Synthesis",
-      "Teaching"
     ]
   },
   "filter_order": [
     "role",
+    "project",
     "discipline",
     "tools",
     "skill set"
