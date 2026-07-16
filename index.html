@@ -658,6 +658,7 @@
     const FEATURE_COLORS = {
       artist: '#5C5255',
       role: '#EAE2D6',
+      project: '#FFE2C4',
       discipline: '#F4A8B3',
       'skill set': '#ADC99E',
       tools: '#B8D5E7',
@@ -972,6 +973,7 @@
       push(artist.city);
       push(artist.lab);
       push(artist.department);
+      push(artist.project);
       push(artist.discipline);
       push(artist.tools);
       push(artist.instruments);
@@ -980,7 +982,7 @@
       push(decodeAt(artist.telegram || ''));
       push(artist.email);
       push(artist.social);
-      ['discipline', 'tools', 'instruments', 'skill set', 'role'].forEach(key => {
+      ['project', 'discipline', 'tools', 'instruments', 'skill set', 'role'].forEach(key => {
         splitCsvTags(artist[key]).forEach(push);
       });
       return fields;
@@ -1088,7 +1090,7 @@
       applySearchHighlight(e.target.value);
     });
 
-    const DEFAULT_FILTER_ORDER = ['lab', 'department', 'role', 'discipline', 'instruments', 'tools', 'skill set'];
+    const DEFAULT_FILTER_ORDER = ['lab', 'department', 'role', 'project', 'discipline', 'instruments', 'tools', 'skill set'];
 
     function getFilterOrder(data) {
       if (data && Array.isArray(data.filter_order) && data.filter_order.length) {
@@ -1237,6 +1239,9 @@
       }
       if (artist.department) {
         html += `<div class="card-row"><span class="label">department:</span> <span class="value">${escapeHtml(artist.department)}</span></div>`;
+      }
+      if (artist.project) {
+        html += `<div class="card-row"><span class="label">projects:</span> ${renderClickableTags('project', artist.project)}</div>`;
       }
       if (artist.discipline) {
         html += `<div class="card-row"><span class="label">disciplines:</span> ${renderClickableTags('discipline', artist.discipline)}</div>`;
