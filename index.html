@@ -847,10 +847,29 @@
       return String(raw).split(',').map(s => s.trim()).filter(Boolean);
     }
 
-    function telegramHandle(raw) {
+    function parseContactField(raw) {
       const decoded = decodeAt(raw || '').trim();
-      if (!decoded) return '';
-      return decoded.replace(/^@+/, '');
+      if (!decoded) return null;
+
+      if (decoded.startsWith('(+')) {
+        const phone = decoded.replace(/[()]/g, '');
+        if (!phone) return null;
+        return {
+          type: 'phone',
+          label: 'Phone:',
+          display: phone,
+          href: 'tel:' + phone
+        };
+      }
+
+      const handle = decoded.replace(/^@+/, '');
+      if (!handle) return null;
+      return {
+        type: 'telegram',
+        label: 'Telegram:',
+        display: '@' + handle,
+        href: 'https://t.me/' + encodeURIComponent(handle)
+      };
     }
 
     function escapeHtml(text) {
@@ -1193,7 +1212,7 @@
       const country = artist.country || artist.city || '';
       const role = formatRoleDisplay(artist.role);
       const social = (artist.social || '').trim();
-      const tg = telegramHandle(artist.telegram);
+      const contact = parseContactField(artist.telegram);
       const metaParts = [];
       if (showLegal) metaParts.push(escapeHtml(legalName));
       if (country) metaParts.push(escapeHtml(country));
@@ -1222,8 +1241,8 @@
       if (artist['skill set']) {
         html += `<div class="card-row"><span class="label">skill set:</span> ${renderClickableTags('skill set', artist['skill set'])}</div>`;
       }
-      if (tg) {
-        html += `<div class="telegram-row">Telegram: <a class="telegram-link" href="https://t.me/${encodeURIComponent(tg)}" target="_blank" rel="noopener noreferrer">@${escapeHtml(tg)}</a></div>`;
+      if (contact) {
+        html += `<div class="telegram-row">${contact.label} <a class="telegram-link" href="${escapeHtml(contact.href)}"${contact.type === 'telegram' ? ' target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(contact.display)}</a></div>`;
       }
       if (social) {
         html += `<a class="connect-btn" href="${escapeHtml(social)}" target="_blank" rel="noopener noreferrer">Connect</a>`;
