@@ -1241,12 +1241,6 @@
       "color": "#ADC99E"
     },
     {
-      "id": "skill set::AI visual",
-      "label": "AI visual",
-      "group": "skill set",
-      "color": "#ADC99E"
-    },
-    {
       "id": "skill set::Arranging",
       "label": "Arranging",
       "group": "skill set",
@@ -1530,6 +1524,10 @@
     },
     {
       "source": "artist::Zoya Sargsyan",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Zoya Sargsyan",
       "target": "discipline::Music Production"
     },
     {
@@ -1551,6 +1549,10 @@
     {
       "source": "artist::Anna Terzikyan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Anna Terzikyan",
+      "target": "project::Installation"
     },
     {
       "source": "artist::Anna Terzikyan",
@@ -1602,6 +1604,10 @@
     },
     {
       "source": "artist::Arev Hayrapetyan",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Arev Hayrapetyan",
       "target": "discipline::Acting"
     },
     {
@@ -1635,6 +1641,10 @@
     {
       "source": "artist::Anton Shanikhin",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Anton Shanikhin",
+      "target": "project::Music Production"
     },
     {
       "source": "artist::Anton Shanikhin",
@@ -1710,6 +1720,10 @@
     },
     {
       "source": "artist::Mariam Gevorgyan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Mariam Gevorgyan",
       "target": "discipline::Animation"
     },
     {
@@ -1727,6 +1741,10 @@
     {
       "source": "artist::Kristina Manucharyan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Kristina Manucharyan",
+      "target": "project::Documental Art"
     },
     {
       "source": "artist::Kristina Manucharyan",
@@ -1758,6 +1776,10 @@
     },
     {
       "source": "artist::Inna Ghazaryan",
+      "target": "project::Somatic Practices"
+    },
+    {
+      "source": "artist::Inna Ghazaryan",
       "target": "discipline::Performance"
     },
     {
@@ -1783,6 +1805,10 @@
     {
       "source": "artist::Tatiana Iaksina",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Tatiana Iaksina",
+      "target": "project::Contemporary Art"
     },
     {
       "source": "artist::Tatiana Iaksina",
@@ -1850,6 +1876,10 @@
     },
     {
       "source": "artist::SU JINGXIANG",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::SU JINGXIANG",
       "target": "discipline::Visual Art"
     },
     {
@@ -1878,6 +1908,10 @@
     },
     {
       "source": "artist::Solomon Fatoma",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Solomon Fatoma",
       "target": "discipline::Music Production"
     },
     {
@@ -1903,6 +1937,10 @@
     {
       "source": "artist::Nikolai Zheltukhin",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Nikolai Zheltukhin",
+      "target": "project::Neo-Tribes"
     },
     {
       "source": "artist::Nikolai Zheltukhin",
@@ -1950,6 +1988,10 @@
     },
     {
       "source": "artist::Tigran Gevorkian",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Tigran Gevorkian",
       "target": "discipline::Performance"
     },
     {
@@ -1963,6 +2005,10 @@
     {
       "source": "artist::Wanbo Li",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Wanbo Li",
+      "target": "project::Contemporary Art"
     },
     {
       "source": "artist::Wanbo Li",
@@ -1995,6 +2041,10 @@
     {
       "source": "artist::Ara Ter-Gabrielyants",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Ara Ter-Gabrielyants",
+      "target": "project::Music Production"
     },
     {
       "source": "artist::Ara Ter-Gabrielyants",
@@ -2043,6 +2093,10 @@
     {
       "source": "artist::Hooman Talakian",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Hooman Talakian",
+      "target": "project::Reverse Tower Ritual"
     },
     {
       "source": "artist::Hooman Talakian",
@@ -2114,6 +2168,10 @@
     },
     {
       "source": "artist::Zhiqiang Li",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Zhiqiang Li",
       "target": "discipline::Performance"
     },
     {
@@ -2155,6 +2213,10 @@
     {
       "source": "artist::Grisha Tsvetkov",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Grisha Tsvetkov",
+      "target": "project::Video Art"
     },
     {
       "source": "artist::Grisha Tsvetkov",
@@ -2214,6 +2276,10 @@
     },
     {
       "source": "artist::Lia Potikyan",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Lia Potikyan",
       "target": "discipline::Electronics"
     },
     {
@@ -2267,6 +2333,10 @@
     {
       "source": "artist::Jessica James",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Jessica James",
+      "target": "project::Communitas"
     },
     {
       "source": "artist::Jessica James",
@@ -2326,11 +2396,19 @@
     },
     {
       "source": "artist::Diren Demir",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Diren Demir",
       "target": "discipline::Media Art"
     },
     {
       "source": "artist::Vedant Manwadkar",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Vedant Manwadkar",
+      "target": "project::Installation"
     },
     {
       "source": "artist::Vedant Manwadkar",
@@ -2386,6 +2464,10 @@
     },
     {
       "source": "artist::Elena Chadaeva",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Elena Chadaeva",
       "target": "discipline::Media Art"
     },
     {
@@ -2430,6 +2512,10 @@
     },
     {
       "source": "artist::Gohar Gizhlaryan",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Gohar Gizhlaryan",
       "target": "discipline::Visual Art"
     },
     {
@@ -2470,6 +2556,10 @@
     },
     {
       "source": "artist::Rhys Votano",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::Rhys Votano",
       "target": "discipline::Filming"
     },
     {
@@ -2506,6 +2596,10 @@
     },
     {
       "source": "artist::Kate Sadovnikova",
+      "target": "project::Zine Art"
+    },
+    {
+      "source": "artist::Kate Sadovnikova",
       "target": "discipline::Photography"
     },
     {
@@ -2527,6 +2621,10 @@
     {
       "source": "artist::Zygmund de Somogyi",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Zygmund de Somogyi",
+      "target": "project::The Refrain"
     },
     {
       "source": "artist::Zygmund de Somogyi",
@@ -2555,6 +2653,10 @@
     {
       "source": "artist::Olivia Melkonian",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Olivia Melkonian",
+      "target": "project::Communitas"
     },
     {
       "source": "artist::Olivia Melkonian",
@@ -2591,6 +2693,10 @@
     {
       "source": "artist::Evgeny Bylina",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Evgeny Bylina",
+      "target": "project::Neo-Tribes"
     },
     {
       "source": "artist::Evgeny Bylina",
@@ -2654,6 +2760,10 @@
     },
     {
       "source": "artist::Yulia Nemova",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::Yulia Nemova",
       "target": "discipline::Media Art"
     },
     {
@@ -2702,6 +2812,10 @@
     },
     {
       "source": "artist::Hugo Pinto",
+      "target": "project::Sama Soundbath"
+    },
+    {
+      "source": "artist::Hugo Pinto",
       "target": "discipline::Music Production"
     },
     {
@@ -2746,6 +2860,10 @@
     },
     {
       "source": "artist::Hannah Koshgarian",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Hannah Koshgarian",
       "target": "discipline::Classical Music"
     },
     {
@@ -2775,6 +2893,10 @@
     {
       "source": "artist::Louise Gorm",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Louise Gorm",
+      "target": "project::Communitas"
     },
     {
       "source": "artist::Louise Gorm",
@@ -2811,6 +2933,10 @@
     {
       "source": "artist::Maksim Sergeev",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Maksim Sergeev",
+      "target": "project::Sama Soundbath"
     },
     {
       "source": "artist::Maksim Sergeev",
@@ -2855,6 +2981,10 @@
     {
       "source": "artist::Matteo Cenerini",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Matteo Cenerini",
+      "target": "project::Communitas"
     },
     {
       "source": "artist::Matteo Cenerini",
@@ -2906,6 +3036,10 @@
     },
     {
       "source": "artist::Artak Kostandian",
+      "target": "project::Music Production"
+    },
+    {
+      "source": "artist::Artak Kostandian",
       "target": "discipline::Installation"
     },
     {
@@ -2935,6 +3069,10 @@
     {
       "source": "artist::Veronika Poghosyan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Veronika Poghosyan",
+      "target": "project::Documental Art"
     },
     {
       "source": "artist::Veronika Poghosyan",
@@ -2982,6 +3120,10 @@
     },
     {
       "source": "artist::Evgeniia Starikova",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::Evgeniia Starikova",
       "target": "discipline::Installation"
     },
     {
@@ -3006,11 +3148,19 @@
     },
     {
       "source": "artist::Yuliia Potapova",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Yuliia Potapova",
       "target": "discipline::Art Management"
     },
     {
       "source": "artist::Aleksandr Kuritsyn",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Aleksandr Kuritsyn",
+      "target": "project::Zine Art"
     },
     {
       "source": "artist::Aleksandr Kuritsyn",
@@ -3033,8 +3183,16 @@
       "target": "role::participant"
     },
     {
+      "source": "artist::Melanya Torosyan",
+      "target": "project::Zine Art"
+    },
+    {
       "source": "artist::Valentin Ryzhov",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Valentin Ryzhov",
+      "target": "project::Music Production"
     },
     {
       "source": "artist::Valentin Ryzhov",
@@ -3083,6 +3241,10 @@
     {
       "source": "artist::Van Sadagh",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Van Sadagh",
+      "target": "project::Communitas"
     },
     {
       "source": "artist::Van Sadagh",
@@ -3146,6 +3308,10 @@
     },
     {
       "source": "artist::Lubomir Andrei",
+      "target": "project::Somatic Practices"
+    },
+    {
+      "source": "artist::Lubomir Andrei",
       "target": "discipline::Choreography"
     },
     {
@@ -3159,6 +3325,10 @@
     {
       "source": "artist::Frederick Bernas",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Frederick Bernas",
+      "target": "project::Video Art"
     },
     {
       "source": "artist::Frederick Bernas",
@@ -3194,6 +3364,10 @@
     },
     {
       "source": "artist::Minami KINTO",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Minami KINTO",
       "target": "discipline::Installation"
     },
     {
@@ -3223,6 +3397,10 @@
     {
       "source": "artist::Fernando Damon",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Fernando Damon",
+      "target": "project::Neo-Tribes"
     },
     {
       "source": "artist::Fernando Damon",
@@ -3270,6 +3448,10 @@
     },
     {
       "source": "artist::Anton Khlabov",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Anton Khlabov",
       "target": "discipline::Filming"
     },
     {
@@ -3302,6 +3484,10 @@
     },
     {
       "source": "artist::Varder Baghdasaryan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Varder Baghdasaryan",
       "target": "discipline::Sound Design"
     },
     {
@@ -3323,6 +3509,10 @@
     {
       "source": "artist::Karine Avetisyan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Karine Avetisyan",
+      "target": "project::Music Production"
     },
     {
       "source": "artist::Karine Avetisyan",
@@ -3370,6 +3560,10 @@
     },
     {
       "source": "artist::Aleksandra Zakaryan",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Aleksandra Zakaryan",
       "target": "discipline::Music Production"
     },
     {
@@ -3402,6 +3596,10 @@
     },
     {
       "source": "artist::Vardui Mirzoyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Vardui Mirzoyan",
       "target": "discipline::Classical Music"
     },
     {
@@ -3415,6 +3613,10 @@
     {
       "source": "artist::Anna Ghazaryan Vladimirskaya",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Anna Ghazaryan Vladimirskaya",
+      "target": "project::Installation"
     },
     {
       "source": "artist::Anna Ghazaryan Vladimirskaya",
@@ -3462,6 +3664,10 @@
     },
     {
       "source": "artist::Elen Poghosyan",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Elen Poghosyan",
       "target": "discipline::Classical Music"
     },
     {
@@ -3479,6 +3685,10 @@
     {
       "source": "artist::Ana Kipshidze",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Ana Kipshidze",
+      "target": "project::Communitas"
     },
     {
       "source": "artist::Ana Kipshidze",
@@ -3530,6 +3740,10 @@
     },
     {
       "source": "artist::Anna Kalenchyan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Anna Kalenchyan",
       "target": "discipline::Animation"
     },
     {
@@ -3562,6 +3776,10 @@
     },
     {
       "source": "artist::Shahane Harutyunyan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Shahane Harutyunyan",
       "target": "discipline::Media Art"
     },
     {
@@ -3579,6 +3797,10 @@
     {
       "source": "artist::David Grigoryan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::David Grigoryan",
+      "target": "project::The Refrain"
     },
     {
       "source": "artist::David Grigoryan",
@@ -3610,6 +3832,10 @@
     },
     {
       "source": "artist::Aleksandr Veselov",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Aleksandr Veselov",
       "target": "discipline::Sound Design"
     },
     {
@@ -3627,6 +3853,10 @@
     {
       "source": "artist::Nelli Vardanyan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Nelli Vardanyan",
+      "target": "project::Music Production"
     },
     {
       "source": "artist::Nelli Vardanyan",
@@ -3669,8 +3899,16 @@
       "target": "role::participant"
     },
     {
+      "source": "artist::Kristina Iskandaryan",
+      "target": "project::Video Art"
+    },
+    {
       "source": "artist::Anna Esaian",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Anna Esaian",
+      "target": "project::Installation"
     },
     {
       "source": "artist::Anna Esaian",
@@ -3706,6 +3944,10 @@
     },
     {
       "source": "artist::Ani Yeghoyan",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Ani Yeghoyan",
       "target": "discipline::Music Production"
     },
     {
@@ -3734,6 +3976,10 @@
     },
     {
       "source": "artist::Syuzanna Ginosyan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Syuzanna Ginosyan",
       "target": "discipline::Art Management"
     },
     {
@@ -3751,6 +3997,10 @@
     {
       "source": "artist::Kristine Danielyan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Kristine Danielyan",
+      "target": "project::Somatic Practices"
     },
     {
       "source": "artist::Kristine Danielyan",
@@ -3779,6 +4029,10 @@
     {
       "source": "artist::Arno Melkonyan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Arno Melkonyan",
+      "target": "project::Neo-Tribes"
     },
     {
       "source": "artist::Arno Melkonyan",
@@ -3811,6 +4065,10 @@
     {
       "source": "artist::Maria Tsharakyan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Maria Tsharakyan",
+      "target": "project::Communitas"
     },
     {
       "source": "artist::Maria Tsharakyan",
@@ -3858,6 +4116,10 @@
     },
     {
       "source": "artist::Henrik Meliqyan",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Henrik Meliqyan",
       "target": "discipline::Classical Music"
     },
     {
@@ -3882,6 +4144,10 @@
     },
     {
       "source": "artist::Svetlana Hakobyan",
+      "target": "project::Neo-Tribes"
+    },
+    {
+      "source": "artist::Svetlana Hakobyan",
       "target": "tools::Guitar"
     },
     {
@@ -3895,6 +4161,10 @@
     {
       "source": "artist::Ekaterina Ishkhanova",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Ekaterina Ishkhanova",
+      "target": "project::Reverse Tower Ritual"
     },
     {
       "source": "artist::Ekaterina Ishkhanova",
@@ -3938,6 +4208,10 @@
     },
     {
       "source": "artist::Vardan Sargsyan",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Vardan Sargsyan",
       "target": "discipline::Music Production"
     },
     {
@@ -3970,6 +4244,10 @@
     },
     {
       "source": "artist::Elena Korkina",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Elena Korkina",
       "target": "discipline::Art Management"
     },
     {
@@ -3987,6 +4265,10 @@
     {
       "source": "artist::Carolina Zakharova",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Carolina Zakharova",
+      "target": "project::Art To Wear"
     },
     {
       "source": "artist::Carolina Zakharova",
@@ -4022,6 +4304,10 @@
     },
     {
       "source": "artist::Toma Aydinyan",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Toma Aydinyan",
       "target": "discipline::Choreography"
     },
     {
@@ -4046,6 +4332,10 @@
     },
     {
       "source": "artist::Syuzanna Misakyan",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Syuzanna Misakyan",
       "target": "discipline::Choreography"
     },
     {
@@ -4067,6 +4357,10 @@
     {
       "source": "artist::Anika Krbetschek",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Anika Krbetschek",
+      "target": "project::Assembling Ritual"
     },
     {
       "source": "artist::Anika Krbetschek",
@@ -4099,6 +4393,10 @@
     {
       "source": "artist::Dmitrii Nenadyshin",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Dmitrii Nenadyshin",
+      "target": "project::Reverse Tower Ritual"
     },
     {
       "source": "artist::Dmitrii Nenadyshin",
@@ -4174,6 +4472,10 @@
     },
     {
       "source": "artist::Juliette Martirosyan",
+      "target": "project::Documental Art"
+    },
+    {
+      "source": "artist::Juliette Martirosyan",
       "target": "discipline::Filming"
     },
     {
@@ -4191,6 +4493,10 @@
     {
       "source": "artist::Julia Krivosheenko",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Julia Krivosheenko",
+      "target": "project::Installation"
     },
     {
       "source": "artist::Julia Krivosheenko",
@@ -4223,6 +4529,10 @@
     {
       "source": "artist::Emilya Nikoghosyan",
       "target": "role::participant"
+    },
+    {
+      "source": "artist::Emilya Nikoghosyan",
+      "target": "project::Video Art"
     },
     {
       "source": "artist::Emilya Nikoghosyan",
@@ -4262,6 +4572,10 @@
     },
     {
       "source": "artist::Davit Aydiyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Davit Aydiyan",
       "target": "discipline::Classical Music"
     },
     {
@@ -4275,6 +4589,10 @@
     {
       "source": "artist::Vahe Abrahamyan",
       "target": "role::curator's helper"
+    },
+    {
+      "source": "artist::Vahe Abrahamyan",
+      "target": "project::Music Production"
     },
     {
       "source": "artist::Vahe Abrahamyan",
@@ -4302,6 +4620,10 @@
     },
     {
       "source": "artist::Grigor Budaghyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Grigor Budaghyan",
       "target": "discipline::Classical Music"
     },
     {
@@ -4323,6 +4645,10 @@
     {
       "source": "artist::Nikola Chen",
       "target": "role::curator's helper"
+    },
+    {
+      "source": "artist::Nikola Chen",
+      "target": "project::Sama Soundbath"
     },
     {
       "source": "artist::Nikola Chen",
@@ -4390,6 +4716,10 @@
     },
     {
       "source": "artist::Levon Yerkanyan",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Levon Yerkanyan",
       "target": "discipline::Classical Music"
     },
     {
@@ -4430,6 +4760,10 @@
     },
     {
       "source": "artist::Mileta Ghazanchyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Mileta Ghazanchyan",
       "target": "discipline::Jazz"
     },
     {
@@ -4451,6 +4785,10 @@
     {
       "source": "artist::Evgeniia Kovalchuk",
       "target": "role::curator's helper"
+    },
+    {
+      "source": "artist::Evgeniia Kovalchuk",
+      "target": "project::Ambisonic Installation"
     },
     {
       "source": "artist::Evgeniia Kovalchuk",
@@ -4483,6 +4821,10 @@
     {
       "source": "artist::Elizabeth Telnaya",
       "target": "role::curator's helper"
+    },
+    {
+      "source": "artist::Elizabeth Telnaya",
+      "target": "project::Reverse Tower Ritual"
     },
     {
       "source": "artist::Elizabeth Telnaya",
@@ -4542,6 +4884,10 @@
     },
     {
       "source": "artist::Nasrin Shojaei",
+      "target": "project::Somatic Practices"
+    },
+    {
+      "source": "artist::Nasrin Shojaei",
       "target": "discipline::Performance"
     },
     {
@@ -4555,6 +4901,10 @@
     {
       "source": "artist::Dubljević Dragan",
       "target": "role::curator's helper"
+    },
+    {
+      "source": "artist::Dubljević Dragan",
+      "target": "project::Music Production"
     },
     {
       "source": "artist::Dubljević Dragan",
@@ -4590,6 +4940,10 @@
     },
     {
       "source": "artist::Varvara Misyurina",
+      "target": "project::Reverse Tower Ritual"
+    },
+    {
+      "source": "artist::Varvara Misyurina",
       "target": "discipline::Music Production"
     },
     {
@@ -4603,6 +4957,10 @@
     {
       "source": "artist::Venera Kazarova",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Venera Kazarova",
+      "target": "project::Art To Wear"
     },
     {
       "source": "artist::Venera Kazarova",
@@ -4654,6 +5012,10 @@
     },
     {
       "source": "artist::Artem Semenov",
+      "target": "project::Documental Art"
+    },
+    {
+      "source": "artist::Artem Semenov",
       "target": "discipline::Filming"
     },
     {
@@ -4675,6 +5037,10 @@
     {
       "source": "artist::Evgeniy Sharakshane",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Evgeniy Sharakshane",
+      "target": "project::Documental Art"
     },
     {
       "source": "artist::Evgeniy Sharakshane",
@@ -4699,6 +5065,10 @@
     {
       "source": "artist::Arman Peshtmaljyan",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Arman Peshtmaljyan",
+      "target": "project::Music Production"
     },
     {
       "source": "artist::Arman Peshtmaljyan",
@@ -4743,6 +5113,10 @@
     {
       "source": "artist::Shahen Khandkaryan (Shhau)",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Shahen Khandkaryan (Shhau)",
+      "target": "project::Music Production"
     },
     {
       "source": "artist::Shahen Khandkaryan (Shhau)",
@@ -4802,6 +5176,10 @@
     },
     {
       "source": "artist::Kai Khachatryan",
+      "target": "project::Ambisonic Installation"
+    },
+    {
+      "source": "artist::Kai Khachatryan",
       "target": "discipline::Sound Design"
     },
     {
@@ -4843,6 +5221,10 @@
     {
       "source": "artist::Nadya Xyxu",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Nadya Xyxu",
+      "target": "project::Installation"
     },
     {
       "source": "artist::Nadya Xyxu",
@@ -4918,6 +5300,10 @@
     },
     {
       "source": "artist::Misak Samokatian",
+      "target": "project::Installation"
+    },
+    {
+      "source": "artist::Misak Samokatian",
       "target": "discipline::Sound Design"
     },
     {
@@ -4946,6 +5332,10 @@
     },
     {
       "source": "artist::Gevorg Grigoryan",
+      "target": "project::Video Art"
+    },
+    {
+      "source": "artist::Gevorg Grigoryan",
       "target": "discipline::Visual Art"
     },
     {
@@ -4962,11 +5352,15 @@
     },
     {
       "source": "artist::Gevorg Grigoryan",
-      "target": "skill set::AI visual"
+      "target": "skill set::AI Visual"
     },
     {
       "source": "artist::Tanya Chizhikova",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Tanya Chizhikova",
+      "target": "project::Somatic Practices"
     },
     {
       "source": "artist::Tanya Chizhikova",
@@ -4994,6 +5388,10 @@
     },
     {
       "source": "artist::Aram Hovhannisyan",
+      "target": "project::The Refrain"
+    },
+    {
+      "source": "artist::Aram Hovhannisyan",
       "target": "discipline::Sound Design"
     },
     {
@@ -5011,6 +5409,10 @@
     {
       "source": "artist::Sergey Umroyan",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Sergey Umroyan",
+      "target": "project::The Refrain"
     },
     {
       "source": "artist::Sergey Umroyan",
@@ -5039,6 +5441,10 @@
     {
       "source": "artist::Tigran Suchyan",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Tigran Suchyan",
+      "target": "project::Neo-Tribes"
     },
     {
       "source": "artist::Tigran Suchyan",
@@ -5095,6 +5501,10 @@
     {
       "source": "artist::Mesrop Sarkisyan",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Mesrop Sarkisyan",
+      "target": "project::Neo-Tribes"
     },
     {
       "source": "artist::Mesrop Sarkisyan",
@@ -5151,6 +5561,10 @@
     {
       "source": "artist::Ben Wheeler",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Ben Wheeler",
+      "target": "project::Communitas"
     },
     {
       "source": "artist::Ben Wheeler",
@@ -5206,6 +5620,10 @@
     },
     {
       "source": "artist::Zhanna Davtyan",
+      "target": "project::Communitas"
+    },
+    {
+      "source": "artist::Zhanna Davtyan",
       "target": "discipline::Performance"
     },
     {
@@ -5238,6 +5656,10 @@
     },
     {
       "source": "artist::Jeanne Kormina",
+      "target": "project::Assembling Ritual"
+    },
+    {
+      "source": "artist::Jeanne Kormina",
       "target": "discipline::Writing"
     },
     {
@@ -5247,6 +5669,10 @@
     {
       "source": "artist::Dima Ustinov",
       "target": "role::curator"
+    },
+    {
+      "source": "artist::Dima Ustinov",
+      "target": "project::Sama Soundbath"
     },
     {
       "source": "artist::Dima Ustinov",
@@ -5306,6 +5732,10 @@
     },
     {
       "source": "artist::Andronik Khachiian",
+      "target": "project::Contemporary Art"
+    },
+    {
+      "source": "artist::Andronik Khachiian",
       "target": "discipline::Light"
     },
     {
@@ -5346,7 +5776,7 @@
     },
     {
       "source": "artist::Andronik Khachiian",
-      "target": "skill set::AI visual"
+      "target": "skill set::AI Visual"
     },
     {
       "source": "artist::Andronik Khachiian",
@@ -5367,6 +5797,10 @@
     {
       "source": "artist::Andriesh Gandrabur",
       "target": "role::hosq team"
+    },
+    {
+      "source": "artist::Andriesh Gandrabur",
+      "target": "project::Reverse Tower Ritual"
     },
     {
       "source": "artist::Andriesh Gandrabur",
@@ -5450,6 +5884,10 @@
     },
     {
       "source": "artist::Arthur Atayan",
+      "target": "project::Zine Art"
+    },
+    {
+      "source": "artist::Arthur Atayan",
       "target": "discipline::Performance"
     },
     {
@@ -5475,6 +5913,10 @@
     {
       "source": "artist::Daria Sadovnikova",
       "target": "role::verticurator"
+    },
+    {
+      "source": "artist::Daria Sadovnikova",
+      "target": "project::Set Design"
     },
     {
       "source": "artist::Daria Sadovnikova",
@@ -5506,11 +5948,19 @@
     },
     {
       "source": "artist::Karina Malik",
+      "target": "project::Set Design"
+    },
+    {
+      "source": "artist::Karina Malik",
       "target": "discipline::Set Design"
     },
     {
       "source": "artist::Aleksei Leontev",
       "target": "role::verticurator"
+    },
+    {
+      "source": "artist::Aleksei Leontev",
+      "target": "project::Set Design"
     },
     {
       "source": "artist::Aleksei Leontev",
@@ -5519,6 +5969,10 @@
     {
       "source": "artist::Yurii Avdeev",
       "target": "role::verticurator"
+    },
+    {
+      "source": "artist::Yurii Avdeev",
+      "target": "project::Set Design"
     },
     {
       "source": "artist::Yurii Avdeev",
@@ -5690,7 +6144,7 @@
     },
     {
       "source": "artist::Uliana Pyadushkina",
-      "target": "skill set::AI visual"
+      "target": "skill set::AI Visual"
     },
     {
       "source": "artist::Uliana Pyadushkina",
@@ -6031,466 +6485,6 @@
     {
       "source": "artist::Petros Goroyan",
       "target": "skill set::Engineering"
-    },
-    {
-      "source": "artist::Zoya Sargsyan",
-      "target": "project::Neo-Tribes"
-    },
-    {
-      "source": "artist::Anna Terzikyan",
-      "target": "project::Installation"
-    },
-    {
-      "source": "artist::Arev Hayrapetyan",
-      "target": "project::Assembling Ritual"
-    },
-    {
-      "source": "artist::Anton Shanikhin",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Mariam Gevorgyan",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::Kristina Manucharyan",
-      "target": "project::Documental Art"
-    },
-    {
-      "source": "artist::Inna Ghazaryan",
-      "target": "project::Somatic Practices"
-    },
-    {
-      "source": "artist::Tatiana Iaksina",
-      "target": "project::Contemporary Art"
-    },
-    {
-      "source": "artist::SU JINGXIANG",
-      "target": "project::Installation"
-    },
-    {
-      "source": "artist::Solomon Fatoma",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Nikolai Zheltukhin",
-      "target": "project::Neo-Tribes"
-    },
-    {
-      "source": "artist::Tigran Gevorkian",
-      "target": "project::Art To Wear"
-    },
-    {
-      "source": "artist::Wanbo Li",
-      "target": "project::Contemporary Art"
-    },
-    {
-      "source": "artist::Ara Ter-Gabrielyants",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Hooman Talakian",
-      "target": "project::Reverse Tower Ritual"
-    },
-    {
-      "source": "artist::Zhiqiang Li",
-      "target": "project::Reverse Tower Ritual"
-    },
-    {
-      "source": "artist::Grisha Tsvetkov",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::Lia Potikyan",
-      "target": "project::Reverse Tower Ritual"
-    },
-    {
-      "source": "artist::Jessica James",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Diren Demir",
-      "target": "project::Ambisonic Installation"
-    },
-    {
-      "source": "artist::Vedant Manwadkar",
-      "target": "project::Installation"
-    },
-    {
-      "source": "artist::Elena Chadaeva",
-      "target": "project::Reverse Tower Ritual"
-    },
-    {
-      "source": "artist::Gohar Gizhlaryan",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Rhys Votano",
-      "target": "project::Contemporary Art"
-    },
-    {
-      "source": "artist::Kate Sadovnikova",
-      "target": "project::Zine Art"
-    },
-    {
-      "source": "artist::Zygmund de Somogyi",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Olivia Melkonian",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Evgeny Bylina",
-      "target": "project::Neo-Tribes"
-    },
-    {
-      "source": "artist::Yulia Nemova",
-      "target": "project::Contemporary Art"
-    },
-    {
-      "source": "artist::Hugo Pinto",
-      "target": "project::Sama Soundbath"
-    },
-    {
-      "source": "artist::Hannah Koshgarian",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Louise Gorm",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Maksim Sergeev",
-      "target": "project::Sama Soundbath"
-    },
-    {
-      "source": "artist::Matteo Cenerini",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Artak Kostandian",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Veronika Poghosyan",
-      "target": "project::Documental Art"
-    },
-    {
-      "source": "artist::Evgeniia Starikova",
-      "target": "project::Contemporary Art"
-    },
-    {
-      "source": "artist::Yuliia Potapova",
-      "target": "project::Assembling Ritual"
-    },
-    {
-      "source": "artist::Aleksandr Kuritsyn",
-      "target": "project::Zine Art"
-    },
-    {
-      "source": "artist::Melanya Torosyan",
-      "target": "project::Zine Art"
-    },
-    {
-      "source": "artist::Valentin Ryzhov",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Van Sadagh",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Lubomir Andrei",
-      "target": "project::Somatic Practices"
-    },
-    {
-      "source": "artist::Frederick Bernas",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::Minami KINTO",
-      "target": "project::Art To Wear"
-    },
-    {
-      "source": "artist::Fernando Damon",
-      "target": "project::Neo-Tribes"
-    },
-    {
-      "source": "artist::Anton Khlabov",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::Varder Baghdasaryan",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Karine Avetisyan",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Aleksandra Zakaryan",
-      "target": "project::Ambisonic Installation"
-    },
-    {
-      "source": "artist::Vardui Mirzoyan",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Anna Ghazaryan Vladimirskaya",
-      "target": "project::Installation"
-    },
-    {
-      "source": "artist::Elen Poghosyan",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Ana Kipshidze",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Anna Kalenchyan",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::Shahane Harutyunyan",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::David Grigoryan",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Aleksandr Veselov",
-      "target": "project::Assembling Ritual"
-    },
-    {
-      "source": "artist::Nelli Vardanyan",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Kristina Iskandaryan",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::Anna Esaian",
-      "target": "project::Installation"
-    },
-    {
-      "source": "artist::Ani Yeghoyan",
-      "target": "project::Ambisonic Installation"
-    },
-    {
-      "source": "artist::Syuzanna Ginosyan",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::Kristine Danielyan",
-      "target": "project::Somatic Practices"
-    },
-    {
-      "source": "artist::Arno Melkonyan",
-      "target": "project::Neo-Tribes"
-    },
-    {
-      "source": "artist::Maria Tsharakyan",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Henrik Meliqyan",
-      "target": "project::Neo-Tribes"
-    },
-    {
-      "source": "artist::Svetlana Hakobyan",
-      "target": "project::Neo-Tribes"
-    },
-    {
-      "source": "artist::Ekaterina Ishkhanova",
-      "target": "project::Reverse Tower Ritual"
-    },
-    {
-      "source": "artist::Vardan Sargsyan",
-      "target": "project::Ambisonic Installation"
-    },
-    {
-      "source": "artist::Elena Korkina",
-      "target": "project::Assembling Ritual"
-    },
-    {
-      "source": "artist::Carolina Zakharova",
-      "target": "project::Art To Wear"
-    },
-    {
-      "source": "artist::Toma Aydinyan",
-      "target": "project::Art To Wear"
-    },
-    {
-      "source": "artist::Syuzanna Misakyan",
-      "target": "project::Art To Wear"
-    },
-    {
-      "source": "artist::Anika Krbetschek",
-      "target": "project::Assembling Ritual"
-    },
-    {
-      "source": "artist::Dmitrii Nenadyshin",
-      "target": "project::Reverse Tower Ritual"
-    },
-    {
-      "source": "artist::Juliette Martirosyan",
-      "target": "project::Documental Art"
-    },
-    {
-      "source": "artist::Julia Krivosheenko",
-      "target": "project::Installation"
-    },
-    {
-      "source": "artist::Emilya Nikoghosyan",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::Davit Aydiyan",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Vahe Abrahamyan",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Grigor Budaghyan",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Nikola Chen",
-      "target": "project::Sama Soundbath"
-    },
-    {
-      "source": "artist::Levon Yerkanyan",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Mileta Ghazanchyan",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Evgeniia Kovalchuk",
-      "target": "project::Ambisonic Installation"
-    },
-    {
-      "source": "artist::Elizabeth Telnaya",
-      "target": "project::Reverse Tower Ritual"
-    },
-    {
-      "source": "artist::Nasrin Shojaei",
-      "target": "project::Somatic Practices"
-    },
-    {
-      "source": "artist::Dubljević Dragan",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Varvara Misyurina",
-      "target": "project::Reverse Tower Ritual"
-    },
-    {
-      "source": "artist::Venera Kazarova",
-      "target": "project::Art To Wear"
-    },
-    {
-      "source": "artist::Artem Semenov",
-      "target": "project::Documental Art"
-    },
-    {
-      "source": "artist::Evgeniy Sharakshane",
-      "target": "project::Documental Art"
-    },
-    {
-      "source": "artist::Arman Peshtmaljyan",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Shahen Khandkaryan (Shhau)",
-      "target": "project::Music Production"
-    },
-    {
-      "source": "artist::Kai Khachatryan",
-      "target": "project::Ambisonic Installation"
-    },
-    {
-      "source": "artist::Nadya Xyxu",
-      "target": "project::Installation"
-    },
-    {
-      "source": "artist::Misak Samokatian",
-      "target": "project::Installation"
-    },
-    {
-      "source": "artist::Gevorg Grigoryan",
-      "target": "project::Video Art"
-    },
-    {
-      "source": "artist::Tanya Chizhikova",
-      "target": "project::Somatic Practices"
-    },
-    {
-      "source": "artist::Aram Hovhannisyan",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Sergey Umroyan",
-      "target": "project::The Refrain"
-    },
-    {
-      "source": "artist::Tigran Suchyan",
-      "target": "project::Neo-Tribes"
-    },
-    {
-      "source": "artist::Mesrop Sarkisyan",
-      "target": "project::Neo-Tribes"
-    },
-    {
-      "source": "artist::Ben Wheeler",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Zhanna Davtyan",
-      "target": "project::Communitas"
-    },
-    {
-      "source": "artist::Jeanne Kormina",
-      "target": "project::Assembling Ritual"
-    },
-    {
-      "source": "artist::Dima Ustinov",
-      "target": "project::Sama Soundbath"
-    },
-    {
-      "source": "artist::Andronik Khachiian",
-      "target": "project::Contemporary Art"
-    },
-    {
-      "source": "artist::Andriesh Gandrabur",
-      "target": "project::Reverse Tower Ritual"
-    },
-    {
-      "source": "artist::Arthur Atayan",
-      "target": "project::Zine Art"
-    },
-    {
-      "source": "artist::Daria Sadovnikova",
-      "target": "project::Set Design"
-    },
-    {
-      "source": "artist::Karina Malik",
-      "target": "project::Set Design"
-    },
-    {
-      "source": "artist::Aleksei Leontev",
-      "target": "project::Set Design"
-    },
-    {
-      "source": "artist::Yurii Avdeev",
-      "target": "project::Set Design"
     }
   ],
   "artists": {
@@ -6504,13 +6498,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Neo-Tribes",
       "discipline": "Music Production, Classical Music, Jazz",
       "tools": "",
       "skill set": "Improvisation, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Neo-Tribes"
+      "instruments": ""
     },
     "artist::Anna Terzikyan": {
       "name": "Anna Vahrami",
@@ -6522,13 +6516,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Installation",
       "discipline": "Music Production, Installation, Writing, Performance",
       "tools": "Ableton Live, Vocal, Piano",
       "skill set": "Composing, Improvisation, Singing, Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Installation"
+      "instruments": ""
     },
     "artist::Arev Hayrapetyan": {
       "name": "Arev",
@@ -6540,13 +6534,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Assembling Ritual",
       "discipline": "Acting, Theatre, Directing, Writing",
       "tools": "Piano, Guitar",
       "skill set": "Instrumentalist, Composing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Assembling Ritual"
+      "instruments": ""
     },
     "artist::Anton Shanikhin": {
       "name": "Tony “Everydaypony” Shanikhin",
@@ -6558,13 +6552,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Music Production, Sound Design, Theatre, Animation, Visual Art, Classical Music",
       "tools": "Guitar, Synthesizers, Piano, Bass, Max/MSP, Resolume",
       "skill set": "Composing, Sampling, Sound Synthesis, Instrumentalist, Coding and Patching",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Mariam Gevorgyan": {
       "name": "Mariam Gevorgyan",
@@ -6576,13 +6570,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "Animation, Set Design",
       "tools": "Dragon Frame",
       "skill set": "Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::Kristina Manucharyan": {
       "name": "Kristina Arark Manucharyan",
@@ -6594,13 +6588,13 @@
       "country": "Armenian",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Documental Art",
       "discipline": "Visual Art, Animation, Writing, Performance",
       "tools": "",
       "skill set": "Illustration and Painting, Sculpture",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Documental Art"
+      "instruments": ""
     },
     "artist::Inna Ghazaryan": {
       "name": "Inna Ghazaryan",
@@ -6612,13 +6606,13 @@
       "country": "Armenian",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Somatic Practices",
       "discipline": "Performance, Choreography, Directing",
       "tools": "",
       "skill set": "Teaching, Improvisation, Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Somatic Practices"
+      "instruments": ""
     },
     "artist::Tatiana Iaksina": {
       "name": "helical_worm",
@@ -6630,13 +6624,13 @@
       "country": "Russia / Cyprus",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Contemporary Art",
       "discipline": "Media Art, Visual Art, Electronics, Installation, Photography, Sound Design",
       "tools": "Max/MSP, Electronics, Coding, DIY, Touch Designer",
       "skill set": "Coding and Patching, Illustration and Painting, Instrument Design, Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Contemporary Art"
+      "instruments": ""
     },
     "artist::SU JINGXIANG": {
       "name": "JAXTON SU",
@@ -6648,31 +6642,31 @@
       "country": "Singapore",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Installation",
       "discipline": "Visual Art, Installation, Filming, Photography, Art Management",
       "tools": "",
       "skill set": "Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Installation"
+      "instruments": ""
     },
     "artist::Solomon Fatoma": {
       "name": "solo's beat",
       "legal_name": "Solomon Fatoma",
       "photo": "",
-      "telegram": "-",
+      "telegram": "",
       "email": "",
       "social": "",
       "country": "Sierra Leone",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Music Production",
       "tools": "Piano, Bass, Drums",
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Nikolai Zheltukhin": {
       "name": "Nikolai Zheltukhin (yomoyo)",
@@ -6684,13 +6678,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Neo-Tribes",
       "discipline": "Music Production, Jazz",
       "tools": "Flute, Guitar, Bass, Piano, Saxophone",
       "skill set": "Improvisation, Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Neo-Tribes"
+      "instruments": ""
     },
     "artist::Tigran Gevorkian": {
       "name": "Tigran Gevorkian",
@@ -6702,13 +6696,13 @@
       "country": "Russia / Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Art To Wear",
       "discipline": "Performance, Theatre, Acting",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Art To Wear"
+      "instruments": ""
     },
     "artist::Wanbo Li": {
       "name": "Ember Li",
@@ -6720,13 +6714,13 @@
       "country": "China / United Kingdom",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Contemporary Art",
       "discipline": "Installation, Performance, Media Art, Photography, Filming, Sound Design",
       "tools": "",
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Contemporary Art"
+      "instruments": ""
     },
     "artist::Ara Ter-Gabrielyants": {
       "name": "Ara Ter-Gabrielyants",
@@ -6738,13 +6732,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Acting, Production, Writing, Music Production, Performance",
       "tools": "Piano, Guitar, Vocal",
       "skill set": "Singing, Instrumentalist, Composing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Hooman Talakian": {
       "name": "Hooman Talakian",
@@ -6756,13 +6750,13 @@
       "country": "Iran",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Reverse Tower Ritual",
       "discipline": "Performance, Music Production, Sound Design, Media Art, Electronics",
       "tools": "Vocal, Piano, Coding",
       "skill set": "Composing, Sampling, Mixing and Mastering, Sound Recording, Teaching, Coding and Patching, Singing, AI sound",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Reverse Tower Ritual"
+      "instruments": ""
     },
     "artist::Zhiqiang Li": {
       "name": "Lee",
@@ -6774,13 +6768,13 @@
       "country": "China / United Kingdom",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Reverse Tower Ritual",
       "discipline": "Performance, Installation, Sound Design, Media Art",
       "tools": "Electronics, DIY",
       "skill set": "Sound Recording, Research, Instrument Design, Engineering",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Reverse Tower Ritual"
+      "instruments": ""
     },
     "artist::Grisha Tsvetkov": {
       "name": "Grisha Tsvetkov",
@@ -6792,13 +6786,13 @@
       "country": "Russia / Israel",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "Animation, Media Art, Installation, Photography, Performance, Visual Art",
       "tools": "Coding, Adobe, Touch Designer",
       "skill set": "Coding and Patching, Teaching, 3D, Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::Lia Potikyan": {
       "name": "pistak",
@@ -6810,13 +6804,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Reverse Tower Ritual",
       "discipline": "Electronics, Music Production, Sound Design, Visual Art",
       "tools": "Electronics, DIY, Guitar, Coding",
       "skill set": "Composing, Instrument Design, Engineering, Illustration and Painting, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Reverse Tower Ritual"
+      "instruments": ""
     },
     "artist::Jessica James": {
       "name": "Winter",
@@ -6828,13 +6822,13 @@
       "country": "Scotland, UK",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Theatre, Performance, Sound Design, Music Production, Electronics",
       "tools": "Ableton Live, Vocal, Synthesizers",
       "skill set": "Composing, Improvisation, Singing, Teaching, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Diren Demir": {
       "name": "DİREN",
@@ -6846,13 +6840,13 @@
       "country": "Turkey / Germany",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Ambisonic Installation",
       "discipline": "Media Art",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Ambisonic Installation"
+      "instruments": ""
     },
     "artist::Vedant Manwadkar": {
       "name": "Vedant Manwadkar",
@@ -6864,13 +6858,13 @@
       "country": "India",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Installation",
       "discipline": "Music Production, Animation, Installation, Filming, Media Art",
       "tools": "Guitar, Coding",
       "skill set": "Composing, Coding and Patching, Design, Research, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Installation"
+      "instruments": ""
     },
     "artist::Elena Chadaeva": {
       "name": "Chadaeva",
@@ -6882,13 +6876,13 @@
       "country": "Russia / Georgia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Reverse Tower Ritual",
       "discipline": "Media Art, Installation, Electronics, Performance, Sound Design",
       "tools": "Electronics, Coding",
       "skill set": "Coding and Patching, Instrument Design, Engineering",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Reverse Tower Ritual"
+      "instruments": ""
     },
     "artist::Gohar Gizhlaryan": {
       "name": "Gohar Gizhlaryan",
@@ -6900,13 +6894,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Visual Art, Photography, Writing, Classical Music, Performance",
       "tools": "Qanun",
       "skill set": "Improvisation, Illustration and Painting, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Rhys Votano": {
       "name": "weight of light",
@@ -6918,13 +6912,13 @@
       "country": "Austria / UK",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Contemporary Art",
       "discipline": "Filming, Media Art, Writing, Theatre, Visual Art, Sound Design",
       "tools": "Synthesizers",
       "skill set": "Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Contemporary Art"
+      "instruments": ""
     },
     "artist::Kate Sadovnikova": {
       "name": "Kate Sadovnikova",
@@ -6936,13 +6930,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Zine Art",
       "discipline": "Photography, Theatre, Writing",
       "tools": "",
       "skill set": "Composing, Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Zine Art"
+      "instruments": ""
     },
     "artist::Zygmund de Somogyi": {
       "name": "Zygmund de Somogyi",
@@ -6954,13 +6948,13 @@
       "country": "United Kingdom, Philippines",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Theatre, Classical Music, Performance, Production",
       "tools": "",
       "skill set": "Composing, Teaching",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Olivia Melkonian": {
       "name": "khanum",
@@ -6972,13 +6966,13 @@
       "country": "United Kingdom",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Sound Design, Performance, Music Production, Filming, Installation",
       "tools": "",
       "skill set": "Composing, Sound Recording, Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Evgeny Bylina": {
       "name": "Evgeny Bylina",
@@ -6990,13 +6984,13 @@
       "country": "Ukraine, Georgia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Neo-Tribes",
       "discipline": "Writing, Art Management, Jazz, Electronics, Music Production",
       "tools": "Piano, Max/MSP, Ableton Live, Synthesizers",
       "skill set": "Research, Teaching, Improvisation, Instrumentalist, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Neo-Tribes"
+      "instruments": ""
     },
     "artist::Yulia Nemova": {
       "name": "Yulia Nemova",
@@ -7008,13 +7002,13 @@
       "country": "Uzbekistan / Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Contemporary Art",
       "discipline": "Media Art, Installation, Filming, Visual Art",
       "tools": "Unreal Engine, Adobe",
       "skill set": "Teaching, AI Visual, 3D, Illustration and Painting, Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Contemporary Art"
+      "instruments": ""
     },
     "artist::Hugo Pinto": {
       "name": "Kino Pinto",
@@ -7026,13 +7020,13 @@
       "country": "Portugal / Germany",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Sama Soundbath",
       "discipline": "Music Production, Sound Design, Performance",
       "tools": "Guitar, Ableton Live, Flute, Bass",
       "skill set": "Composing, Instrumentalist, Sound Recording",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Sama Soundbath"
+      "instruments": ""
     },
     "artist::Hannah Koshgarian": {
       "name": "Hannah Koshgarian",
@@ -7044,13 +7038,13 @@
       "country": "United States",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Classical Music, Performance",
       "tools": "Cello",
       "skill set": "Instrumentalist, Arranging, Research, Improvisation",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Louise Gorm": {
       "name": "Louise Gorm",
@@ -7062,13 +7056,13 @@
       "country": "Denmark",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Classical Music, Performance, Production",
       "tools": "Violin",
       "skill set": "Improvisation, Composing, Research, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Maksim Sergeev": {
       "name": "Maksim Sergeev",
@@ -7080,13 +7074,13 @@
       "country": "Russia / Israel",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Sama Soundbath",
       "discipline": "Music Production, Sound Design, Theatre",
       "tools": "Logic Pro, Ableton Live, Guitar, Vocal",
       "skill set": "Composing, Singing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Sama Soundbath"
+      "instruments": ""
     },
     "artist::Matteo Cenerini": {
       "name": "Matteo Cenerini",
@@ -7098,13 +7092,13 @@
       "country": "Italy",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Performance, Jazz, Music Production, Installation, Writing",
       "tools": "Guitar",
       "skill set": "Composing, Arranging, Improvisation, Instrumentalist, Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Artak Kostandian": {
       "name": "dreamy0psis",
@@ -7116,13 +7110,13 @@
       "country": "Armenia / Georgia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Installation, Visual Art, Music Production",
       "tools": "Ableton Live",
       "skill set": "Sculpture, 3D, Composing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Veronika Poghosyan": {
       "name": "Who Is Veronika Poghosyan",
@@ -7134,13 +7128,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Documental Art",
       "discipline": "Filming, Animation, Performance, Acting, Writing, Directing",
       "tools": "Adobe, Dragon Frame",
       "skill set": "Sculpture, Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Documental Art"
+      "instruments": ""
     },
     "artist::Evgeniia Starikova": {
       "name": "Evgeniia Starikova",
@@ -7152,13 +7146,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Contemporary Art",
       "discipline": "Installation, Performance, Media Art, Filming, Sound Design",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Contemporary Art"
+      "instruments": ""
     },
     "artist::Yuliia Potapova": {
       "name": "Yuliia Potapova",
@@ -7170,13 +7164,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Assembling Ritual",
       "discipline": "Art Management",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Assembling Ritual"
+      "instruments": ""
     },
     "artist::Aleksandr Kuritsyn": {
       "name": "blue pencil",
@@ -7188,13 +7182,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Zine Art",
       "discipline": "Visual Art, Writing",
       "tools": "",
       "skill set": "Research, Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Zine Art"
+      "instruments": ""
     },
     "artist::Melanya Torosyan": {
       "name": "Marl Superstarl",
@@ -7206,13 +7200,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Zine Art",
       "discipline": "",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Zine Art"
+      "instruments": ""
     },
     "artist::Valentin Ryzhov": {
       "name": "zvukofor",
@@ -7224,13 +7218,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Music Production, Sound Design, Visual Art, Filming",
       "tools": "Synthesizers, Guitar, Electronics",
       "skill set": "Sound Recording, Instrumentalist, Sound Synthesis, Engineering",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Van Sadagh": {
       "name": "Van Sadagh",
@@ -7242,13 +7236,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Jazz, Acting, Theatre, Visual Art, Photography, Performance, Music Production",
       "tools": "Piano, Vocal",
       "skill set": "Composing, Singing, Teaching, Illustration and Painting, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Lubomir Andrei": {
       "name": "Lubomir Andrei",
@@ -7260,13 +7254,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Somatic Practices",
       "discipline": "Choreography, Performance, Theatre",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Somatic Practices"
+      "instruments": ""
     },
     "artist::Frederick Bernas": {
       "name": "Freddie Fiasco",
@@ -7278,13 +7272,13 @@
       "country": "UK / USA",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "Filming, Media Art, Music Production, Sound Design",
       "tools": "Saxophone",
       "skill set": "Instrumentalist, Composing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::Minami KINTO": {
       "name": "Minami KINTO",
@@ -7296,13 +7290,13 @@
       "country": "Japan",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Art To Wear",
       "discipline": "Installation, Visual Art, Performance",
       "tools": "DIY",
       "skill set": "Research, Illustration and Painting, Sculpture",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Art To Wear"
+      "instruments": ""
     },
     "artist::Fernando Damon": {
       "name": "Fernando Damon",
@@ -7314,13 +7308,13 @@
       "country": "South Africa",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Neo-Tribes",
       "discipline": "Jazz, Electronics, Music Production, Visual Art",
       "tools": "Drums, Synthesizers",
       "skill set": "Sampling, Sound Synthesis, Instrumentalist, Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Neo-Tribes"
+      "instruments": ""
     },
     "artist::Anton Khlabov": {
       "name": "Anton Khlabov",
@@ -7332,13 +7326,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "Filming, Animation, Photography, Media Art, Visual Art",
       "tools": "Adobe",
       "skill set": "Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::Varder Baghdasaryan": {
       "name": "Qi",
@@ -7350,13 +7344,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Sound Design, Performance, Art Management, Electronics",
       "tools": "",
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Karine Avetisyan": {
       "name": "Kariné",
@@ -7368,13 +7362,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Electronics, Music Production",
       "tools": "Piano, Vocal, Electronics, Synthesizers",
       "skill set": "Composing, Sound Synthesis, Singing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Aleksandra Zakaryan": {
       "name": "XANDRA",
@@ -7386,13 +7380,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Ambisonic Installation",
       "discipline": "Music Production, Media Art, Electronics",
       "tools": "Ableton Live, Touch Designer",
       "skill set": "Sound Recording, Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Ambisonic Installation"
+      "instruments": ""
     },
     "artist::Vardui Mirzoyan": {
       "name": "Vardui Mirzoyan",
@@ -7404,13 +7398,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Classical Music",
       "tools": "Cello",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Anna Ghazaryan Vladimirskaya": {
       "name": "Anna Ghazaryan Vladimirskaya",
@@ -7422,13 +7416,13 @@
       "country": "USA / Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Installation",
       "discipline": "Visual Art, Media Art, Installation",
       "tools": "Coding",
       "skill set": "Design, Sculpture, Coding and Patching, Research, 3D, Engineering",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Installation"
+      "instruments": ""
     },
     "artist::Elen Poghosyan": {
       "name": "Elen Poghosyan",
@@ -7440,13 +7434,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Classical Music",
       "tools": "Piano, Cello",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Ana Kipshidze": {
       "name": "Anuka Kipshidze",
@@ -7458,13 +7452,13 @@
       "country": "Georgia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Sound Design, Music Production",
       "tools": "Bass, Guitar, Piano",
       "skill set": "Instrumentalist, Composing, Sound Recording, Instrument Design, Engineering, Mixing and Mastering",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Anna Kalenchyan": {
       "name": "Anna Kalenchyan",
@@ -7476,13 +7470,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "Animation, Visual Art, Media Art",
       "tools": "Adobe",
       "skill set": "Design, 3D, AI Visual",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::Shahane Harutyunyan": {
       "name": "22194 (Shahane)",
@@ -7494,13 +7488,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "Media Art, Visual Art",
       "tools": "Coding",
       "skill set": "Coding and Patching",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::David Grigoryan": {
       "name": "David Grigoryan",
@@ -7512,13 +7506,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Classical Music, Set Design, Visual Art",
       "tools": "Saxophone",
       "skill set": "Instrumentalist, Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Aleksandr Veselov": {
       "name": "Aleksandr Veselov",
@@ -7530,13 +7524,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Assembling Ritual",
       "discipline": "Sound Design, Media Art, Writing",
       "tools": "",
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Assembling Ritual"
+      "instruments": ""
     },
     "artist::Nelli Vardanyan": {
       "name": "Echoes in dust",
@@ -7548,13 +7542,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Music Production, Sound Design, Classical Music",
       "tools": "Ableton Live, Logic Pro, Qanun",
       "skill set": "Instrumentalist, Composing, Sound Recording",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Kristina Iskandaryan": {
       "name": "Kiara",
@@ -7566,13 +7560,13 @@
       "country": "",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::Anna Esaian": {
       "name": "esai",
@@ -7584,13 +7578,13 @@
       "country": "Armenia / Netherlands",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Installation",
       "discipline": "Installation, Performance, Photography, Visual Art, Media Art",
       "tools": "",
       "skill set": "Sculpture, Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Installation"
+      "instruments": ""
     },
     "artist::Ani Yeghoyan": {
       "name": "NODE",
@@ -7602,13 +7596,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Ambisonic Installation",
       "discipline": "Music Production",
       "tools": "Guitar, Piano, Ableton Live",
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Ambisonic Installation"
+      "instruments": ""
     },
     "artist::Syuzanna Ginosyan": {
       "name": "Suzy Ginosyan",
@@ -7620,13 +7614,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "Art Management, Classical Music",
       "tools": "Piano",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::Kristine Danielyan": {
       "name": "Christina Danielyan",
@@ -7638,13 +7632,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Somatic Practices",
       "discipline": "Acting, Choreography, Performance, Directing, Theatre",
       "tools": "",
       "skill set": "Teaching",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Somatic Practices"
+      "instruments": ""
     },
     "artist::Arno Melkonyan": {
       "name": "Arno Melkonyan",
@@ -7656,13 +7650,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Neo-Tribes",
       "discipline": "Classical Music, Jazz, Music Production",
       "tools": "Piano, Guitar",
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Neo-Tribes"
+      "instruments": ""
     },
     "artist::Maria Tsharakyan": {
       "name": "manu",
@@ -7674,13 +7668,13 @@
       "country": "Armenia / Spain",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Music Production, Sound Design",
       "tools": "Piano, Guitar, Drums, Bass",
       "skill set": "Instrumentalist, Teaching, Engineering, Composing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Henrik Meliqyan": {
       "name": "Henrik Meliqyan",
@@ -7692,13 +7686,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Neo-Tribes",
       "discipline": "Classical Music, Jazz",
       "tools": "Clarinet, Saxophone",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Neo-Tribes"
+      "instruments": ""
     },
     "artist::Svetlana Hakobyan": {
       "name": "Svetlana Hakobyan",
@@ -7710,13 +7704,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Neo-Tribes",
       "discipline": "",
       "tools": "Guitar, Bass",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Neo-Tribes"
+      "instruments": ""
     },
     "artist::Ekaterina Ishkhanova": {
       "name": "ishkhan",
@@ -7728,13 +7722,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Reverse Tower Ritual",
       "discipline": "Sound Design, Music Production",
       "tools": "Guitar, Piano, Ableton Live, Vocal",
       "skill set": "Instrumentalist, Singing, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Reverse Tower Ritual"
+      "instruments": ""
     },
     "artist::Vardan Sargsyan": {
       "name": "duke",
@@ -7746,13 +7740,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Ambisonic Installation",
       "discipline": "Music Production",
       "tools": "Guitar, Bass, Ableton Live",
       "skill set": "Composing, Arranging, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Ambisonic Installation"
+      "instruments": ""
     },
     "artist::Elena Korkina": {
       "name": "Elena Korkina",
@@ -7764,13 +7758,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Assembling Ritual",
       "discipline": "Art Management, Writing",
       "tools": "",
       "skill set": "Research, Teaching",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Assembling Ritual"
+      "instruments": ""
     },
     "artist::Carolina Zakharova": {
       "name": "Carolina Zakharova",
@@ -7782,13 +7776,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Art To Wear",
       "discipline": "Choreography, Performance, Animation, Photography, Visual Art",
       "tools": "Adobe",
       "skill set": "Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Art To Wear"
+      "instruments": ""
     },
     "artist::Toma Aydinyan": {
       "name": "Toma Aydinyan",
@@ -7800,13 +7794,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Art To Wear",
       "discipline": "Choreography, Performance, Filming, Photography",
       "tools": "",
       "skill set": "Improvisation",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Art To Wear"
+      "instruments": ""
     },
     "artist::Syuzanna Misakyan": {
       "name": "Syuzan Misakyan",
@@ -7818,13 +7812,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Art To Wear",
       "discipline": "Choreography, Acting, Performance, Theatre",
       "tools": "",
       "skill set": "Teaching",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Art To Wear"
+      "instruments": ""
     },
     "artist::Anika Krbetschek": {
       "name": "Anika Krbetschek",
@@ -7836,13 +7830,13 @@
       "country": "Germany",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Assembling Ritual",
       "discipline": "Writing, Art Management, Media Art, Photography, Installation, Sound Design",
       "tools": "",
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Assembling Ritual"
+      "instruments": ""
     },
     "artist::Dmitrii Nenadyshin": {
       "name": "Ptichka Soe",
@@ -7854,13 +7848,13 @@
       "country": "Russia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Reverse Tower Ritual",
       "discipline": "Music Production, Sound Design, Electronics, Performance, Media Art, Visual Art",
       "tools": "Ableton Live, Logic Pro, Vocal, Piano, Guitar, Bass, Touch Designer",
       "skill set": "Composing, Singing, Instrumentalist, Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Reverse Tower Ritual"
+      "instruments": ""
     },
     "artist::Juliette Martirosyan": {
       "name": "Juliette Martirosyan",
@@ -7872,13 +7866,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Documental Art",
       "discipline": "Filming, Directing, Writing",
       "tools": "Adobe",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Documental Art"
+      "instruments": ""
     },
     "artist::Julia Krivosheenko": {
       "name": "Julia Krivosheenko",
@@ -7890,13 +7884,13 @@
       "country": "UK",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Installation",
       "discipline": "Media Art, Installation, Light",
       "tools": "Coding, Touch Designer",
       "skill set": "Coding and Patching, Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Installation"
+      "instruments": ""
     },
     "artist::Emilya Nikoghosyan": {
       "name": "Emilya Nikoghosyan",
@@ -7908,13 +7902,13 @@
       "country": "Armenia",
       "role": "participant",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "Media Art, Installation, Light",
       "tools": "Coding",
       "skill set": "Coding and Patching, Design, Engineering, 3D",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::Davit Aydiyan": {
       "name": "Davit Aydiyan",
@@ -7926,13 +7920,13 @@
       "country": "Armenia / Germany",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Classical Music",
       "tools": "Violin",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Vahe Abrahamyan": {
       "name": "Nerøx",
@@ -7944,13 +7938,13 @@
       "country": "Armenia / Germany",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Electronics, Music Production, Classical Music",
       "tools": "Ableton Live",
       "skill set": "Composing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Grigor Budaghyan": {
       "name": "Grigor Budaghyan",
@@ -7962,13 +7956,13 @@
       "country": "Armenia",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Classical Music, Jazz",
       "tools": "Clarinet, Saxophone",
       "skill set": "Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Nikola Chen": {
       "name": "Nikola Chen",
@@ -7980,13 +7974,13 @@
       "country": "Russia / Armenia",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "Sama Soundbath",
       "discipline": "Electronics, Music Production, Sound Design, Classical Music, Media Art, Performance",
       "tools": "Piano, Clarinet, Synthesizers, Electronics",
       "skill set": "Composing, Sound Synthesis, Improvisation, Instrumentalist, Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Sama Soundbath"
+      "instruments": ""
     },
     "artist::Levon Yerkanyan": {
       "name": "Lerk",
@@ -7998,13 +7992,13 @@
       "country": "Armenia",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Classical Music, Music Production, Photography",
       "tools": "Vocal, Guitar, Ableton Live, Logic Pro",
       "skill set": "Singing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Mileta Ghazanchyan": {
       "name": "MILETA",
@@ -8016,13 +8010,13 @@
       "country": "Armenia",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Jazz, Music Production",
       "tools": "Piano",
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Evgeniia Kovalchuk": {
       "name": "arnet",
@@ -8034,13 +8028,13 @@
       "country": "Armenia",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "Ambisonic Installation",
       "discipline": "Electronics, Music Production, Visual Art",
       "tools": "Ableton Live, Synthesizers",
       "skill set": "Design, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Ambisonic Installation"
+      "instruments": ""
     },
     "artist::Elizabeth Telnaya": {
       "name": "Black Babette",
@@ -8052,13 +8046,13 @@
       "country": "Russia",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "Reverse Tower Ritual",
       "discipline": "Music Production, Sound Design, Performance",
       "tools": "Ableton Live, Synthesizers, Electronics, Body",
       "skill set": "Composing, Sound Recording, Sound Synthesis, Sampling, Singing, Improvisation",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Reverse Tower Ritual"
+      "instruments": ""
     },
     "artist::Nasrin Shojaei": {
       "name": "Nasrin",
@@ -8070,13 +8064,13 @@
       "country": "Iran",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "Somatic Practices",
       "discipline": "Performance",
       "tools": "Body",
       "skill set": "Improvisation",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Somatic Practices"
+      "instruments": ""
     },
     "artist::Dubljević Dragan": {
       "name": "Dubljević Dragan",
@@ -8088,13 +8082,13 @@
       "country": "Montenegro",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Music Production, Production, Sound Design",
       "tools": "Ableton Live, Electronics",
       "skill set": "Composing, Arranging",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Varvara Misyurina": {
       "name": "Varvara Misyurina",
@@ -8106,13 +8100,13 @@
       "country": "Russia",
       "role": "curator's helper",
       "projects": "Notations '26",
+      "project": "Reverse Tower Ritual",
       "discipline": "Music Production",
       "tools": "Ableton Live",
       "skill set": "Composing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Reverse Tower Ritual"
+      "instruments": ""
     },
     "artist::Venera Kazarova": {
       "name": "Venera Kazarova",
@@ -8124,13 +8118,13 @@
       "country": "Germany",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Art To Wear",
       "discipline": "Theatre, Animation, Set Design, Installation, Visual Art, Art to Wear",
       "tools": "Body, DIY",
       "skill set": "Sculpture, Illustration and Painting, Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Art To Wear"
+      "instruments": ""
     },
     "artist::Artem Semenov": {
       "name": "Artem Semenov",
@@ -8142,13 +8136,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Documental Art",
       "discipline": "Filming, Photography, Light, Directing",
       "tools": "Da Vinci Resolve",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Documental Art"
+      "instruments": ""
     },
     "artist::Evgeniy Sharakshane": {
       "name": "Evgeniy Sharakshane",
@@ -8160,13 +8154,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Documental Art",
       "discipline": "Filming, Photography, Light, Directing",
       "tools": "Da Vinci Resolve",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Documental Art"
+      "instruments": ""
     },
     "artist::Arman Peshtmaljyan": {
       "name": "Arman Peshtmaljyan",
@@ -8178,13 +8172,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Performance, Sound Design, Music Production, Jazz",
       "tools": "Piano, Ableton Live",
       "skill set": "Composing, Instrumentalist, Arranging, Instrument Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Shahen Khandkaryan (Shhau)": {
       "name": "Shhau",
@@ -8196,13 +8190,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Music Production",
       "discipline": "Sound Design, Music Production",
       "tools": "Piano, Drums, Ableton Live",
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling, Mixing and Mastering, Instrument Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Music Production"
+      "instruments": ""
     },
     "artist::Kai Khachatryan": {
       "name": "Kai Khachatryan",
@@ -8214,13 +8208,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Ambisonic Installation",
       "discipline": "Sound Design, Music Production, Performance",
       "tools": "Ableton Live, DIY",
       "skill set": "Composing, Sound Recording, Sound Synthesis, Sampling, Mixing and Mastering",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Ambisonic Installation"
+      "instruments": ""
     },
     "artist::Nadya Xyxu": {
       "name": "Nadya Xyxu",
@@ -8232,13 +8226,13 @@
       "country": "Russia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Installation",
       "discipline": "Sound Design, Music Production, Performance, Light, Visual Art, Installation, Electronics",
       "tools": "Touch Designer, Vocal, Synthesizers, Electronics",
       "skill set": "Sound Synthesis, Coding and Patching, Instrument Design, Illustration and Painting, Singing, Sound Recording",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Installation"
+      "instruments": ""
     },
     "artist::Misak Samokatian": {
       "name": "Misak Samokatian",
@@ -8250,13 +8244,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Installation",
       "discipline": "Sound Design, Music Production, Light",
       "tools": "Touch Designer, Unreal Engine, DIY",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Installation"
+      "instruments": ""
     },
     "artist::Gevorg Grigoryan": {
       "name": "Gevorg Grigoryan",
@@ -8268,13 +8262,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Video Art",
       "discipline": "Visual Art, Light",
       "tools": "Touch Designer",
       "skill set": "Coding and Patching, AI visual",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Video Art"
+      "instruments": ""
     },
     "artist::Tanya Chizhikova": {
       "name": "Tanya Chizhikova",
@@ -8286,13 +8280,13 @@
       "country": "Russia / Germany",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Somatic Practices",
       "discipline": "Acting, Choreography, Theatre",
       "tools": "Body",
       "skill set": "Improvisation",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Somatic Practices"
+      "instruments": ""
     },
     "artist::Aram Hovhannisyan": {
       "name": "Aram Hovhannisyan",
@@ -8304,13 +8298,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Sound Design",
       "tools": "Flute",
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Sergey Umroyan": {
       "name": "Sergey Umroyan",
@@ -8322,13 +8316,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "The Refrain",
       "discipline": "Sound Design, Music Production",
       "tools": "Ableton Live, Electronics",
       "skill set": "Composing, Instrumentalist",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "The Refrain"
+      "instruments": ""
     },
     "artist::Tigran Suchyan": {
       "name": "Tigran Suchyan",
@@ -8340,13 +8334,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Neo-Tribes",
       "discipline": "Sound Design, Music Production, Performance, Jazz",
       "tools": "Piano, Guitar, Drums",
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Neo-Tribes"
+      "instruments": ""
     },
     "artist::Mesrop Sarkisyan": {
       "name": "Mesrop Sarkisyan",
@@ -8358,13 +8352,13 @@
       "country": "USA / Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Neo-Tribes",
       "discipline": "Sound Design, Music Production, Performance, Jazz",
       "tools": "Piano, Guitar, Drums",
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Neo-Tribes"
+      "instruments": ""
     },
     "artist::Ben Wheeler": {
       "name": "Ben Wheeler",
@@ -8376,13 +8370,13 @@
       "country": "USA / Georgia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Music Production, Sound Design",
       "tools": "Ableton Live, Guitar, Synthesizers, Electronics",
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Zhanna Davtyan": {
       "name": "Zhanna Davtyan",
@@ -8394,13 +8388,13 @@
       "country": "Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Communitas",
       "discipline": "Performance, Classical Music, Jazz",
       "tools": "Vocal",
       "skill set": "Composing, Singing, Improvisation",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Communitas"
+      "instruments": ""
     },
     "artist::Jeanne Kormina": {
       "name": "Jeanne Kormina",
@@ -8412,13 +8406,13 @@
       "country": "Russia / Armenia",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Assembling Ritual",
       "discipline": "Writing",
       "tools": "",
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Assembling Ritual"
+      "instruments": ""
     },
     "artist::Dima Ustinov": {
       "name": "Dima Ustinov",
@@ -8430,13 +8424,13 @@
       "country": "Russia / Germany",
       "role": "curator",
       "projects": "Notations '26",
+      "project": "Sama Soundbath",
       "discipline": "Sound Design, Music Production, Electronics",
       "tools": "Ableton Live, Piano",
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling, Mixing and Mastering",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Sama Soundbath"
+      "instruments": ""
     },
     "artist::Andronik Khachiian": {
       "name": "Andronik Khachiian",
@@ -8448,13 +8442,13 @@
       "country": "Armenia / Mexico",
       "role": "curator, hosq team",
       "projects": "Notations '26",
+      "project": "Contemporary Art",
       "discipline": "Light, Visual Art, Animation, Performance, Choreography, Directing, Production, Filming",
       "tools": "Resolume, Adobe",
       "skill set": "AI visual, Design, Illustration and Painting, Improvisation",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Contemporary Art"
+      "instruments": ""
     },
     "artist::Andriesh Gandrabur": {
       "name": "Andriesh Gandrabur",
@@ -8466,13 +8460,13 @@
       "country": "Armenia",
       "role": "curator, hosq team",
       "projects": "Notations '26",
+      "project": "Reverse Tower Ritual",
       "discipline": "Sound Design, Music Production, Art Management, Production, Electronics",
       "tools": "Guitar, Ableton Live, Synthesizers",
       "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling, Mixing and Mastering, Research, Improvisation, Teaching",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Reverse Tower Ritual"
+      "instruments": ""
     },
     "artist::Arthur Atayan": {
       "name": "Arthur Atayan",
@@ -8484,13 +8478,13 @@
       "country": "Armenia",
       "role": "curator, hosq team",
       "projects": "Notations '26",
+      "project": "Zine Art",
       "discipline": "Performance, Sound Design, Music Production, Production",
       "tools": "Guitar, Vocal",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Zine Art"
+      "instruments": ""
     },
     "artist::Daria Sadovnikova": {
       "name": "Daria Sadovnikova",
@@ -8502,13 +8496,13 @@
       "country": "Russia",
       "role": "verticurator",
       "projects": "Notations '26",
+      "project": "Set Design",
       "discipline": "Sound Design, Music Production",
       "tools": "Ableton Live",
       "skill set": "Composing, Sound Recording, Sound Synthesis",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Set Design"
+      "instruments": ""
     },
     "artist::Karina Malik": {
       "name": "Karina Malik",
@@ -8520,13 +8514,13 @@
       "country": "Russia / Pakistan",
       "role": "verticurator",
       "projects": "Notations '26",
+      "project": "Set Design",
       "discipline": "Set Design",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Set Design"
+      "instruments": ""
     },
     "artist::Aleksei Leontev": {
       "name": "Aleksei Leontev",
@@ -8538,13 +8532,13 @@
       "country": "Russia / France",
       "role": "verticurator",
       "projects": "Notations '26",
+      "project": "Set Design",
       "discipline": "Set Design",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Set Design"
+      "instruments": ""
     },
     "artist::Yurii Avdeev": {
       "name": "Yurii Avdeev",
@@ -8556,13 +8550,13 @@
       "country": "Russia",
       "role": "verticurator",
       "projects": "Notations '26",
+      "project": "Set Design",
       "discipline": "Set Design",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": "Set Design"
+      "instruments": ""
     },
     "artist::Georgy Safarov": {
       "name": "Georgy Safarov",
@@ -8574,13 +8568,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Production, Music Production, Electronics",
       "tools": "Ableton Live",
       "skill set": "Sampling",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Lusine MLKE-Galstyan": {
       "name": "Lusine MLKE-Galstyan",
@@ -8592,13 +8586,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Sound Design, Music Production, Performance",
       "tools": "Piano, Flute, Ableton Live, Vocal",
       "skill set": "Composing, Instrumentalist, Arranging",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Shoghakat MLKE-Galstyan": {
       "name": "Shoghakat MLKE-Galstyan",
@@ -8610,13 +8604,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Choreography, Directing, Theatre, Performance, Art Management",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Uliana Pyadushkina": {
       "name": "Uliana Pyadushkina",
@@ -8628,13 +8622,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Animation, Media Art, Sound Design, Music Production, Visual Art",
       "tools": "Ableton Live, Procreate, Da Vinci Resolve, Blender, Coding, AI, DIY, Max/MSP",
       "skill set": "Sound Recording, Sound Synthesis, Sampling, Coding and Patching, AI visual, 3D, Design, Illustration and Painting",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Sonya Ovchinnikova": {
       "name": "Sonya Ovchinnikova",
@@ -8646,13 +8640,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Sound Design, Music Production",
       "tools": "Piano, Ableton Live, Vocal",
       "skill set": "Sound Recording, Arranging, Singing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Syuzi Juharyan": {
       "name": "Syuzi Juharyan",
@@ -8664,13 +8658,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Performance",
       "tools": "Vocal",
       "skill set": "Singing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Evgeniy Lyalin": {
       "name": "Evgeniy Lyalin",
@@ -8682,13 +8676,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Art Management, Classical Music",
       "tools": "Vocal",
       "skill set": "Singing",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Nikita Maksimenko": {
       "name": "Nikita Maksimenko",
@@ -8700,13 +8694,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Performance, Set Design, Light, Media Art, Installation, Sound Design, Music Production, Electronics, Production",
       "tools": "Ableton Live, Max/MSP, Unreal Engine, Touch Designer, Electronics, DIY, Synthesizers",
       "skill set": "Engineering, Sound Synthesis, Sound Recording, Composing, Sampling, Coding and Patching",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Vladimir Gurskii": {
       "name": "Vladimir Gurskii",
@@ -8718,13 +8712,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Production",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Maria Makora": {
       "name": "Maria Makora",
@@ -8736,13 +8730,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Production",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Mitya Lyalin": {
       "name": "Mitya Lyalin",
@@ -8754,13 +8748,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Photography, Filming",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Flora Gevorgyan": {
       "name": "Flora Gevorgyan",
@@ -8772,13 +8766,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Production, Art Management",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Lin Paravyan": {
       "name": "Lin Paravyan",
@@ -8790,13 +8784,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Art Management",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Natalia Kupriyanova": {
       "name": "Natalia Kupriyanova",
@@ -8808,13 +8802,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Photography, Production, Art Management",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Daniil Yakushov": {
       "name": "Daniil Yakushov",
@@ -8826,13 +8820,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Directing",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Aksanna Poghosyan": {
       "name": "Aksanna Poghosyan",
@@ -8844,13 +8838,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Production, Art Management",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Agatha Karapetyan": {
       "name": "Agatha Karapetyan",
@@ -8862,13 +8856,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Art Management, Production",
       "tools": "",
       "skill set": "",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Liz Victorova": {
       "name": "Liz Victorova",
@@ -8880,13 +8874,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Visual Art",
       "tools": "Adobe",
       "skill set": "Design",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Christian Ginosyan": {
       "name": "Christian Ginosyan",
@@ -8898,13 +8892,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Writing, Multimedia  Journalism, Production",
       "tools": "",
       "skill set": "Research",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     },
     "artist::Petros Goroyan": {
       "name": "Petros Goroyan",
@@ -8916,13 +8910,13 @@
       "country": "Armenia",
       "role": "hosq team",
       "projects": "Notations '26",
+      "project": "",
       "discipline": "Sound Design, Set Design",
       "tools": "Electronics, Cubase",
       "skill set": "Sound Recording, Mixing and Mastering, Engineering",
       "lab": "",
       "department": "",
-      "instruments": "",
-      "project": ""
+      "instruments": ""
     }
   },
   "filter_options": {
@@ -8979,7 +8973,6 @@
     "skill set": [
       "3D",
       "AI sound",
-      "AI visual",
       "AI Visual",
       "Arranging",
       "Coding and Patching",
