@@ -1080,14 +1080,14 @@
 
     function baseNodeOpacity(d) {
       if (focusedVisibleNodeIds) return focusedVisibleNodeIds.has(d.id) ? 1 : 0;
-      if (filteredTagNodeIds?.has(d.id)) return 1;
+      // Menu filters: only matching artists are visible.
+      if (filteredTagNodeIds) return d.id.startsWith('artist::') ? 1 : 0;
       if (d.id.startsWith('artist::')) return 1;
       return featuresOn ? 1 : 0;
     }
 
     function nodePointerEvents(d) {
       if (focusedVisibleNodeIds) return focusedVisibleNodeIds.has(d.id) ? 'all' : 'none';
-      if (filteredTagNodeIds?.has(d.id)) return 'all';
       if (baseNodeOpacity(d) === 0) return 'none';
       if (d.id.startsWith('artist::')) return 'all';
       return featuresOn ? 'all' : 'none';
@@ -1100,6 +1100,7 @@
       const matches = buildSearchMatchSet(q, data);
       const searching = q.length > 0 && matches.size > 0;
       const dim = 0.3;
+      const menuFiltersActive = !!filteredTagNodeIds && !focusedNodeId;
 
       const opacityFor = (d) => {
         const base = baseNodeOpacity(d);
@@ -1123,8 +1124,8 @@
 
       link
         .attr('opacity', () => {
+          if (menuFiltersActive) return 0;
           if (focusedNodeId) return searching ? dim : 1;
-          if (filteredTagNodeIds) return searching ? dim : 1;
           if (!featuresOn) return 0;
           if (!searching) return 1;
           return dim;
@@ -1134,7 +1135,7 @@
       if (q.length > 0 && matches.size === 0) {
         node.attr('opacity', d => baseNodeOpacity(d));
         if (labels) labels.attr('opacity', d => baseNodeOpacity(d));
-        link.attr('opacity', focusedNodeId || filteredTagNodeIds || featuresOn ? 1 : 0);
+        link.attr('opacity', menuFiltersActive ? 0 : (focusedNodeId || featuresOn ? 1 : 0));
       }
     }
 
@@ -1584,19 +1585,16 @@
         (values || []).forEach(value => selectedTagIds.add(`${category}::${value}`));
       });
       const hasSelectedTags = selectedTagIds.size > 0;
-      filteredTagNodeIds = hasSelectedTags ? new Set(selectedTagIds) : null;
+      // Truthy while menu filters are active; feature nodes stay in the graph for focus/physics but are hidden.
+      filteredTagNodeIds = hasSelectedTags ? selectedTagIds : null;
       const visibleRelatedIds = new Set(visibleArtistIds);
 
-      if (hasSelectedTags) {
-        selectedTagIds.forEach(id => visibleRelatedIds.add(id));
-      } else {
-        data.links.forEach(l => {
-          const s = typeof l.source === 'string' ? l.source : l.source.id;
-          const t = typeof l.target === 'string' ? l.target : l.target.id;
-          if (visibleArtistIds.has(s)) visibleRelatedIds.add(t);
-          if (visibleArtistIds.has(t)) visibleRelatedIds.add(s);
-        });
-      }
+      data.links.forEach(l => {
+        const s = typeof l.source === 'string' ? l.source : l.source.id;
+        const t = typeof l.target === 'string' ? l.target : l.target.id;
+        if (visibleArtistIds.has(s)) visibleRelatedIds.add(t);
+        if (visibleArtistIds.has(t)) visibleRelatedIds.add(s);
+      });
 
       const nodes = data.nodes
         .filter(n => visibleRelatedIds.has(n.id))
@@ -1606,8 +1604,7 @@
       const links = data.links.filter(l => {
         const s = typeof l.source === 'string' ? l.source : l.source.id;
         const t = typeof l.target === 'string' ? l.target : l.target.id;
-        if (!nodeIdSet.has(s) || !nodeIdSet.has(t)) return false;
-        return !hasSelectedTags || selectedTagIds.has(s) || selectedTagIds.has(t);
+        return nodeIdSet.has(s) && nodeIdSet.has(t);
       }).map(l => ({ ...l }));
 
       const MIN_NODE_DISTANCE = NODE_RADIUS * 5;
