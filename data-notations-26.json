@@ -811,6 +811,12 @@
       "color": "#5C5255"
     },
     {
+      "id": "artist::Robert Poghosyan",
+      "label": "Robert Poghosyan",
+      "group": "artist",
+      "color": "#5C5255"
+    },
+    {
       "id": "project::Ambisonic Installation",
       "label": "Ambisonic Installation",
       "group": "project",
@@ -6485,6 +6491,90 @@
     {
       "source": "artist::Petros Goroyan",
       "target": "skill set::Engineering"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "role::verticurator"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "project::Art To Wear"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "discipline::Sound Design"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "discipline::Music Production"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "discipline::Performance"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "discipline::Visual Art"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "discipline::Set Design"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "tools::Piano"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "tools::Guitar"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "tools::Ableton Live"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "tools::Touch Designer"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "tools::DIY"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "tools::Synthesizers"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "skill set::Composing"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "skill set::Sound Recording"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "skill set::Instrumentalist"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "skill set::Arranging"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "skill set::Sound Synthesis"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "skill set::Sampling"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "skill set::Mixing and Mastering"
+    },
+    {
+      "source": "artist::Robert Poghosyan",
+      "target": "skill set::Instrument Design"
     }
   ],
   "artists": {
@@ -8914,6 +9004,24 @@
       "discipline": "Sound Design, Set Design",
       "tools": "Electronics, Cubase",
       "skill set": "Sound Recording, Mixing and Mastering, Engineering",
+      "lab": "",
+      "department": "",
+      "instruments": ""
+    },
+    "artist::Robert Poghosyan": {
+      "name": "Robert Poghosyan",
+      "legal_name": "Robert Poghosyan",
+      "photo": "https://drive.google.com/thumbnail?id=1iwy6Em6TapY-TqE5lR9DYvkXDtz62zrT",
+      "telegram": "&#64;crossroads_imcs",
+      "email": "",
+      "social": "https://www.instagram.com/robin_van_cox/",
+      "country": "Armenia",
+      "role": "verticurator",
+      "projects": "Notations '26",
+      "project": "Art To Wear",
+      "discipline": "Sound Design, Music Production, Performance, Visual Art, Set Design",
+      "tools": "Piano, Guitar, Ableton Live, Touch Designer, DIY, Synthesizers",
+      "skill set": "Composing, Sound Recording, Instrumentalist, Arranging, Sound Synthesis, Sampling, Mixing and Mastering, Instrument Design",
       "lab": "",
       "department": "",
       "instruments": ""
