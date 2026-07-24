@@ -3193,6 +3193,46 @@
       "target": "project::Zine Art"
     },
     {
+      "source": "artist::Melanya Torosyan",
+      "target": "discipline::Music Production"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "discipline::Writing"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "tools::Vocal"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "tools::Piano"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "tools::Electronics"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "skill set::Composing"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "skill set::Instrumentalist"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "skill set::Singing"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "skill set::Research"
+    },
+    {
+      "source": "artist::Melanya Torosyan",
+      "target": "skill set::Improvisation"
+    },
+    {
       "source": "artist::Valentin Ryzhov",
       "target": "role::participant"
     },
@@ -7291,9 +7331,9 @@
       "role": "participant",
       "projects": "Notations '26",
       "project": "Zine Art",
-      "discipline": "",
-      "tools": "",
-      "skill set": "",
+      "discipline": "Music Production, Writing",
+      "tools": "Vocal, Piano, Electronics",
+      "skill set": "Composing, Instrumentalist, Singing, Research, Improvisation",
       "lab": "",
       "department": "",
       "instruments": ""
