@@ -1289,6 +1289,7 @@
       const role = formatRoleDisplay(artist.role);
       const social = (artist.social || '').trim();
       const contact = parseContactField(artist.telegram);
+      const phoneContact = contact && contact.type === 'phone' ? contact : null;
       const metaParts = [];
       if (showLegal) metaParts.push(escapeHtml(legalName));
       if (country) metaParts.push(escapeHtml(country));
@@ -1320,8 +1321,8 @@
       if (artist['skill set']) {
         html += `<div class="card-row"><span class="label">skill set:</span> ${renderClickableTags('skill set', artist['skill set'])}</div>`;
       }
-      if (contact) {
-        html += `<div class="telegram-row">${contact.label} <a class="telegram-link" href="${escapeHtml(contact.href)}"${contact.type === 'telegram' ? ' target="_blank" rel="noopener noreferrer"' : ''}>${escapeHtml(contact.display)}</a></div>`;
+      if (phoneContact) {
+        html += `<div class="telegram-row">${phoneContact.label} <a class="telegram-link" href="${escapeHtml(phoneContact.href)}">${escapeHtml(phoneContact.display)}</a></div>`;
       }
       if (social) {
         html += `<a class="connect-btn" href="${escapeHtml(social)}" target="_blank" rel="noopener noreferrer">Connect</a>`;
